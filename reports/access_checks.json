@@ -1,0 +1,23 @@
+{
+  "checked_at": "2026-10-17T23:28:49.530466+00:00",
+  "checks": [
+    {
+      "episode": 90,
+      "status": "access_restricted",
+      "message": "Public page redirected outside allowed episode pages to forum/login_info.php; redirect was not followed.",
+      "url": "https://www.10thplanetjj.com/techniques/mts-90-x-guard-to-doa/"
+    },
+    {
+      "episode": 96,
+      "status": "access_restricted",
+      "url": "https://www.10thplanetjj.com/techniques/mts-96-pre-web/",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-96-pre-web/"
+    },
+    {
+      "episode": 226,
+      "status": "access_restricted",
+      "url": "https://www.10thplanetjj.com/techniques/mts-226-full-rubber-guard-invisible-collar/",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-226-full-rubber-guard-invisible-collar/"
+    }
+  ]
+}

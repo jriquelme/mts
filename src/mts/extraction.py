@@ -9,7 +9,7 @@ from mts.timestamps import enrich_chapters
 
 SCOPES = ('#main-video .about', '.entry-content', '.post-content', 'article')
 HEADING = re.compile(r'^(?:MTS\s*\d+\s*[-–—:]?\s*)?table\s+of\s+contents\s*[:.!]?$', re.I)
-TOKEN = r'\d{1,3}(?:\s*:\s*(?:\d{1,3}|[a-zA-Z]{1,2})){1,3}'
+TOKEN = r'\d{1,3}(?:\s*:\s*(?:\d{1,3}|[a-zA-Z]+)){1,3}'
 LEADING = re.compile(rf'^\s*\(?(?P<time>{TOKEN})(?=$|[\s)\]–—-]|[A-Za-z])\)?\s*[-–—:]?\s*(?P<title>.*)$', re.S)
 TRAILING = re.compile(rf'^(?P<title>.*?)\s*\((?P<time>{TOKEN})\)\s*$', re.S)
 BLOCKS = ('p', 'li', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'tr')
@@ -58,6 +58,16 @@ def parse_chapter(raw):
         original = match['time'].strip()
         return dict(time=re.sub(r'\s*:\s*', ':', original), time_original=original,
                     title=clean(match['title']), text_original=raw)
+    # Preserve recognizable but unsupported time-like tokens instead of dropping
+    # them or guessing whether semicolons/periods represent clock separators.
+    malformed = re.match(r'^\s*(\d+(?:[;.]\d+){2,})\s+(.+)$', raw, re.S)
+    if malformed:
+        return dict(time=malformed[1], time_original=malformed[1],
+                    title=clean(malformed[2]), text_original=raw)
+    split_digits = re.match(r'^\s*(\d+(?:[ \t]+\d+)+(?::\s*\d+){1,3})\s+(.+)$', raw, re.S)
+    if split_digits:
+        return dict(time=split_digits[1], time_original=split_digits[1],
+                    title=clean(split_digits[2]), text_original=raw)
     return dict(time='', time_original='', title=clean(raw), text_original=raw)
 
 
@@ -78,7 +88,7 @@ def finish(chapters, diagnostics, layout):
         status = 'toc_partial'
     else:
         status = 'ok'
-    needs_review = any(d['code'] != 'frame_rate_unknown' for d in diagnostics)
+    needs_review = any(d['code'] != 'frame_rate_unknown' and d.get('severity') != 'info' for d in diagnostics)
     return dict(chapters=chapters, status=status, layout=layout, diagnostics=diagnostics,
                 requires_review=status != 'ok' or needs_review)
 
@@ -87,11 +97,14 @@ def extract_episode(html):
     soup = BeautifulSoup(html, 'html.parser')
     selector = next((s for s in SCOPES if soup.select_one(s) is not None), None)
     if selector is None:
-        restricted = soup.select_one('input[type="password"]') is not None
+        title = soup.title.get_text(' ', strip=True) if soup.title else ''
+        restricted = soup.select_one('input[type="password"]') is not None or bool(
+            re.search(r'access denied|attention required|just a moment', title, re.I))
         status = 'access_restricted' if restricted else 'unsupported_layout'
         return dict(chapters=[], status=status, layout=None, requires_review=True,
                     diagnostics=[dict(code=status, message='No recognized public episode description. Inspect cached HTML.')])
     scope = soup.select_one(selector)
+    scope_restricted = scope.select_one('input[type="password"]') is not None
     for unwanted in list(scope.select(NOISE)):
         if unwanted.parent is not None:
             unwanted.decompose()
@@ -105,7 +118,7 @@ def extract_episode(html):
             continue
         if HEADING.fullmatch(text):
             continue
-        if re.match(r'^(?:MTS\s*\d+\b|(?:Mastering the System:\s*)?Episode\s+\d+\b)', text, re.I):
+        if not started and re.match(r'^(?:MTS\s*\d+\b|(?:Mastering the System:\s*)?Episode\s+\d+\b)', text, re.I):
             continue
         if re.match(r'^(?:comments?\s+(?:off|closed)|leave a (?:reply|comment)|related posts?|play video|log\s*in|sign up)\b', text, re.I):
             break
@@ -118,6 +131,9 @@ def extract_episode(html):
         diagnostics.append(dict(code='toc_not_present', message='Recognized episode description has no chapter list. Inspect cached description; do not infer video access.'))
     layout = 'headed_blocks' if heading is not None else 'headingless_blocks'
     result = finish(chapters, diagnostics, layout)
+    if not chapters and scope_restricted:
+        result.update(status='access_restricted', requires_review=True,
+                      diagnostics=[dict(code='access_restricted', message='Login form inside the episode content; no public TOC available.')])
     result['source_selector'] = selector
     return result
 

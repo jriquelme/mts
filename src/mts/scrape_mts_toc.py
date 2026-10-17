@@ -10,7 +10,7 @@ from urllib.parse import urldefrag, urljoin, urlparse
 
 from bs4 import BeautifulSoup
 
-from mts.extraction import clean, extract_chapters, extract_episode, finish
+from mts.extraction import clean, extract_chapters, extract_episode, finish, parse_chapter
 from mts.http import ARCHIVE, BASE, USER_AGENT, FetchFailure, OfflineMiss, TextClient
 from mts.storage import HtmlCache, load_catalog, save_outputs
 
@@ -37,15 +37,31 @@ def episodes_from_archive(html):
 
 
 def upgrade_legacy(row):
-    if row.get('schema_version') == 2:
+    if row.get('schema_version') == 2 and row.get('source', {}).get('kind') != 'legacy_metadata':
         return dict(row)
     result = dict(row)
-    result.update(finish(row['chapters'], [], 'legacy_metadata'))
+    chapters, recovered = [], []
+    for index, chapter in enumerate(row['chapters'], 1):
+        current = dict(chapter)
+        if not chapter.get('time'):
+            parsed = parse_chapter(chapter['title'])
+            if parsed['time_original']:
+                current.update(parsed)
+                recovered.append(dict(code='timestamp_recovered_from_legacy_title', chapter=index,
+                    severity='info', original_title=chapter['title'],
+                    message='Time-like prefix separated from an existing catalog label; raw HTML not revalidated.'))
+        chapters.append(current)
+    result.update(finish(chapters, [], 'legacy_metadata'))
+    result['diagnostics'].extend(recovered)
     if not row['chapters']:
         result.update(status='unsupported_layout', requires_review=True)
+    if row['status'] in FAILED_STATUSES or row['status'] == 'robots_disallowed':
+        result.update(status=row['status'], requires_review=True)
+        result['diagnostics'].append(dict(code=row['status'],
+            message=row.get('error', 'Previous operational failure; inspect prior evidence.')))
     result['diagnostics'].append(dict(code='raw_html_unavailable', severity='info',
         message='Timestamp metadata normalized from the previous catalog; raw extraction not revalidated.'))
-    result.update(schema_version=2, source=dict(kind='legacy_metadata'))
+    result.update(schema_version=2, source=dict(row.get('source', {}), kind='legacy_metadata'))
     return result
 
 
@@ -81,11 +97,21 @@ def failure_row(episode, previous, status, message):
     row = dict(previous or episode)
     row.update(status=status, error=message, requires_review=True, schema_version=2)
     row.setdefault('chapters', [])
-    row['diagnostics'] = [dict(code=status, message=message)]
+    row['diagnostics'] = [d for d in row.get('diagnostics', [])
+                          if d['code'] not in FAILED_STATUSES | {'robots_disallowed', 'previous_chapters_retained'}]
+    row['diagnostics'].append(dict(code=status, message=message))
     if row['chapters']:
         row['diagnostics'].append(dict(code='previous_chapters_retained',
             message='Current attempt failed; existing chapter evidence was kept.'))
     return row
+
+
+def record_source(row, page):
+    row['source'] = {k: page[k] for k in ('url', 'final_url', 'status_code', 'fetched_at', 'cache_key', 'request_source')}
+    row['source']['kind'] = 'raw_html'
+    for field in ('origin', 'final_url_verified', 'sha256', 'redirect_target'):
+        if field in page:
+            row['source'][field] = page[field]
 
 
 def run(args, client):
@@ -144,8 +170,7 @@ def run(args, client):
                             row['diagnostics'].append(dict(code='chapter_count_decreased',
                                 before=len(previous['chapters']), after=len(row['chapters']),
                                 message='Compare cached source with prior catalog before accepting this loss.'))
-                row['source'] = {k: page[k] for k in ('url', 'final_url', 'status_code', 'fetched_at', 'cache_key', 'request_source')}
-                row['source']['kind'] = 'raw_html'
+                record_source(row, page)
             except OfflineMiss as exc:
                 if previous:
                     row = dict(previous)
@@ -155,6 +180,8 @@ def run(args, client):
                     row = failure_row(episode, None, 'fetch_error', str(exc))
             except FetchFailure as exc:
                 row = failure_row(episode, previous, exc.status, str(exc))
+                if exc.page:
+                    record_source(row, exc.page)
             rows[number] = row
             save_outputs(args.output, list(rows.values()), discovered)
             codes = sorted({d['code'] for d in row.get('diagnostics', []) if d['code'] != 'frame_rate_unknown'})

@@ -10,6 +10,11 @@ def normalize_timestamp(original):
     if not value:
         return result
     result['time_format'] = 'invalid'
+    # Verified in MTS 213: four-field codes use semicolons consistently.
+    # Preserve that separator, including any possible drop-frame significance.
+    if re.fullmatch(r'\d+(?:\s*;\s*\d{2}){3}', raw.strip()):
+        value = re.sub(r'\s*;\s*', ':', raw.strip())
+        result['time_separator'] = ';'
     if not re.fullmatch(r'\d+(?::\d{2}){1,3}', value):
         return result
     parts = [int(x) for x in value.split(':')]
@@ -36,15 +41,25 @@ def enrich_chapters(chapters):
     enriched, diagnostics = [], []
     positions = {}
     previous = None
+    mixed_frames = any(normalize_timestamp(c.get('time_original', c.get('time', '')))['time_format']
+                       == 'hh:mm:ss:frames' for c in chapters)
     for index, chapter in enumerate(chapters, 1):
         row = dict(chapter)
         row.update(normalize_timestamp(row.get('time_original', row.get('time', ''))))
+        # MTS 212 mixes HH:MM:SS:FF with values such as 58:44:04 before
+        # 01:00:39:17. The three fields may be MM:SS:FF, not 58 hours.
+        # Keep both readings unresolved rather than choosing an undocumented clock.
+        if mixed_frames and row['time_format'] == 'hh:mm:ss' and row['time_seconds'] >= 7200:
+            row.update(time_seconds=None, time_format='ambiguous', time_valid=False)
         row['order'] = index
         enriched.append(row)
         def warn(code, **details):
             diagnostics.append(dict(code=code, chapter=index, **details))
         if row['time_format'] == 'missing':
             warn('timestamp_missing')
+        elif row['time_format'] == 'ambiguous':
+            warn('timestamp_format_ambiguous', value=row['time_original'],
+                 message='Mixed frame timecodes: HH:MM:SS versus MM:SS:frames is unresolved.')
         elif not row['time_valid']:
             warn('timestamp_malformed', value=row['time_original'])
         else:
@@ -64,6 +79,9 @@ def enrich_chapters(chapters):
             previous = (position, key[1], index)
             if row['time_format'] == 'hh:mm:ss:frames':
                 warn('frame_rate_unknown', value=row['time_original'])
-        if re.search(r'\d\s*:\s*\d', row.get('title', '')):
+                if row.get('time_separator') == ';':
+                    warn('timestamp_semicolon_timecode', severity='info', value=row['time_original'],
+                         message='Four source fields retained; no drop-frame rate or fractional conversion assumed.')
+        if re.search(r'\b\d{1,3}\s*:\s*\d{2}(?![\d/])', row.get('title', '')):
             warn('title_contains_timestamp', value=row['title'])
     return enriched, diagnostics

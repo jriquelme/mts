@@ -86,6 +86,12 @@ class HttpTests(unittest.TestCase):
             self.client.get(BASE + '/techniques/one/')
         self.assertEqual(error.exception.status, 'access_restricted')
         self.assertEqual(self.session.get.call_count, 3)
+        self.assertEqual(error.exception.page['redirect_target'], BASE + '/login/')
+        self.client.offline = True
+        with self.assertRaises(FetchFailure) as cached:
+            self.client.get(BASE + '/techniques/one/')
+        self.assertEqual(cached.exception.status, 'access_restricted')
+        self.assertEqual(self.session.get.call_count, 3)
 
     def test_network_timeouts_are_bounded(self):
         self.client.retries = 2
@@ -167,6 +173,37 @@ class ExecutionTests(unittest.TestCase):
 
     def test_retry_failed_without_catalog_stops_without_network(self):
         self.assertEqual(self.run_cli('--retry-failed'), 1)
+
+    def test_legacy_operational_failure_remains_retryable(self):
+        self.run_cli('--reparse', '--include', '1')
+        rows = load_catalog(self.out)
+        rows[0].pop('schema_version')
+        rows[0]['status'] = 'parse_error'
+        write_json(self.out / 'mts_toc.json', rows)
+        self.assertEqual(self.run_cli('--retry-failed', '--reparse'), 0)
+        self.assertEqual(load_catalog(self.out)[0]['status'], 'ok')
+
+    def test_legacy_time_fragment_is_normalized_with_provenance(self):
+        from mts.scrape_mts_toc import upgrade_legacy
+        row = dict(number=96, title='MTS 96', url=BASE + '/techniques/96/',
+                   status='toc_untimed', chapters=[dict(time='', title='00: 32:15 Br azilian MMA Fighter captures robber')])
+        upgraded = upgrade_legacy(row)
+        chapter = upgraded['chapters'][0]
+        self.assertEqual(chapter['time_original'], '00: 32:15')
+        self.assertEqual(chapter['time_seconds'], 1935)
+        self.assertEqual(chapter['title'], 'Br azilian MMA Fighter captures robber')
+        self.assertEqual(upgraded['source']['kind'], 'legacy_metadata')
+        self.assertIn('timestamp_recovered_from_legacy_title', {d['code'] for d in upgraded['diagnostics']})
+
+    def test_legacy_access_diagnostic_and_live_check_survive_reparse(self):
+        from mts.scrape_mts_toc import upgrade_legacy
+        row = dict(number=90, title='MTS 90', url=BASE + '/techniques/90/', schema_version=2,
+                   status='access_restricted', error='Login-related redirect declined',
+                   source=dict(kind='legacy_metadata', last_live_check=dict(status='access_restricted')),
+                   chapters=[dict(time='00:01:00', title='Known chapter')])
+        upgraded = upgrade_legacy(row)
+        self.assertEqual(upgraded['source']['last_live_check']['status'], 'access_restricted')
+        self.assertIn('access_restricted', {d['code'] for d in upgraded['diagnostics']})
 
     def test_missing_cache_preserves_legacy_chapters_with_explicit_provenance(self):
         self.run_cli('--reparse', '--include', '1')

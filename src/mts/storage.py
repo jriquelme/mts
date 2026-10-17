@@ -55,14 +55,16 @@ class HtmlCache:
             digest = hashlib.sha256(html.encode()).hexdigest()
             if meta.get('sha256', digest) != digest:
                 raise ValueError('Cache checksum mismatch')
-            return dict(meta, html=html, cache_key=key, request_source='cache')
+            return dict(meta, sha256=digest, html=html, cache_key=key, request_source='cache')
         except FileNotFoundError:
             return None
 
-    def write(self, url, html, status_code, final_url=None):
+    def write(self, url, html, status_code, final_url=None, redirect_target=None):
         key = self.key(url)
         meta = dict(url=url, final_url=final_url or url, status_code=status_code,
                     fetched_at=utcnow(), sha256=hashlib.sha256(html.encode()).hexdigest())
+        if redirect_target:
+            meta['redirect_target'] = redirect_target
         with atomic_file(self.directory / f'{key}.html') as stream:
             stream.write(html)
         write_json(self.directory / f'{key}.json', meta)
@@ -96,7 +98,7 @@ def save_outputs(directory, rows, discovered=None, interrupted=False):
     write_json(directory / 'mts_toc.json', rows)
     chapter_fields = ['episode', 'episode_title', 'url', 'timestamp', 'chapter_title',
                       'order', 'time_original', 'time_seconds', 'time_format', 'time_valid',
-                      'time_frames', 'time_frame_rate', 'time_precision', 'text_original']
+                      'time_frames', 'time_frame_rate', 'time_precision', 'text_original', 'time_separator']
     with atomic_file(directory / 'mts_chapters.csv') as stream:
         writer = csv.DictWriter(stream, fieldnames=chapter_fields)
         writer.writeheader()

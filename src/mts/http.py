@@ -19,9 +19,10 @@ TRANSIENT = {429, 500, 502, 503, 504}
 
 
 class FetchFailure(Exception):
-    def __init__(self, message, status='fetch_error'):
+    def __init__(self, message, status='fetch_error', page=None):
         super().__init__(message)
         self.status = status
+        self.page = page
 
 
 class OfflineMiss(FetchFailure):
@@ -90,7 +91,11 @@ class TextClient:
                 break
             if response.is_redirect:
                 target = urljoin(url, response.headers['Location'])
-                validate_url(target)
+                try:
+                    validate_url(target)
+                except FetchFailure as exc:
+                    page = self.cache.write(original_url, response.text, response.status_code, url, target)
+                    raise FetchFailure(str(exc), exc.status, page) from exc
                 url = target
                 continue
             content_type = response.headers.get('Content-Type', '').split(';')[0].lower()
@@ -118,6 +123,11 @@ class TextClient:
                 raise OfflineMiss(f'Corrupt cache for {url}: {exc}') from exc
             cached = None
         if cached and not (refresh or self.refresh):
+            if cached.get('redirect_target'):
+                try:
+                    validate_url(cached['redirect_target'])
+                except FetchFailure as exc:
+                    raise FetchFailure(str(exc), exc.status, cached) from exc
             return cached
         if self.offline:
             raise OfflineMiss(f'No cached HTML for {url}; run a targeted live crawl first')
