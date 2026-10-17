@@ -1,164 +1,189 @@
 #!/usr/bin/env python3
-"""Collect 10th Planet MTS *textual* episode/chapter metadata (never videos).
+"""Index public MTS episode descriptions, never video resources."""
 
-Usage:
-  uv run mts --limit 3
-  uv run mts
-
-Outputs: mts_toc.json, mts_chapters.csv, mts_review.csv, mts_summary.json
-Respect the site's robots.txt and terms. Run only with authorization.
-"""
 import argparse
-import csv
 import json
 import math
-import random
 import re
-import time
-from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import urljoin, urlparse, urldefrag
-from urllib.robotparser import RobotFileParser
+from urllib.parse import urldefrag, urljoin, urlparse
 
-import requests
 from bs4 import BeautifulSoup
 
-from mts.extraction import extract_chapters, extract_episode
-
-BASE = 'https://www.10thplanetjj.com'
-ARCHIVE = BASE + '/techniques-archive/'
-USER_AGENT = 'PersonalMTSChapterIndexer/1.0 (personal research; text metadata only)'
-EPISODE_RE = re.compile(r'\bMTS\s*(\d{1,3})\b', re.I)
+from mts.extraction import clean, extract_chapters, extract_episode, finish
+from mts.http import ARCHIVE, BASE, USER_AGENT, FetchFailure, OfflineMiss, TextClient
+from mts.storage import HtmlCache, load_catalog, save_outputs
 
 
-def clean(s):
-    return re.sub(r'\s+', ' ', s).strip()
-
-
-def get(session, url, pause, retries=4):
-    # Delay before every request, including first; use a little random jitter.
-    for attempt in range(retries):
-        time.sleep(pause + random.uniform(0, min(1, pause / 3)))
-        try:
-            response = session.get(url, timeout=(10, 30), allow_redirects=True)
-            if response.status_code in (429, 500, 502, 503, 504):
-                if attempt == retries - 1:
-                    response.raise_for_status()
-                wait = min(120, 8 * 2 ** attempt)
-                print(f'HTTP {response.status_code}: backing off {wait}s: {url}', flush=True)
-                time.sleep(wait)
-                continue
-            response.raise_for_status()
-            return response.text
-        except requests.RequestException:
-            if attempt == retries - 1:
-                raise
-            time.sleep(min(120, 8 * 2 ** attempt))
-    raise RuntimeError(f'Retries exhausted for {url}')
+EPISODE_RE = re.compile(r'\bMTS\s*(\d{1,4})\b', re.I)
+FAILED_STATUSES = {'fetch_error', 'parse_error', 'unsupported_layout', 'access_restricted'}
 
 
 def episodes_from_archive(html):
     soup = BeautifulSoup(html, 'html.parser')
     episodes = {}
-    for h in soup.find_all(['h2', 'h3', 'h4']):
-        title = clean(h.get_text(' ', strip=True))
+    for heading in soup.find_all(['h2', 'h3', 'h4']):
+        title = clean(heading.get_text(' ', strip=True))
         match = EPISODE_RE.search(title)
-        if not match:
+        anchor = heading.find('a', href=True)
+        if not match or not anchor:
             continue
-        a = h.find('a', href=True)
-        if not a:
-            continue
-        url = urldefrag(urljoin(BASE, a['href']))[0].split('?')[0]
+        url = urldefrag(urljoin(BASE, anchor['href']))[0].split('?')[0]
         if urlparse(url).netloc not in {'www.10thplanetjj.com', '10thplanetjj.com'}:
             continue
         number = int(match.group(1))
-        episodes.setdefault(number, {'number': number, 'title': title, 'url': url})
+        episodes.setdefault(number, dict(number=number, title=title, url=url))
     return [episodes[n] for n in sorted(episodes)]
 
 
-def main(argv=None):
-    p = argparse.ArgumentParser()
-    p.add_argument('--output', default='mts_data')
-    p.add_argument('--delay', type=float, default=3.0, help='Minimum seconds between HTTP requests')
-    p.add_argument('--limit', type=int, default=0, help='Only crawl N episodes (test mode)')
-    p.add_argument('--include', default='', help='Optional comma-separated episode numbers, e.g. 34,180,259')
-    p.add_argument('--ignore-robots', action='store_true', help='Only use if site owner explicitly permits crawling')
-    args = p.parse_args(argv)
+def upgrade_legacy(row):
+    if row.get('schema_version') == 2:
+        return dict(row)
+    result = dict(row)
+    result.update(finish(row['chapters'], [], 'legacy_metadata'))
+    if not row['chapters']:
+        result.update(status='unsupported_layout', requires_review=True)
+    result['diagnostics'].append(dict(code='raw_html_unavailable', severity='info',
+        message='Timestamp metadata normalized from the previous catalog; raw extraction not revalidated.'))
+    result.update(schema_version=2, source=dict(kind='legacy_metadata'))
+    return result
+
+
+def parse_args(argv):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output', default='mts_data', help='Catalog and CSV directory')
+    parser.add_argument('--cache', default='mts_cache', help='Raw HTML evidence directory')
+    parser.add_argument('--delay', type=float, default=5.0, help='Minimum delay per network request (default: 5s, minimum: 2s)')
+    parser.add_argument('--limit', type=int, default=0, help='Select the newest N episodes (0: all)')
+    parser.add_argument('--include', default='', help='Comma-separated episode numbers')
+    modes = parser.add_mutually_exclusive_group()
+    modes.add_argument('--resume', action='store_true', help='Skip completed results; retry fetch/parse/layout failures')
+    modes.add_argument('--retry-failed', action='store_true', help='Process only fetch/parse/layout/access failures in the existing catalog')
+    parser.add_argument('--reparse', action='store_true', help='Reparse cached HTML only; never use the network')
+    parser.add_argument('--refresh', action='store_true', help='Refresh selected cached pages over HTTP')
+    args = parser.parse_args(argv)
     if not math.isfinite(args.delay) or args.delay < 2:
-        p.error('Use --delay >= 2 seconds')
+        parser.error('Use --delay >= 2 seconds')
     if args.limit < 0:
-        p.error('Use --limit >= 0')
+        parser.error('Use --limit >= 0')
+    if args.refresh and args.reparse:
+        parser.error('--refresh and --reparse cannot be combined')
     try:
-        selected = {int(x.strip()) for x in args.include.split(',')} if args.include else set()
-        if any(n <= 0 for n in selected):
+        args.selected = {int(x.strip()) for x in args.include.split(',')} if args.include else set()
+        if any(n <= 0 for n in args.selected):
             raise ValueError
     except ValueError:
-        p.error('--include must contain comma-separated positive episode numbers')
-    out = Path(args.output)
-    out.mkdir(parents=True, exist_ok=True)
-    session = requests.Session()
-    session.headers.update({'User-Agent': USER_AGENT, 'Accept': 'text/html,application/xhtml+xml'})
-    robots = RobotFileParser()
-    robots.set_url(BASE + '/robots.txt')
-    try:
-        robots.parse(get(session, robots.url, args.delay).splitlines())
-        robots_ok = True
-    except Exception as exc:
-        robots_ok = False
-        print(f'Could not read robots.txt: {exc}')
-        if not args.ignore_robots:
-            raise SystemExit('Stop: robots.txt unavailable. Check manually, then use --ignore-robots only if permitted.')
-    def allowed(url):
-        return args.ignore_robots or (robots_ok and robots.can_fetch(USER_AGENT, url))
-    if not allowed(ARCHIVE):
-        raise SystemExit('robots.txt disallows crawling the archive.')
-    archive_html = get(session, ARCHIVE, args.delay)
-    episodes = episodes_from_archive(archive_html)
+        parser.error('--include must contain comma-separated positive episode numbers')
+    return args
+
+
+def failure_row(episode, previous, status, message):
+    row = dict(previous or episode)
+    row.update(status=status, error=message, requires_review=True, schema_version=2)
+    row.setdefault('chapters', [])
+    row['diagnostics'] = [dict(code=status, message=message)]
+    if row['chapters']:
+        row['diagnostics'].append(dict(code='previous_chapters_retained',
+            message='Current attempt failed; existing chapter evidence was kept.'))
+    return row
+
+
+def run(args, client):
+    existing = load_catalog(args.output)
+    if args.retry_failed and not existing:
+        raise FetchFailure('--retry-failed requires an existing catalog in --output')
+    rows = {r['number']: upgrade_legacy(r) for r in existing}
+    if existing and args.retry_failed:
+        episodes = [{k: r[k] for k in ('number', 'title', 'url')} for r in existing]
+    else:
+        try:
+            archive = client.get(ARCHIVE)
+        except OfflineMiss:
+            if not existing:
+                raise
+            episodes = [{k: r[k] for k in ('number', 'title', 'url')} for r in existing]
+        else:
+            if archive['status_code'] != 200:
+                raise FetchFailure(f'Archive HTTP {archive["status_code"]}')
+            episodes = episodes_from_archive(archive['html'])
     if not episodes:
-        raise SystemExit('No episode links found. Site markup may have changed; inspect the archive.')
-    if selected:
-        missing = selected - {ep['number'] for ep in episodes}
+        raise FetchFailure('No episode links found; inspect the cached archive HTML.')
+    discovered = len(episodes)
+    if args.selected:
+        missing = args.selected - {e['number'] for e in episodes}
         if missing:
-            raise SystemExit(f'Episodes not found in archive: {", ".join(map(str, sorted(missing)))}')
-        episodes = [ep for ep in episodes if ep['number'] in selected]
+            raise FetchFailure(f'Episodes not found in archive/catalog: {", ".join(map(str, sorted(missing)))}')
+        episodes = [e for e in episodes if e['number'] in args.selected]
+    episodes.sort(key=lambda e: e['number'])
     if args.limit:
         episodes = episodes[-args.limit:]
-    print(f'Collecting text metadata from {len(episodes)} episode pages.')
-    items = []
-    for i, episode in enumerate(episodes, 1):
-        row = dict(episode)
-        try:
-            if not allowed(row['url']):
-                row.update(chapters=[], status='robots_disallowed')
-            else:
-                html = get(session, row['url'], args.delay)
-                row.update(extract_episode(html))
-        except Exception as exc:
-            row.update(chapters=[], status='fetch_error', error=str(exc)[:300])
-        items.append(row)
-        print(f"[{i}/{len(episodes)}] MTS {row['number']}: {len(row['chapters'])} chapters ({row['status']})", flush=True)
-        # Save after each episode to preserve progress from interrupted runs.
-        (out / 'mts_toc.json').write_text(json.dumps(items, indent=2, ensure_ascii=False), encoding='utf-8')
-    with (out / 'mts_chapters.csv').open('w', newline='', encoding='utf-8') as f:
-        writer = csv.DictWriter(f, fieldnames=['episode', 'episode_title', 'url', 'timestamp', 'chapter_title'])
-        writer.writeheader()
-        for row in items:
-            for chapter in row['chapters']:
-                writer.writerow(dict(episode=row['number'], episode_title=row['title'], url=row['url'],
-                                     timestamp=chapter['time'], chapter_title=chapter['title']))
-    with (out / 'mts_review.csv').open('w', newline='', encoding='utf-8') as f:
-        writer = csv.DictWriter(f, fieldnames=['episode', 'title', 'url', 'status', 'error'])
-        writer.writeheader()
-        for row in items:
-            if row.get('requires_review', row['status'] != 'ok'):
-                writer.writerow(dict(episode=row['number'], title=row['title'], url=row['url'],
-                                     status=row['status'], error=row.get('error', '')))
-    summary = dict(scraped_at=datetime.now(timezone.utc).isoformat(), episodes=len(items),
-                   chapters=sum(len(x['chapters']) for x in items),
-                   with_toc=sum(x['status'] == 'ok' for x in items),
-                   require_review=sum(x.get('requires_review', x['status'] != 'ok') for x in items))
-    (out / 'mts_summary.json').write_text(json.dumps(summary, indent=2), encoding='utf-8')
-    print(json.dumps(summary, indent=2))
+    if args.retry_failed:
+        episodes = [e for e in episodes if e['number'] in rows and rows[e['number']]['status'] in FAILED_STATUSES]
+    elif args.resume:
+        episodes = [e for e in episodes if e['number'] not in rows or rows[e['number']]['status'] in FAILED_STATUSES]
+    print(f'Processing {len(episodes)} of {discovered} discovered episodes (sequential public HTML).', flush=True)
+    try:
+        for index, episode in enumerate(episodes, 1):
+            number = episode['number']
+            previous = rows.get(number)
+            try:
+                page = client.get(episode['url'], refresh=bool(
+                    previous and previous['status'] in {'fetch_error', 'access_restricted'} and not args.reparse))
+                if page['status_code'] != 200:
+                    status = 'access_restricted' if page['status_code'] in (401, 403) else 'fetch_error'
+                    row = failure_row(episode, previous, status, f'HTTP {page["status_code"]}; inspect cached response.')
+                else:
+                    try:
+                        extraction = extract_episode(page['html'])
+                    except Exception as exc:
+                        row = failure_row(episode, previous, 'parse_error', f'{type(exc).__name__}: {exc}')
+                    else:
+                        row = dict(episode, **extraction, schema_version=2)
+                        if previous and len(row['chapters']) < len(previous['chapters']):
+                            row['requires_review'] = True
+                            row['diagnostics'].append(dict(code='chapter_count_decreased',
+                                before=len(previous['chapters']), after=len(row['chapters']),
+                                message='Compare cached source with prior catalog before accepting this loss.'))
+                row['source'] = {k: page[k] for k in ('url', 'final_url', 'status_code', 'fetched_at', 'cache_key', 'request_source')}
+                row['source']['kind'] = 'raw_html'
+            except OfflineMiss as exc:
+                if previous:
+                    row = dict(previous)
+                    row['diagnostics'] = [d for d in row.get('diagnostics', []) if d['code'] != 'cache_missing']
+                    row['diagnostics'].append(dict(code='cache_missing', severity='info', message=str(exc)))
+                else:
+                    row = failure_row(episode, None, 'fetch_error', str(exc))
+            except FetchFailure as exc:
+                row = failure_row(episode, previous, exc.status, str(exc))
+            rows[number] = row
+            save_outputs(args.output, list(rows.values()), discovered)
+            codes = sorted({d['code'] for d in row.get('diagnostics', []) if d['code'] != 'frame_rate_unknown'})
+            print(f'[{index}/{len(episodes)}] MTS {number}: {len(row["chapters"])} chapters '
+                  f'({row["status"]}; {row.get("source", {}).get("request_source", "catalog")})'
+                  + (f' [{", ".join(codes)}]' if codes else ''), flush=True)
+    except KeyboardInterrupt:
+        save_outputs(args.output, list(rows.values()), discovered, interrupted=True)
+        print('\nInterrupted. Completed results and exports saved; use --resume to continue.', flush=True)
+        return 130
+    summary = save_outputs(args.output, list(rows.values()), discovered)
+    print(json.dumps(dict(summary, network_requests=client.network_requests), indent=2), flush=True)
+    return 0
+
+
+def main(argv=None):
+    args = parse_args(argv)
+    client = TextClient(HtmlCache(args.cache), delay=args.delay, offline=args.reparse, refresh=args.refresh)
+    try:
+        return run(args, client)
+    except KeyboardInterrupt:
+        print('\nInterrupted before episode processing; existing catalog preserved.', flush=True)
+        return 130
+    except (FetchFailure, ValueError, OSError) as exc:
+        print(f'Stopped: {exc}', flush=True)
+        return 1
+    finally:
+        client.close()
+
 
 if __name__ == '__main__':
-    main()
+    raise SystemExit(main())

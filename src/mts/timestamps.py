@@ -54,9 +54,14 @@ def enrich_chapters(chapters):
             if key in positions:
                 warn('timestamp_duplicate', previous_chapter=positions[key])
             positions[key] = index
-            if previous is not None and key[0] < previous[0]:
-                warn('timestamp_non_monotonic', previous_chapter=previous[1])
-            previous = (position, index)
+            if previous is not None:
+                previous_position, previous_frames, previous_index = previous
+                backwards = position < previous_position or (
+                    position == previous_position and key[1] is not None and previous_frames is not None
+                    and key[1] < previous_frames)
+                if backwards:
+                    warn('timestamp_non_monotonic', previous_chapter=previous_index)
+            previous = (position, key[1], index)
             if row['time_format'] == 'hh:mm:ss:frames':
                 warn('frame_rate_unknown', value=row['time_original'])
         if re.search(r'\d\s*:\s*\d', row.get('title', '')):

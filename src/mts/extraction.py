@@ -10,7 +10,7 @@ from mts.timestamps import enrich_chapters
 SCOPES = ('#main-video .about', '.entry-content', '.post-content', 'article')
 HEADING = re.compile(r'^(?:MTS\s*\d+\s*[-–—:]?\s*)?table\s+of\s+contents\s*[:.!]?$', re.I)
 TOKEN = r'\d{1,3}(?:\s*:\s*(?:\d{1,3}|[a-zA-Z]{1,2})){1,3}'
-LEADING = re.compile(rf'^\s*\(?(?P<time>{TOKEN})(?=$|[\s)\]–—-])\)?\s*[-–—:]?\s*(?P<title>.*)$', re.S)
+LEADING = re.compile(rf'^\s*\(?(?P<time>{TOKEN})(?=$|[\s)\]–—-]|[A-Za-z])\)?\s*[-–—:]?\s*(?P<title>.*)$', re.S)
 TRAILING = re.compile(rf'^(?P<title>.*?)\s*\((?P<time>{TOKEN})\)\s*$', re.S)
 BLOCKS = ('p', 'li', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'tr')
 NOISE = ('.comments-link, .commentlist, .comment, #comments, #respond, .related, '

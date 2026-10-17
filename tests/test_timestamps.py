@@ -41,6 +41,11 @@ class TimestampTests(unittest.TestCase):
         self.assertEqual({d['code'] for d in diagnostics},
                          {'timestamp_duplicate', 'timestamp_non_monotonic', 'timestamp_missing', 'title_contains_timestamp'})
 
+    def test_frame_order_without_rate_assumption(self):
+        _, diagnostics = enrich_chapters([dict(time='00:00:01:22', title='First'),
+                                         dict(time='00:00:01:10', title='Second')])
+        self.assertIn('timestamp_non_monotonic', {d['code'] for d in diagnostics})
+
 
 if __name__ == '__main__':
     unittest.main()

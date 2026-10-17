@@ -48,6 +48,11 @@ class ExtractionTests(unittest.TestCase):
         self.assertEqual(result['chapters'][24]['title'],
                          'Fedor Nikolov vs Garrett Lineberger at High Rollerz Blue Belt Championship')
 
+    def test_attached_title_after_timecode(self):
+        result = extract_episode('<article><p>00:39:00Eddie Bravo on Music, MMA, Nick Diaz</p></article>')
+        self.assertEqual(result['chapters'][0]['time_original'], '00:39:00')
+        self.assertEqual(result['chapters'][0]['title'], 'Eddie Bravo on Music, MMA, Nick Diaz')
+
     def test_mixed_heading_case_spacing_invalid_and_untimed(self):
         result = extract_episode('''<article><h3>MTS 9 TABLE OF CONTENTS:</h3>
             <p>00: 32:15 – First</p><p>00:99:15 Invalid</p><p>Untimed</p></article>''')
