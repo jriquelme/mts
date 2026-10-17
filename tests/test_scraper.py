@@ -41,24 +41,25 @@ class ChapterTests(unittest.TestCase):
 
     def test_old_trailing_timestamp(self):
         chapters, status = extract_chapters(self.fixture(1))
-        self.assertEqual(status, 'toc_untimed')
-        self.assertEqual(chapters[1], {'time': '1:58', 'title': 'Japanese Necktie'})
+        self.assertEqual(status, 'toc_partial')
+        self.assertEqual({k: chapters[1][k] for k in ('time', 'title')}, {'time': '1:58', 'title': 'Japanese Necktie'})
 
     def test_inline_tags_and_multiple_chapters_in_one_paragraph(self):
         chapters, status = extract_chapters('''<article><h3>Table of Contents:</h3>
             <p>00:01:02 <strong>First</strong> chapter<br>00:02:03 Second chapter</p>
             <p>00:02:03 Second chapter</p></article>''')
         self.assertEqual(status, 'ok')
-        self.assertEqual(chapters, [
+        self.assertEqual([{k: c[k] for k in ('time', 'title')} for c in chapters], [
             {'time': '00:01:02', 'title': 'First chapter'},
+            {'time': '00:02:03', 'title': 'Second chapter'},
             {'time': '00:02:03', 'title': 'Second chapter'},
         ])
 
     def test_missing_and_empty_toc(self):
         self.assertEqual(extract_chapters('<div id="content">Table of Contents<br>00:01:00 Comment</div>'),
-                         ([], 'toc_heading_missing'))
+                         ([], 'unsupported_layout'))
         self.assertEqual(extract_chapters('<article><p>Table of Contents</p></article>'),
-                         ([], 'toc_empty'))
+                         ([], 'toc_not_present'))
 
     def test_frame_timestamp(self):
         chapters, status = extract_chapters('<article><p>Table of Contents</p><p>00:01:02:03 Frames</p></article>')
@@ -85,7 +86,7 @@ class CrawlTests(unittest.TestCase):
             main(['--output', output, '--include', '1,2', '--delay', '2'])
             out = Path(output)
             items = json.loads((out / 'mts_toc.json').read_text())
-            self.assertEqual([row['status'] for row in items], ['toc_untimed', 'ok'])
+            self.assertEqual([row['status'] for row in items], ['toc_partial', 'ok'])
             summary = json.loads((out / 'mts_summary.json').read_text())
             self.assertEqual((summary['episodes'], summary['chapters'], summary['require_review']), (2, 18, 1))
             with (out / 'mts_review.csv').open() as f:

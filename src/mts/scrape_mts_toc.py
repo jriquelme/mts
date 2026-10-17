@@ -23,13 +23,12 @@ from urllib.robotparser import RobotFileParser
 import requests
 from bs4 import BeautifulSoup
 
+from mts.extraction import extract_chapters, extract_episode
+
 BASE = 'https://www.10thplanetjj.com'
 ARCHIVE = BASE + '/techniques-archive/'
 USER_AGENT = 'PersonalMTSChapterIndexer/1.0 (personal research; text metadata only)'
 EPISODE_RE = re.compile(r'\bMTS\s*(\d{1,3})\b', re.I)
-STAMP = r'\d{1,2}(?::\d{2}){1,3}'
-TIME_RE = re.compile(rf'^({STAMP})\s*(?:[-–—:]\s*)?(.+?)\s*$')
-TRAILING_TIME_RE = re.compile(rf'^(.+?)\s*\(({STAMP})\)\s*$')
 
 
 def clean(s):
@@ -75,69 +74,6 @@ def episodes_from_archive(html):
         number = int(match.group(1))
         episodes.setdefault(number, {'number': number, 'title': title, 'url': url})
     return [episodes[n] for n in sorted(episodes)]
-
-
-def extract_chapters(html):
-    soup = BeautifulSoup(html, 'html.parser')
-    # The site's #content contains comments and related episodes, not the TOC.
-    scope = (soup.select_one('#main-video .about') or soup.select_one('.entry-content')
-             or soup.select_one('.post-content') or soup.select_one('article'))
-    if scope is None:
-        return [], 'toc_heading_missing'
-    for unwanted in scope.select('.comments-link, .commentlist, #comments, #respond, '
-                                  '.related, .related-posts, script, style'):
-        unwanted.decompose()
-    # Preserve inline formatting within a chapter, while keeping block/BR boundaries.
-    # Some pages even break a timestamp across a BR ("00:<br>03:04").
-    for br in list(scope.find_all('br')):
-        before = str(br.previous_sibling or '').rstrip()
-        after = str(br.next_sibling or '').lstrip()
-        br.replace_with(' ' if re.search(r'\d:\s*$', before) and re.match(r'\d{2}:', after) else '\n')
-    for block in scope.find_all(['p', 'li', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'tr']):
-        block.insert_before('\n')
-        block.insert_after('\n')
-    text = re.sub(r'(?<=\d):\s+(?=\d{2}(?:\D|$))', ':', scope.get_text())
-    lines = [clean(line) for line in text.splitlines() if clean(line)]
-    start = next((i for i, x in enumerate(lines) if re.search(r'^table\s+of\s+contents\s*:?$', x, re.I)), None)
-    if start is None:
-        # Older episodes publish a bullet list without a TOC heading or timestamps.
-        entries = scope.select('li')
-        chapters = []
-        for entry in entries:
-            label = clean(entry.get_text(' ', strip=True))
-            if not label:
-                continue
-            match = TIME_RE.match(label)
-            trailing = TRAILING_TIME_RE.match(label)
-            if match:
-                stamp, label = match.groups()
-            elif trailing:
-                label, stamp = trailing.groups()
-            else:
-                stamp = ''
-            chapters.append({'time': stamp, 'title': label})
-        if chapters:
-            return chapters, ('ok' if all(c['time'] for c in chapters) else 'toc_untimed')
-        return [], 'toc_heading_missing'
-    chapters, seen = [], set()
-    for line in lines[start + 1:]:
-        if re.match(r'^(comments?\s+off|leave a reply|related posts?|post a comment|play video|sign up|log in)\b', line, re.I):
-            break
-        if re.match(r'^MTS\s*\d+\b', line, re.I) and chapters:
-            break
-        m = TIME_RE.match(line)
-        if m:
-            stamp, label = m.groups()
-            # Reject unrelated line formats and keep raw time (some episodes have frame fields).
-            if len(stamp.split(':')) not in (2, 3, 4):
-                continue
-            key = (stamp, label)
-            if key not in seen:
-                chapters.append({'time': stamp, 'title': label})
-                seen.add(key)
-        elif chapters and len(line) > 300:
-            break
-    return chapters, ('ok' if chapters else 'toc_empty')
 
 
 def main(argv=None):
@@ -196,8 +132,7 @@ def main(argv=None):
                 row.update(chapters=[], status='robots_disallowed')
             else:
                 html = get(session, row['url'], args.delay)
-                chapters, status = extract_chapters(html)
-                row.update(chapters=chapters, status=status)
+                row.update(extract_episode(html))
         except Exception as exc:
             row.update(chapters=[], status='fetch_error', error=str(exc)[:300])
         items.append(row)
@@ -215,13 +150,13 @@ def main(argv=None):
         writer = csv.DictWriter(f, fieldnames=['episode', 'title', 'url', 'status', 'error'])
         writer.writeheader()
         for row in items:
-            if row['status'] != 'ok':
+            if row.get('requires_review', row['status'] != 'ok'):
                 writer.writerow(dict(episode=row['number'], title=row['title'], url=row['url'],
                                      status=row['status'], error=row.get('error', '')))
     summary = dict(scraped_at=datetime.now(timezone.utc).isoformat(), episodes=len(items),
                    chapters=sum(len(x['chapters']) for x in items),
                    with_toc=sum(x['status'] == 'ok' for x in items),
-                   require_review=sum(x['status'] != 'ok' for x in items))
+                   require_review=sum(x.get('requires_review', x['status'] != 'ok') for x in items))
     (out / 'mts_summary.json').write_text(json.dumps(summary, indent=2), encoding='utf-8')
     print(json.dumps(summary, indent=2))
 
