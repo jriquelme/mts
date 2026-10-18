@@ -11,6 +11,9 @@ from pathlib import Path
 import tempfile
 from datetime import datetime, timezone
 
+from mts.identity import ensure_catalog_identity
+from mts.exports import flat_chapters
+
 
 def utcnow():
     return datetime.now(timezone.utc).isoformat()
@@ -130,20 +133,31 @@ def needs_review(row):
 def save_outputs(directory, rows, discovered=None, interrupted=False):
     directory = Path(directory)
     rows = sorted(rows, key=lambda r: r['number'])
+    ensure_catalog_identity(rows)
     write_json(directory / 'mts_toc.json', rows)
     chapter_fields = ['episode', 'episode_title', 'url', 'timestamp', 'chapter_title',
                       'order', 'time_original', 'time_seconds', 'time_format', 'time_valid',
-                      'time_frames', 'time_frame_rate', 'time_precision', 'text_original', 'time_separator']
+                      'time_frames', 'time_frame_rate', 'time_precision', 'text_original', 'time_separator',
+                      'chapter_id', 'original_order', 'title_original', 'title_normalized', 'title_source',
+                      'timestamp_confidence', 'source', 'diagnostics']
     with atomic_file(directory / 'mts_chapters.csv') as stream:
         writer = csv.DictWriter(stream, fieldnames=chapter_fields)
         writer.writeheader()
+        flattened = iter(flat_chapters(rows))
         for row in rows:
             for index, chapter in enumerate(row['chapters'], 1):
+                flat = next(flattened)
                 item = {key: chapter.get(key, '') for key in chapter_fields[5:]}
                 item.update(episode=row['number'], episode_title=row['title'], url=row['url'],
                             timestamp=chapter.get('time', ''), chapter_title=chapter['title'])
                 item['order'] = chapter.get('order', index)
+                item['timestamp_confidence'] = flat['timestamp_confidence']
+                item['source'] = json.dumps(flat['source'], ensure_ascii=False)
+                item['diagnostics'] = json.dumps(flat['diagnostics'], ensure_ascii=False)
                 writer.writerow(item)
+    with atomic_file(directory / 'mts_chapters.jsonl') as stream:
+        for record in flat_chapters(rows):
+            stream.write(json.dumps(record, ensure_ascii=False) + '\n')
     with atomic_file(directory / 'mts_review.csv') as stream:
         fields = ['episode', 'title', 'url', 'status', 'error', 'reasons', 'diagnostics']
         writer = csv.DictWriter(stream, fieldnames=fields)
@@ -155,7 +169,7 @@ def save_outputs(directory, rows, discovered=None, interrupted=False):
                     status=row['status'], error=row.get('error', ''),
                     reasons=';'.join(sorted({d['code'] for d in diagnostics})),
                     diagnostics=json.dumps(diagnostics, ensure_ascii=False)))
-    summary = dict(schema_version=2, scraped_at=utcnow(), episodes=len(rows),
+    summary = dict(schema_version=3, scraped_at=utcnow(), episodes=len(rows),
                    episodes_discovered=discovered if discovered is not None else len(rows),
                    chapters=sum(len(r['chapters']) for r in rows),
                    with_toc=sum(r['status'] == 'ok' for r in rows),

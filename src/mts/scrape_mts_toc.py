@@ -13,6 +13,7 @@ from bs4 import BeautifulSoup
 from mts.extraction import clean, extract_chapters, extract_episode, finish, parse_chapter
 from mts.http import ARCHIVE, BASE, USER_AGENT, FetchFailure, OfflineMiss, TextClient
 from mts.reconciliation import reconcile_episode
+from mts.identity import ensure_catalog_identity
 from mts.storage import HtmlCache, load_catalog, save_outputs
 
 
@@ -38,7 +39,7 @@ def episodes_from_archive(html):
 
 
 def upgrade_legacy(row):
-    if row.get('schema_version') == 2 and row.get('source', {}).get('kind') != 'legacy_metadata':
+    if row.get('schema_version', 0) >= 2 and row.get('source', {}).get('kind') != 'legacy_metadata':
         return dict(row)
     result = dict(row)
     chapters, recovered = [], []
@@ -125,6 +126,7 @@ def run(args, client):
     if args.retry_failed and not existing:
         raise FetchFailure('--retry-failed requires an existing catalog in --output')
     rows = {r['number']: upgrade_legacy(r) for r in existing}
+    ensure_catalog_identity(list(rows.values()))
     if existing and args.retry_failed:
         episodes = [{k: r[k] for k in ('number', 'title', 'url')} for r in existing]
     else:

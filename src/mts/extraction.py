@@ -57,18 +57,18 @@ def parse_chapter(raw):
     if match:
         original = match['time'].strip()
         return dict(time=re.sub(r'\s*:\s*', ':', original), time_original=original,
-                    title=clean(match['title']), text_original=raw)
+                    title=clean(match['title']), title_source=match['title'].strip(), text_original=raw)
     # Preserve recognizable but unsupported time-like tokens instead of dropping
     # them or guessing whether semicolons/periods represent clock separators.
     malformed = re.match(r'^\s*(\d+(?:[;.]\d+){2,})\s+(.+)$', raw, re.S)
     if malformed:
         return dict(time=malformed[1], time_original=malformed[1],
-                    title=clean(malformed[2]), text_original=raw)
+                    title=clean(malformed[2]), title_source=malformed[2].strip(), text_original=raw)
     split_digits = re.match(r'^\s*(\d+(?:[ \t]+\d+)+(?::\s*\d+){1,3})\s+(.+)$', raw, re.S)
     if split_digits:
         return dict(time=split_digits[1], time_original=split_digits[1],
-                    title=clean(split_digits[2]), text_original=raw)
-    return dict(time='', time_original='', title=clean(raw), text_original=raw)
+                    title=clean(split_digits[2]), title_source=split_digits[2].strip(), text_original=raw)
+    return dict(time='', time_original='', title=clean(raw), title_source=raw.strip(), text_original=raw)
 
 
 def finish(chapters, diagnostics, layout):

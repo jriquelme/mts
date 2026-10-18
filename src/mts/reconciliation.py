@@ -81,7 +81,12 @@ def reconcile_episode(previous, candidate):
                 issues.append(dict(code='chapter_quality_regressed', chapter=i + 1,
                                    message='Previous title/time retained; current source is incomplete or ambiguous.'))
             else:
+                for field in ('time_frames', 'time_frame_rate', 'time_precision', 'time_separator'):
+                    kept.pop(field, None)
                 kept.update(deepcopy(fresh))
+                for field in ('chapter_id', 'original_order', 'title_original'):
+                    if field in old_chapter:
+                        kept[field] = old_chapter[field]
                 kept['source'] = deepcopy(candidate.get('source', {}))
                 kept['source_order'] = j + 1
                 for field in ('title', 'time'):
@@ -104,6 +109,9 @@ def reconcile_episode(previous, candidate):
                 merged.append(added)
         canonical = merged
     result = deepcopy(candidate)
+    for field in ('next_chapter_sequence', 'chapter_id_strategy', 'retired_chapter_ids'):
+        if field in previous:
+            result[field] = deepcopy(previous[field])
     result.update(finish(canonical, issues, candidate.get('layout')))
     retained = bool(missing or reordered or degraded)
     result['validation'] = dict(state='preserved' if retained else 'revalidated',

@@ -45,6 +45,8 @@ def enrich_chapters(chapters):
                        == 'hh:mm:ss:frames' for c in chapters)
     for index, chapter in enumerate(chapters, 1):
         row = dict(chapter)
+        for field in ('time_frames', 'time_frame_rate', 'time_precision', 'time_separator'):
+            row.pop(field, None)
         row.update(normalize_timestamp(row.get('time_original', row.get('time', ''))))
         # MTS 212 mixes HH:MM:SS:FF with values such as 58:44:04 before
         # 01:00:39:17. The three fields may be MM:SS:FF, not 58 hours.
