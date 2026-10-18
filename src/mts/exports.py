@@ -2,6 +2,8 @@
 
 from copy import deepcopy
 
+from mts.provenance import public_source
+
 
 def flat_chapters(rows):
     for episode in rows:
@@ -11,14 +13,14 @@ def flat_chapters(rows):
             kind = chapter.get('time_format', 'missing')
             if not valid:
                 confidence = kind if kind in {'missing', 'ambiguous'} else 'invalid'
-            elif source.get('kind') != 'raw_html':
+            elif not public_source(source):
                 confidence = 'unverified_legacy'
             elif kind == 'hh:mm:ss:frames':
                 confidence = 'nominal_second_unknown_frame_rate'
             else:
                 confidence = 'whole_second'
-            diagnostics = [deepcopy(d) for d in episode.get('diagnostics', [])
-                           if d.get('chapter', index) == index]
+            diagnostics = [deepcopy(d) for d in episode.get('diagnostics', []) if (
+                d['chapter_id'] == chapter['chapter_id'] if d.get('chapter_id') else d.get('chapter', index) == index)]
             yield dict(schema_version=1, chapter_id=chapter['chapter_id'],
                 episode_number=episode['number'], episode_title=episode['title'],
                 source_url=episode['url'], order=chapter.get('order', index),

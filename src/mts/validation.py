@@ -9,6 +9,7 @@ from pathlib import Path
 
 from mts.storage import atomic_file, load_catalog, needs_review, utcnow, write_json
 from mts.timestamps import normalize_timestamp
+from mts.provenance import public_source
 
 
 def metrics(rows):
@@ -70,10 +71,28 @@ def compare(before, after):
                     corrections.append(dict(episode=number, title=chapter['title'], before=old_time,
                                             after=chapter.get('time', ''), original=chapter.get('time_original')))
     missing_episodes = sorted(set(original) - set(current))
+    original_ids = {c['chapter_id']: c for r in before for c in r['chapters'] if c.get('chapter_id')}
+    current_ids = {c['chapter_id']: c for r in after for c in r['chapters'] if c.get('chapter_id')}
+    missing_ids = sorted(set(original_ids) - set(current_ids))
+    original_field_changes = [dict(chapter_id=key, field=field,
+        before=original_ids[key].get(field), after=current_ids[key].get(field))
+        for key in sorted(original_ids.keys() & current_ids.keys())
+        for field in ('title_original', 'original_order')
+        if original_ids[key].get(field) != current_ids[key].get(field)]
     remaining = [dict(episode=r['number'], url=r['url'], status=r['status'], diagnostics=r.get('diagnostics', []))
                  for r in after if not r['chapters']]
-    raw = sorted(r['number'] for r in after if r.get('source', {}).get('kind') == 'raw_html')
-    retained = sorted(r['number'] for r in after if r.get('source', {}).get('kind') != 'raw_html')
+    def fully_sourced(row):
+        return all(public_source(c.get('source', row.get('source', {}))) for c in row['chapters']) if row['chapters'] else public_source(row.get('source', {}))
+    raw = sorted(r['number'] for r in after if fully_sourced(r))
+    retained = sorted(r['number'] for r in after if not fully_sourced(r))
+    proposals = []
+    for row in after:
+        proposal = row.get('candidate_extraction')
+        if proposal:
+            proposals.append(dict(episode=row['number'], retained_chapters=len(row['chapters']),
+                proposed_chapters=len(proposal['chapters']), status=proposal['status'],
+                source=proposal.get('source'), chapters=proposal['chapters'],
+                review_reasons=[d for d in row.get('diagnostics', []) if d['code'].startswith(('chapter_', 'new_chapter_'))]))
     return dict(generated_at=utcnow(), before=metrics(before), after=metrics(after),
         source_coverage=dict(reparsed_html=raw, retained_metadata=retained,
             originally_empty_without_raw_html=sorted(r['number'] for r in before
@@ -82,11 +101,13 @@ def compare(before, after):
         chapters_added=added, chapters_removed=removed, changed_episodes=changed,
         timestamp_corrections=corrections, remaining_without_chapters=remaining,
         potential_regressions=regressions, missing_episodes=missing_episodes,
+        missing_chapter_ids=missing_ids, original_metadata_changes=original_field_changes,
+        candidate_changes=proposals,
         review_diagnostics=dict(Counter(d['code'] for r in after if needs_review(r)
             for d in r.get('diagnostics', []) if d.get('severity') != 'info' and d['code'] != 'frame_rate_unknown')))
 
 
-def render_html(report, json_name='comparison.json'):
+def render_html(report, json_name='comparison.json', investigation_url='investigation.md'):
     labels = dict(episodes_discovered='Episodes discovered', episodes_with_chapters='Episodes with chapters',
         episodes_without_chapters='Episodes without chapters', total_chapters='Total chapters',
         fully_valid_timestamps='Episodes with valid timestamp formats', episodes_requiring_review='Episodes requiring review')
@@ -98,6 +119,7 @@ def render_html(report, json_name='comparison.json'):
         episode=r['episode'], status=escape(r['status']), url=escape(r['url'], quote=True))
         for r in report['remaining_without_chapters'])
     changed = ''.join(f'<li>MTS {r["episode"]}: {r["before"]} → {r["after"]} chapters</li>' for r in report['changed_episodes'])
+    investigation_link = f'<a href="{escape(investigation_url, quote=True)}">Investigation</a>.' if investigation_url else ''
     return f'''<!doctype html><html lang="en"><meta charset="utf-8"><title>MTS catalog validation</title>
 <style>body{{font:16px/1.5 system-ui;max-width:1000px;margin:40px auto;padding:0 24px;color:#202020}}
 table{{border-collapse:collapse;width:100%;margin:24px 0}}th,td{{text-align:left;padding:10px;border-bottom:1px solid #ddd}}
@@ -107,7 +129,7 @@ Generated {escape(report['generated_at'])}.</p>
 <table><caption>Extraction quality before and after</caption><thead><tr><th>Metric</th><th>Before</th><th>After</th></tr></thead><tbody>{rows}</tbody></table>
 <p><strong>{len(report['newly_recovered'])} episodes recovered; {report['chapters_newly_recovered']} chapters recovered from previously empty episodes.</strong>
 {report['chapters_added']} chapter entries added and {report['chapters_removed']} removed or replaced across the comparison.</p>
-<p>HTML reparsed for {len(coverage['reparsed_html'])} episodes. Prior metadata retained and timestamp-normalized for
+<p>Recorded public HTML supports metadata for {len(coverage['reparsed_html'])} episodes, including verified descriptions without TOCs. Prior metadata retained and timestamp-normalized for
 {len(coverage['retained_metadata'])} episodes without cached raw HTML; their extraction is not independently revalidated.
 Original empty episodes without raw evidence: {escape(str(coverage['originally_empty_without_raw_html']))}.</p>
 <p>Timestamp-format validity does not establish source accuracy. Four-component timecodes retain the unknown frame rate;
@@ -116,9 +138,11 @@ numeric seconds give only the whole-second position. Duplicate and backwards sou
 <details><summary>Remaining episodes without chapters</summary><ul>{remaining}</ul></details>
 <details><summary>Changed episode counts</summary><ul>{changed}</ul></details>
 <p>Episodes losing chapters: {escape(str(report['potential_regressions']))}. Missing episodes: {escape(str(report['missing_episodes']))}.</p>
+<p>Missing stable chapter IDs: {len(report.get('missing_chapter_ids', []))}. Changed original title/order fields: {len(report.get('original_metadata_changes', []))}.
+Proposed source extractions retained for manual review: {len(report.get('candidate_changes', []))}.</p>
 <p>Review reasons: {escape(str(report['review_diagnostics']))}.</p>
 <p>See <a href="{escape(json_name, quote=True)}">{escape(json_name)}</a> for ordered chapter-level changes, timestamp corrections, and source coverage;
-<a href="investigation.md">investigation.md</a> for template evidence and remaining limitations.</p></html>'''
+{investigation_link}</p></html>'''
 
 
 def main(argv=None):
@@ -135,7 +159,8 @@ def main(argv=None):
     print(json.dumps({k: report[k] for k in ('before', 'after', 'chapters_newly_recovered',
           'chapters_added', 'chapters_removed', 'potential_regressions')}, indent=2))
     return int(bool(report['potential_regressions'] or report['missing_episodes']
-                    or report['source_coverage']['originally_empty_without_raw_html']))
+                    or report['source_coverage']['originally_empty_without_raw_html']
+                    or report['missing_chapter_ids'] or report['original_metadata_changes']))
 
 
 if __name__ == '__main__':

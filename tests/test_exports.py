@@ -49,12 +49,44 @@ class IdentityTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'duplicate chapter ID'):
             ensure_catalog_identity([row])
 
+    def test_empty_episode_preserves_prior_identity_reservations(self):
+        old = episode([])
+        old['retired_chapter_ids'] = ['mts-0001-c000009']
+        old['next_chapter_sequence'] = 10
+        result = reconcile_episode(old,episode([('00:01','Newly available')]))
+        ensure_catalog_identity([result])
+        self.assertEqual(result['chapters'][0]['chapter_id'],'mts-0001-c000010')
+
     def test_timestamp_correction_clears_stale_frame_metadata(self):
         old = episode([('00:01:00:22', 'First')])
         ensure_catalog_identity([old])
         result = reconcile_episode(old, episode([('00:01:01', 'First')]))
         self.assertNotIn('time_frames', result['chapters'][0])
         self.assertEqual(result['chapters'][0]['chapter_id'], old['chapters'][0]['chapter_id'])
+
+    def test_correction_review_survives_an_unchanged_reparse(self):
+        old = episode([('00:01', 'First')])
+        ensure_catalog_identity([old])
+        current = episode([('00:03', 'First')])
+        once = reconcile_episode(old, current)
+        ensure_catalog_identity([once])
+        twice = reconcile_episode(once, current)
+        self.assertTrue(twice['requires_review'])
+        self.assertEqual(len(twice['chapter_changes']), 1)
+        self.assertIn('chapter_timestamp_changed',{d['code']for d in twice['diagnostics']})
+        twice['chapter_changes'][0]['reviewed'] = True
+        reviewed = reconcile_episode(twice, current)
+        self.assertFalse(reviewed['requires_review'])
+
+    def test_insertions_do_not_move_change_diagnostics_to_another_id(self):
+        old = episode([('00:02', 'First')])
+        ensure_catalog_identity([old])
+        current = episode([('00:01', 'Inserted'), ('00:03', 'First')])
+        result = reconcile_episode(old, current)
+        ensure_catalog_identity([result])
+        records = list(flat_chapters([result]))
+        self.assertNotIn('chapter_timestamp_changed',{d['code']for d in records[0]['diagnostics']})
+        self.assertIn('chapter_timestamp_changed',{d['code']for d in records[1]['diagnostics']})
 
 
 class ExportTests(unittest.TestCase):
@@ -69,7 +101,7 @@ class ExportTests(unittest.TestCase):
             catalog = load_catalog(directory)
             self.assertEqual([r['chapter_id'] for r in records], [r['chapter_id'] for r in csv_rows])
             self.assertEqual(records[0]['chapter_id'], catalog[0]['chapters'][0]['chapter_id'])
-            self.assertEqual(records[0]['source']['sha256'], 'raw_html')
+            self.assertEqual(records[0]['source']['sha256'], 'a' * 64)
             self.assertEqual(records[0]['time_seconds'], 1)
             self.assertEqual(records[0]['timestamp_confidence'], 'whole_second')
             for field in ('original_order', 'title_original', 'title_normalized', 'timestamp_raw', 'diagnostics', 'source_url'):

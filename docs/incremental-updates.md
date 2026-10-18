@@ -37,6 +37,12 @@ The proposed source extraction and review reasons remain available in
 and order, while title/time changes are explicitly flagged for review. A larger
 source chapter count does not by itself authorize replacing unmatched entries.
 
+Title/time corrections remain in `chapter_changes` with `reviewed = false`.
+An unchanged subsequent reparse does not silently clear their review flags.
+After reviewing the authoritative source, an editor can mark the corresponding
+change `reviewed = true` in the catalog; history preserves the previous state.
+Chapter IDs keep these diagnostics attached to the right entry after insertions.
+
 Every run snapshots its previous catalog in `history/<content-hash>/mts_toc.json`
 before migration or updates. The run journal `mts_run.json` records its baseline,
 selection, completed entries, pending entries, and cache/refresh mode. The

@@ -102,6 +102,9 @@ def parse_args(argv):
             raise ValueError
     except ValueError:
         parser.error('--include must contain comma-separated positive episode numbers')
+    if args.resume and (args.selected or args.limit or args.reparse or args.refresh or args.discover
+                        or args.revalidate or args.revalidate_legacy or args.retry_failed):
+        parser.error('--resume uses the saved selection and request mode; pass it without selection/mode flags')
     return args
 
 
@@ -120,7 +123,7 @@ def failure_row(episode, previous, status, message):
 
 def record_source(row, page):
     source = {k: page[k] for k in ('url', 'final_url', 'status_code', 'fetched_at', 'cache_key', 'request_source')}
-    source['kind'] = 'raw_html'
+    source['kind'] = 'http_response' if row['status'] in FAILED_STATUSES | {'robots_disallowed'} else 'raw_html'
     for field in ('origin', 'final_url_verified', 'sha256', 'redirect_target'):
         if field in page:
             source[field] = page[field]
@@ -157,9 +160,18 @@ def run(args, client):
                         row = failure_row(episode, previous, 'parse_error', f'{type(exc).__name__}: {exc}')
                         record_source(row, page)
                     else:
-                        candidate = dict(episode, **extraction, schema_version=2)
-                        record_source(candidate, page)
-                        row = reconcile_episode(previous, candidate)
+                        if extraction.get('source_episode_number', number) != number:
+                            row = failure_row(episode, previous, 'parse_error',
+                                f'Episode number mismatch: expected {number}, source header says {extraction["source_episode_number"]}.')
+                            record_source(row, page)
+                        elif extraction['status'] in FAILED_STATUSES:
+                            message = '; '.join(d.get('message', d['code']) for d in extraction.get('diagnostics', []))
+                            row = failure_row(episode, previous, extraction['status'], message)
+                            record_source(row, page)
+                        else:
+                            candidate = dict(episode, **extraction, schema_version=2)
+                            record_source(candidate, page)
+                            row = reconcile_episode(previous, candidate)
             except OfflineMiss as exc:
                 if previous:
                     row = dict(previous)

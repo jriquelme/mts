@@ -8,7 +8,7 @@ from mts.reconciliation import reconcile_episode
 def episode(entries, kind='raw_html'):
     html = '<article>' + ''.join(f'<p>{time} {title}</p>' for time, title in entries) + '</article>'
     return dict(number=1, title='MTS 1', url='https://www.10thplanetjj.com/techniques/1/',
-                source=dict(kind=kind, sha256=kind), **extract_episode(html))
+                source=dict(kind=kind, sha256='a' * 64, status_code=200), **extract_episode(html))
 
 
 class ReconciliationTests(unittest.TestCase):
@@ -46,7 +46,7 @@ class ReconciliationTests(unittest.TestCase):
         old = episode([('00:01', 'First')], 'legacy_metadata')
         result = reconcile_episode(old, episode([('00:01', 'First')]))
         self.assertEqual(result['source']['kind'], 'raw_html')
-        self.assertEqual(result['chapters'][0]['source']['sha256'], 'raw_html')
+        self.assertEqual(result['chapters'][0]['source']['sha256'], 'a' * 64)
         self.assertEqual(result['validation']['state'], 'revalidated')
 
     def test_source_correction_is_accepted_but_flagged(self):
@@ -67,6 +67,14 @@ class ReconciliationTests(unittest.TestCase):
         new = episode([('00:01', 'First'), ('00:02', 'New'), ('00:03', 'Last')])
         result = reconcile_episode(old, new)
         self.assertEqual([c['title'] for c in result['chapters']], ['First', 'New', 'Last'])
+
+    def test_unknown_untimed_block_is_a_candidate_not_an_automatic_addition(self):
+        old = episode([('00:01', 'First')])
+        new = episode([('00:01', 'First'), ('', 'Uncertain appended paragraph')])
+        result = reconcile_episode(old, new)
+        self.assertEqual(len(result['chapters']), 1)
+        self.assertEqual(len(result['candidate_extraction']['chapters']), 2)
+        self.assertIn('new_chapter_unconfirmed', {d['code'] for d in result['diagnostics']})
 
 
 if __name__ == '__main__':

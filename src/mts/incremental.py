@@ -145,8 +145,8 @@ def write_changes(directory, journal, rows):
     history = directory / 'changes' / journal['run_id']
     write_json(history / 'comparison.json', report)
     with atomic_file(history / 'comparison.html') as stream:
-        stream.write(render_html(report))
+        stream.write(render_html(report, investigation_url=None))
     write_json(directory / 'mts_changes.json', report)
     with atomic_file(directory / 'mts_changes.html') as stream:
-        stream.write(render_html(report, json_name='mts_changes.json'))
+        stream.write(render_html(report, json_name='mts_changes.json', investigation_url=None))
     return report

@@ -13,6 +13,7 @@ from datetime import datetime, timezone
 
 from mts.identity import ensure_catalog_identity
 from mts.exports import flat_chapters
+from mts.provenance import public_source
 
 
 def utcnow():
@@ -169,7 +170,14 @@ def save_outputs(directory, rows, discovered=None, interrupted=False):
                     status=row['status'], error=row.get('error', ''),
                     reasons=';'.join(sorted({d['code'] for d in diagnostics})),
                     diagnostics=json.dumps(diagnostics, ensure_ascii=False)))
+    source_counts = Counter('public_html' if public_source(c.get('source', r.get('source', {}))) else 'legacy_or_unverified'
+                            for r in rows for c in r['chapters'])
+    public_episodes = sum(all(public_source(c.get('source', r.get('source', {}))) for c in r['chapters'])
+                          if r['chapters'] else public_source(r.get('source', {})) for r in rows)
     summary = dict(schema_version=3, scraped_at=utcnow(), episodes=len(rows),
+                   chapter_ids=len({c['chapter_id'] for r in rows for c in r['chapters']}),
+                   chapter_source_counts=dict(source_counts), episodes_with_public_evidence=public_episodes,
+                   episodes_with_unverified_evidence=len(rows) - public_episodes,
                    episodes_discovered=discovered if discovered is not None else len(rows),
                    chapters=sum(len(r['chapters']) for r in rows),
                    with_toc=sum(r['status'] == 'ok' for r in rows),

@@ -1,0 +1,2893 @@
+{
+  "started_at": "2026-10-18T00:02:13.816332+00:00",
+  "legacy_episodes": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    24,
+    29,
+    30,
+    31,
+    32,
+    33,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    159,
+    160,
+    161,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    181,
+    182,
+    183,
+    184,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    201,
+    202,
+    203,
+    204,
+    205,
+    206,
+    207,
+    208,
+    209,
+    222,
+    223,
+    224,
+    225,
+    226,
+    227,
+    228,
+    229,
+    230,
+    231,
+    232,
+    233,
+    234,
+    235,
+    236,
+    237,
+    238,
+    239,
+    240,
+    241,
+    245,
+    246,
+    247,
+    248,
+    249,
+    250,
+    251,
+    252,
+    253,
+    254,
+    255,
+    256,
+    257,
+    258,
+    259
+  ],
+  "attempts": [
+    {
+      "episode": 2,
+      "url": "https://www.10thplanetjj.com/techniques/studio-sessions-great-big-white-world/",
+      "checked_at": "2026-10-18T00:02:27.454691+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/studio-sessions-great-big-white-world/",
+      "source": {
+        "sha256": "45049e22eb63cfc7898356172a0b447593353c5a79616979be76f9fd23056813",
+        "fetched_at": "2026-10-18T00:02:33.638546+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/studio-sessions-great-big-white-world/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/studio-sessions-great-big-white-world/",
+        "status_code": 302,
+        "cache_key": "86cded9c435f9475987fd5cba5b5ecbd57d4f2550257863492808d04f058a9a0",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 3,
+      "url": "https://www.10thplanetjj.com/techniques/along/",
+      "checked_at": "2026-10-18T00:02:33.641745+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/along/",
+      "source": {
+        "sha256": "e9e96908975b94c05941fe8d207dcba20b12b90e793d22f46307a46d22db16bd",
+        "fetched_at": "2026-10-18T00:02:40.131780+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/along/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/along/",
+        "status_code": 302,
+        "cache_key": "5623d4bf0ba73cc65bbf90a633077ab44ed7b11d2f3538ca9c0600e3a8a75471",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 4,
+      "url": "https://www.10thplanetjj.com/techniques/karates-comeback/",
+      "checked_at": "2026-10-18T00:02:40.134921+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/karates-comeback/",
+      "source": {
+        "sha256": "53690f1f1e978c430ef8a063dac29d675015309218f5ea2723679acd3029a650",
+        "fetched_at": "2026-10-18T00:02:46.289201+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/karates-comeback/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/karates-comeback/",
+        "status_code": 302,
+        "cache_key": "cc294f50f48abc173b4a4a79505df0db5ca97ce5cded5b99e91b47917624ae76",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 5,
+      "url": "https://www.10thplanetjj.com/techniques/einstein-isode/",
+      "checked_at": "2026-10-18T00:02:46.292248+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/einstein-isode/",
+      "source": {
+        "sha256": "fafe854711c51370fdfa2370e0aa8bba72f32ec4007ee20781c1bf941f0950e5",
+        "fetched_at": "2026-10-18T00:02:52.687332+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/einstein-isode/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/einstein-isode/",
+        "status_code": 302,
+        "cache_key": "7eb0a77e214ef109d0ebf99a45885f000b65c7cc096430b31ba0f59383a16ea5",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 6,
+      "url": "https://www.10thplanetjj.com/techniques/bow-sensei/",
+      "checked_at": "2026-10-18T00:02:52.690554+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/bow-sensei/",
+      "source": {
+        "sha256": "98c1fdbfb913b7c251084a9763dec34c7a0a2943b0ea22d45e3234ebbfaceaa8",
+        "fetched_at": "2026-10-18T00:02:58.418537+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/bow-sensei/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/bow-sensei/",
+        "status_code": 302,
+        "cache_key": "a804d5656624047909501d5e0bfaa81a1f066f3b1b9d18d927f1ab0829f90728",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 7,
+      "url": "https://www.10thplanetjj.com/techniques/mts-7/",
+      "checked_at": "2026-10-18T00:02:58.421540+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-7/",
+      "source": {
+        "sha256": "91036b7fb08d6df181bc66b80c989e314ef6e0e7481bfd42e5a7a1af395aefef",
+        "fetched_at": "2026-10-18T00:03:04.653395+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-7/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-7/",
+        "status_code": 302,
+        "cache_key": "51cf9c418f6a156d07919888ea97144a7b65acdf67a63ff2d04efdd7cb546705",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 8,
+      "url": "https://www.10thplanetjj.com/techniques/jiu-jitsu-thats-it/",
+      "checked_at": "2026-10-18T00:03:04.657486+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/jiu-jitsu-thats-it/",
+      "source": {
+        "sha256": "472fe1207efe71c9cd37891a384d7957324efe7bc9c11669421a44d1c4a41ae1",
+        "fetched_at": "2026-10-18T00:03:11.333924+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/jiu-jitsu-thats-it/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/jiu-jitsu-thats-it/",
+        "status_code": 302,
+        "cache_key": "7022a5e4f5d12eb8fed2eef8ec44db0792b1a4cfe940c0b22657a86cdc1789a0",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 9,
+      "url": "https://www.10thplanetjj.com/techniques/fake-clouds-sky/",
+      "checked_at": "2026-10-18T00:03:11.337042+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/fake-clouds-sky/",
+      "source": {
+        "sha256": "8c5f83669c35fab3dd8f5968fa837b2e10f8b9473af58131d9d12b14ec80f297",
+        "fetched_at": "2026-10-18T00:03:17.047326+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/fake-clouds-sky/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/fake-clouds-sky/",
+        "status_code": 302,
+        "cache_key": "4ebe0f68988501d655a4378e10557eb6c764475da50267c06a4cbb1bb2d2fc41",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 10,
+      "url": "https://www.10thplanetjj.com/techniques/bright-california-nuglets/",
+      "checked_at": "2026-10-18T00:03:17.050253+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/bright-california-nuglets/",
+      "source": {
+        "sha256": "4f5ce7c756ecce2cdf39d46c3ad3f1d0727e4737cf14cf270a16679f23ee9f4e",
+        "fetched_at": "2026-10-18T00:03:23.455600+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/bright-california-nuglets/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/bright-california-nuglets/",
+        "status_code": 302,
+        "cache_key": "e82b47b4a789cad5de6a1060a5257f43ba1fd1f2404c7041fc233950769a21ad",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 11,
+      "url": "https://www.10thplanetjj.com/techniques/enter-rogan/",
+      "checked_at": "2026-10-18T00:03:23.458785+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/enter-rogan/",
+      "source": {
+        "sha256": "6e593f4d183b41e1904ef3a901d92c7250382e0bb507354c82a9a6c73b40f42c",
+        "fetched_at": "2026-10-18T00:03:29.438378+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/enter-rogan/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/enter-rogan/",
+        "status_code": 302,
+        "cache_key": "e003072c258a3f7c452085912a1f5742cf8a84af839d05a26ea96c855878cfe4",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 12,
+      "url": "https://www.10thplanetjj.com/techniques/mts-12-pijamas/",
+      "checked_at": "2026-10-18T00:03:29.441300+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-12-pijamas/",
+      "source": {
+        "sha256": "296e689a47654c9c0cf651b8668b4fe2608b50fbe04028e5dba56d86e8797544",
+        "fetched_at": "2026-10-18T00:03:35.577912+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-12-pijamas/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-12-pijamas/",
+        "status_code": 302,
+        "cache_key": "dbe718a1ab1e909b29aaee1280efdd81c79e93964e9854591dab0c473afa32e6",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 13,
+      "url": "https://www.10thplanetjj.com/techniques/mts-13-attack-renato/",
+      "checked_at": "2026-10-18T00:03:35.580997+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-13-attack-renato/",
+      "source": {
+        "sha256": "99c8b511ae8fcb1acff44fa0ed57426edb32ce03047bf1191d204b7ae0937175",
+        "fetched_at": "2026-10-18T00:03:41.549644+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-13-attack-renato/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-13-attack-renato/",
+        "status_code": 302,
+        "cache_key": "6c5b2d767ab304786f9e6af81adf50b92c9c2624a9b5ade41abc08daed221d56",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 14,
+      "url": "https://www.10thplanetjj.com/techniques/mts-14-emc-gonna-stab-bch/",
+      "checked_at": "2026-10-18T00:03:41.552799+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-14-emc-gonna-stab-bch/",
+      "source": {
+        "sha256": "40eaf26e8098a4e45c4d256e1f5dcec5d3cc2187cf91a37a2dbca9cec18e2e13",
+        "fetched_at": "2026-10-18T00:03:47.856164+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-14-emc-gonna-stab-bch/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-14-emc-gonna-stab-bch/",
+        "status_code": 302,
+        "cache_key": "a3368039d06399ab2c5029a1c4a2b90f99c4f5589500c86b58a4204ff7d3ff0c",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 16,
+      "url": "https://www.10thplanetjj.com/techniques/mts-16-wrath-renato/",
+      "checked_at": "2026-10-18T00:03:47.859377+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-16-wrath-renato/",
+      "source": {
+        "sha256": "7afc69442b1a8ca310ca04c6b42dcf8f3ccf4ff99d3857883591426649d21a5c",
+        "fetched_at": "2026-10-18T00:03:53.436412+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-16-wrath-renato/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-16-wrath-renato/",
+        "status_code": 302,
+        "cache_key": "16b7a6ca7d76338de2b668fc25d3865ede27c4921d7ba91cd4a3269f1f93a44e",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 17,
+      "url": "https://www.10thplanetjj.com/techniques/mts-17-put-shrimp-renato/",
+      "checked_at": "2026-10-18T00:03:53.439633+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-17-put-shrimp-renato/",
+      "source": {
+        "sha256": "397a9846612340c7a7a16feb4d0fa8490362ed990d62e6d55062dec64a7f41cf",
+        "fetched_at": "2026-10-18T00:03:59.675805+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-17-put-shrimp-renato/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-17-put-shrimp-renato/",
+        "status_code": 302,
+        "cache_key": "e5e42895ddd544f60a629d187e20994c5557618f624357840f9545660a4c6188",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 18,
+      "url": "https://www.10thplanetjj.com/techniques/mts-18-orochon-challenge/",
+      "checked_at": "2026-10-18T00:03:59.678962+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-18-orochon-challenge/",
+      "source": {
+        "sha256": "217e882d2fa07bd9c6a026887bdb68996cfa545e2d2ffb4894f4bf3ed129a715",
+        "fetched_at": "2026-10-18T00:04:06.181964+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-18-orochon-challenge/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-18-orochon-challenge/",
+        "status_code": 302,
+        "cache_key": "d5d67f0a6648c3b32365b9e164049bae650b39b51dbc39eb4419361343d4041b",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 19,
+      "url": "https://www.10thplanetjj.com/techniques/mts-19-hedge-hedge-winey/",
+      "checked_at": "2026-10-18T00:04:06.185310+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-19-hedge-hedge-winey/",
+      "source": {
+        "sha256": "98a3539247b06f8a91f28bcc222f312f56804747ce2e15ac3ec73b883ebf052c",
+        "fetched_at": "2026-10-18T00:04:12.268841+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-19-hedge-hedge-winey/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-19-hedge-hedge-winey/",
+        "status_code": 302,
+        "cache_key": "13662a4640665c1785826726705bef3448de2692ee0192e6fd6f048361a00715",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 20,
+      "url": "https://www.10thplanetjj.com/techniques/mts-20-barbed-penis/",
+      "checked_at": "2026-10-18T00:04:12.272116+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-20-barbed-penis/",
+      "source": {
+        "sha256": "94b6b42374e376c84af7aee4d974c023e0551ee5557e3914e0f08b46017a4306",
+        "fetched_at": "2026-10-18T00:04:18.074629+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-20-barbed-penis/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-20-barbed-penis/",
+        "status_code": 302,
+        "cache_key": "99f780eeae22ba9d8286ea9821b717e96b0abbc6c0a0af5e74420bdef354cb39",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 21,
+      "url": "https://www.10thplanetjj.com/techniques/mts-21-10/",
+      "checked_at": "2026-10-18T00:04:18.077790+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-21-10/",
+      "source": {
+        "sha256": "b6f14dde06caafe6f25431ff6553afe3b6607367dfbf9d88ea3d26cb919fe6c6",
+        "fetched_at": "2026-10-18T00:04:23.794406+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-21-10/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-21-10/",
+        "status_code": 302,
+        "cache_key": "1e16a957892667e499258cbf5d2dd13623bef3d9af9e8659fd66d3c61161f82a",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 22,
+      "url": "https://www.10thplanetjj.com/techniques/mts-22-7-days-week/",
+      "checked_at": "2026-10-18T00:04:23.798263+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-22-7-days-week/",
+      "source": {
+        "sha256": "070c6a92f45bf87a0db336703fa176b9629f71ef0d51cfd620fa13a71b68d824",
+        "fetched_at": "2026-10-18T00:04:30.163155+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-22-7-days-week/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-22-7-days-week/",
+        "status_code": 302,
+        "cache_key": "d0d65b952b21c33c85e9b12f487e53c1d6d088d82dfe0addebb4f480d1da14d4",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 24,
+      "url": "https://www.10thplanetjj.com/techniques/mts-24-cheick-yo/",
+      "checked_at": "2026-10-18T00:04:30.166482+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-24-cheick-yo/",
+      "source": {
+        "sha256": "4305332124bec36110835a32707e1f5eda158df2f9d846f374277a3c67129789",
+        "fetched_at": "2026-10-18T00:04:36.519313+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-24-cheick-yo/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-24-cheick-yo/",
+        "status_code": 302,
+        "cache_key": "29e6e8b701c6818d753fc2ccedef8b00008d1bc93f0b979ef0f01f0b8091dfa6",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 29,
+      "url": "https://www.10thplanetjj.com/techniques/bravo-and-co/",
+      "checked_at": "2026-10-18T00:04:36.522883+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/bravo-and-co/",
+      "source": {
+        "sha256": "a37e99b3efffa1880219285525dff77ab12c2394a5e40bfe5a7837258b3b2b58",
+        "fetched_at": "2026-10-18T00:04:43.100139+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/bravo-and-co/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/bravo-and-co/",
+        "status_code": 302,
+        "cache_key": "4f034b2ff538f7d24f13f38707060573066985db47967f4c1786531e871513a5",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 30,
+      "url": "https://www.10thplanetjj.com/techniques/mts-30-black-belts-cry/",
+      "checked_at": "2026-10-18T00:04:43.103711+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-30-black-belts-cry/",
+      "source": {
+        "sha256": "e4bdd6964c13da6b13cabb7b85cccf4644b72d73a38b182db6912a7fb195051c",
+        "fetched_at": "2026-10-18T00:04:48.778173+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-30-black-belts-cry/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-30-black-belts-cry/",
+        "status_code": 302,
+        "cache_key": "bac0a2dd7a7ccd890a40c3d0ca4b87182e16e0d99ea8a2fa7581b52ff7c20eb6",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 31,
+      "url": "https://www.10thplanetjj.com/techniques/mts-31-doggy-style/",
+      "checked_at": "2026-10-18T00:04:48.781162+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-31-doggy-style/",
+      "source": {
+        "sha256": "5eb101a72cac12657a6b385d4f3b8de53cfbdd4c204cdca1b8cffd3848866f96",
+        "fetched_at": "2026-10-18T00:04:54.791202+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-31-doggy-style/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-31-doggy-style/",
+        "status_code": 302,
+        "cache_key": "03421194ad09c9fad2e9f2173aaad78a2980ea95ccf3415b9a3a37edadec0024",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 32,
+      "url": "https://www.10thplanetjj.com/techniques/mts-32-filmes-de-porrada/",
+      "checked_at": "2026-10-18T00:04:54.796707+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-32-filmes-de-porrada/",
+      "source": {
+        "sha256": "377163e7b917ff8a8e29591d251deae394c8e499b9499303997b923bf27c5222",
+        "fetched_at": "2026-10-18T00:05:00.853394+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-32-filmes-de-porrada/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-32-filmes-de-porrada/",
+        "status_code": 302,
+        "cache_key": "2561399e4d3d224ec3cf276f76b45a505167600ba2b9ab8c05d4191fb6dd6276",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 33,
+      "url": "https://www.10thplanetjj.com/techniques/mts-33-og-grape-juice/",
+      "checked_at": "2026-10-18T00:05:00.856628+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-33-og-grape-juice/",
+      "source": {
+        "sha256": "52640b4b493b368c2f95c41a955e3343bd176790a85a7eb0c4bb1016b2ea2ed9",
+        "fetched_at": "2026-10-18T00:05:07.547677+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-33-og-grape-juice/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-33-og-grape-juice/",
+        "status_code": 302,
+        "cache_key": "4dd23668f3d02b754004134a1e360cd8f035555315f9c80c059d9e5661eafcc3",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 35,
+      "url": "https://www.10thplanetjj.com/techniques/mts-35-300/",
+      "checked_at": "2026-10-18T00:05:07.551053+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-35-300/",
+      "source": {
+        "sha256": "f10015371a175639afe6bbbd99c4aeb4a238215e585bc8cbf979226d8f7110dc",
+        "fetched_at": "2026-10-18T00:05:13.478990+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-35-300/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-35-300/",
+        "status_code": 302,
+        "cache_key": "43f2904f0d70bf3808f5d436689331814938a9f01a850beb9270cb5578c195f8",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 36,
+      "url": "https://www.10thplanetjj.com/techniques/mts-36-dead-zones/",
+      "checked_at": "2026-10-18T00:05:13.482036+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-36-dead-zones/",
+      "source": {
+        "sha256": "d7f2e5f3948f43f944ffdedb49b8597b460ee55b236b60f3df8ff5b6b0744632",
+        "fetched_at": "2026-10-18T00:05:20.294178+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-36-dead-zones/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-36-dead-zones/",
+        "status_code": 302,
+        "cache_key": "0d3788607989930e7fb41899450116a248f5d65ba2086c5e52989aba10594d71",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 37,
+      "url": "https://www.10thplanetjj.com/techniques/mts-37-planet-x/",
+      "checked_at": "2026-10-18T00:05:20.297690+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-37-planet-x/",
+      "source": {
+        "sha256": "942b62372c12ccc1abac1f46142f99ddaa828137b17d59bedae22329f0a41ad4",
+        "fetched_at": "2026-10-18T00:05:26.352437+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-37-planet-x/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-37-planet-x/",
+        "status_code": 302,
+        "cache_key": "fb60288118f1e9c828f25a70456881c3531433fc054f31d7dbb5c77ee25a57c0",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 38,
+      "url": "https://www.10thplanetjj.com/techniques/mts-38-enter-draco/",
+      "checked_at": "2026-10-18T00:05:26.355858+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-38-enter-draco/",
+      "source": {
+        "sha256": "660c4902974985b6dfb8ad60ac3345c2205b2e8e92a9dffe7f5eebbf15c54f6a",
+        "fetched_at": "2026-10-18T00:05:32.893398+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-38-enter-draco/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-38-enter-draco/",
+        "status_code": 302,
+        "cache_key": "58761dd36eff0d82313cebd503325d99e29e8e0639e70fbce213a8121372fbb9",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 39,
+      "url": "https://www.10thplanetjj.com/techniques/mts-39-leg-locks-ur-ass/",
+      "checked_at": "2026-10-18T00:05:32.896824+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-39-leg-locks-ur-ass/",
+      "source": {
+        "sha256": "70a9aa4a1fe99715dfdec15becb040fb8b0869774869fd076e4b30a8ef704df2",
+        "fetched_at": "2026-10-18T00:05:39.261237+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-39-leg-locks-ur-ass/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-39-leg-locks-ur-ass/",
+        "status_code": 302,
+        "cache_key": "427fed10633699b1975c97f031d9892dda92eeaa6567c28e4e58f6b54b3d35a6",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 40,
+      "url": "https://www.10thplanetjj.com/techniques/mts-40-renarco/",
+      "checked_at": "2026-10-18T00:05:39.264823+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-40-renarco/",
+      "source": {
+        "sha256": "a22ccf817eb690a97d710c74da8fe63a50c5ed36790ce2c37a685b4cfc9dd1fc",
+        "fetched_at": "2026-10-18T00:05:45.265212+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-40-renarco/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-40-renarco/",
+        "status_code": 302,
+        "cache_key": "caebbf573f3f32ea5a4b1ee37d43b01cb7117465892c6474fe8a5e30d6c2be65",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 41,
+      "url": "https://www.10thplanetjj.com/techniques/mts-41-rutten-tootin/",
+      "checked_at": "2026-10-18T00:05:45.268760+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-41-rutten-tootin/",
+      "source": {
+        "sha256": "f080ca1f14f695c943c73e1634a00053575fd39a4c01cba69767592255d7fec9",
+        "fetched_at": "2026-10-18T00:05:51.882382+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-41-rutten-tootin/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-41-rutten-tootin/",
+        "status_code": 302,
+        "cache_key": "51e44dfb6bd1fdfbcb22d0d728c4f84648bb31f8286c2f353e9ccf887743fb5a",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 42,
+      "url": "https://www.10thplanetjj.com/techniques/mts-42-hub-tug/",
+      "checked_at": "2026-10-18T00:05:51.886143+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-42-hub-tug/",
+      "source": {
+        "sha256": "70a2df73f8f9faf42a821f03d1f44e109d9d90ccafe160ee721753e47a9f42b6",
+        "fetched_at": "2026-10-18T00:05:58.449015+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-42-hub-tug/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-42-hub-tug/",
+        "status_code": 302,
+        "cache_key": "5ae1ba826e6c7e71b3dd732e38c5041e4d6453496974642a0ae5c67d5d65fd48",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 43,
+      "url": "https://www.10thplanetjj.com/techniques/mts-43-studying-tape/",
+      "checked_at": "2026-10-18T00:05:58.452667+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-43-studying-tape/",
+      "source": {
+        "sha256": "fa59e8dddfd70b31aa4591f76b22597b0cd9a9daeab41e5a6cce029c02ea5e92",
+        "fetched_at": "2026-10-18T00:06:05.273817+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-43-studying-tape/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-43-studying-tape/",
+        "status_code": 302,
+        "cache_key": "f87ffaaeda19a56e9291dd82fae6e6ebec73f5104ff89d4d6297c369d7284a12",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 44,
+      "url": "https://www.10thplanetjj.com/techniques/mts-44-freak-show/",
+      "checked_at": "2026-10-18T00:06:05.277460+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-44-freak-show/",
+      "source": {
+        "sha256": "e5867b44badea1ed4db63e7b5cacc584a0bcc61c0bc1142d261da8fba28b9123",
+        "fetched_at": "2026-10-18T00:06:11.202601+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-44-freak-show/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-44-freak-show/",
+        "status_code": 302,
+        "cache_key": "11ce838b87e4ea550df657895f21d7ede54e15217993ef55bd12005774294402",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 45,
+      "url": "https://www.10thplanetjj.com/techniques/mts-45-single-day/",
+      "checked_at": "2026-10-18T00:06:11.206028+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-45-single-day/",
+      "source": {
+        "sha256": "c6f082e6000f56fc6ffa221e87a74a2496db63c518d494355365204672dc705c",
+        "fetched_at": "2026-10-18T00:06:17.734178+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-45-single-day/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-45-single-day/",
+        "status_code": 302,
+        "cache_key": "93dde87aec0ee7841f07270595e228f3dbecf27b36298fe9a90d0bb5e7bb1904",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 46,
+      "url": "https://www.10thplanetjj.com/techniques/mts-46-bridge/",
+      "checked_at": "2026-10-18T00:06:17.737884+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-46-bridge/",
+      "source": {
+        "sha256": "6e0d4a38bee966a0193ff06b9b51fd38f47f8fcaf4c41809c94ea6609f3ab90c",
+        "fetched_at": "2026-10-18T00:06:24.147819+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-46-bridge/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-46-bridge/",
+        "status_code": 302,
+        "cache_key": "c514f714d4bb0b65a0832045f5f35994260f07931e6da7f9143a304258097f6b",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 48,
+      "url": "https://www.10thplanetjj.com/techniques/mts-48-red-destroyer/",
+      "checked_at": "2026-10-18T00:06:24.151286+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-48-red-destroyer/",
+      "source": {
+        "sha256": "f5850e909a7cfbf2f5d6ef0634c81da3b686b9b8ef4757e4ea3f55fa61b346bb",
+        "fetched_at": "2026-10-18T00:06:30.229913+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-48-red-destroyer/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-48-red-destroyer/",
+        "status_code": 302,
+        "cache_key": "00418e9210c8e339350a1237a48ec33a0ce20d6c67446e2a1fab609e7eaa9f53",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 49,
+      "url": "https://www.10thplanetjj.com/techniques/mts-49-rules/",
+      "checked_at": "2026-10-18T00:06:30.233432+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-49-rules/",
+      "source": {
+        "sha256": "c8b80ae6639ddefbd9eb95a094c0f2b381f3bbf0cbc5e540bc15bbe74de511ca",
+        "fetched_at": "2026-10-18T00:06:36.884202+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-49-rules/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-49-rules/",
+        "status_code": 302,
+        "cache_key": "95be2939ddfca5dd98fa7d0de10eca84fd146f56abec0fe19779dd0fd503bb4c",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 50,
+      "url": "https://www.10thplanetjj.com/techniques/mts-50-studying-tape-2/",
+      "checked_at": "2026-10-18T00:06:36.887627+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-50-studying-tape-2/",
+      "source": {
+        "sha256": "072347036eabb333b956e99e1be009bda3bdf7c48f3d1c409867eb036b769c94",
+        "fetched_at": "2026-10-18T00:06:43.532186+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-50-studying-tape-2/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-50-studying-tape-2/",
+        "status_code": 302,
+        "cache_key": "484e8292f378ce01875a5dd7219046a632f7f14588d6bf16b91fcfceabd4e258",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 51,
+      "url": "https://www.10thplanetjj.com/techniques/mts-51-world/",
+      "checked_at": "2026-10-18T00:06:43.535528+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-51-world/",
+      "source": {
+        "sha256": "425954c9a6e90cfefbf469d12d5a116f20d953196886c2457c91c7b66eaa57b1",
+        "fetched_at": "2026-10-18T00:06:49.636040+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-51-world/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-51-world/",
+        "status_code": 302,
+        "cache_key": "39f8826be8b0fdaac1de7d558c24e3d73a756623226db7ff5bf9765c98c612b4",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 52,
+      "url": "https://www.10thplanetjj.com/techniques/mts-52-gracie-national-2013/",
+      "checked_at": "2026-10-18T00:06:49.639346+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-52-gracie-national-2013/",
+      "source": {
+        "sha256": "f333ada43520aa14affe6924052e19577acdc615a4c69340b0a415086e411cee",
+        "fetched_at": "2026-10-18T00:06:55.975566+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-52-gracie-national-2013/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-52-gracie-national-2013/",
+        "status_code": 302,
+        "cache_key": "2ead438ef8ee34467bef437a2edbe2403af714b6c3939b80baa59c9e9a66bf66",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 53,
+      "url": "https://www.10thplanetjj.com/techniques/mts-53-sleeping-dragon/",
+      "checked_at": "2026-10-18T00:06:55.979614+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-53-sleeping-dragon/",
+      "source": {
+        "sha256": "b7a7c84ea23ad5ae7f4575eb44bbc88e7ee06d459147c0efe9d1a91cee302b62",
+        "fetched_at": "2026-10-18T00:07:02.021972+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-53-sleeping-dragon/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-53-sleeping-dragon/",
+        "status_code": 302,
+        "cache_key": "e2ac02d2f91be583c545a74854142b591a53cab2e71c2b95cec8206dfe51de4a",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 54,
+      "url": "https://www.10thplanetjj.com/techniques/mts-54-uk-part-1/",
+      "checked_at": "2026-10-18T00:07:02.025449+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-54-uk-part-1/",
+      "source": {
+        "sha256": "a306f5e75280f9c84785be6f94b7a4a72f35d9759c2e4713b59a96f2c1fee044",
+        "fetched_at": "2026-10-18T00:07:08.466377+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-54-uk-part-1/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-54-uk-part-1/",
+        "status_code": 302,
+        "cache_key": "f43594a3e6d15a5fedfafe7c51b9b682eaf1b0120704f8b940fd9e366a4c0ea5",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 55,
+      "url": "https://www.10thplanetjj.com/techniques/mts-55-uk-part-2/",
+      "checked_at": "2026-10-18T00:07:08.470095+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-55-uk-part-2/",
+      "source": {
+        "sha256": "9465b28927e361fdf3077b8cbdb32dd1c8c962202ea9822ab85d68e32bcf39bb",
+        "fetched_at": "2026-10-18T00:07:15.139412+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-55-uk-part-2/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-55-uk-part-2/",
+        "status_code": 302,
+        "cache_key": "d2102bd6b184d093600e3e383e3de8216b4857d7b2cf8c346b5f5353ddff018b",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 56,
+      "url": "https://www.10thplanetjj.com/techniques/mts-56-uk-part-3/",
+      "checked_at": "2026-10-18T00:07:15.143162+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-56-uk-part-3/",
+      "source": {
+        "sha256": "9753fc2076ab1034b0d36aa1df45e5c9f22dd9f20a921ef4a39e0e7296decef0",
+        "fetched_at": "2026-10-18T00:07:21.589521+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-56-uk-part-3/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-56-uk-part-3/",
+        "status_code": 302,
+        "cache_key": "2db8000ef6a37728c8e3fbca095794c11b7378e11a04fdb57afcc6bae4ccbdf1",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 57,
+      "url": "https://www.10thplanetjj.com/techniques/mts-57-uk-part-4/",
+      "checked_at": "2026-10-18T00:07:21.593103+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-57-uk-part-4/",
+      "source": {
+        "sha256": "00556e2f13e516d4bcae59f516fd44f2e9142a8815a39e750d255c4a0aececf8",
+        "fetched_at": "2026-10-18T00:07:28.232440+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-57-uk-part-4/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-57-uk-part-4/",
+        "status_code": 302,
+        "cache_key": "bafc3dd2cac6b82a905137b911dbe4a0fab6415eab319eeb504f8d08b874ef0a",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 58,
+      "url": "https://www.10thplanetjj.com/techniques/mts-58-10-years/",
+      "checked_at": "2026-10-18T00:07:28.235845+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-58-10-years/",
+      "source": {
+        "sha256": "4db15f8c2b49731aca3f77d103c24e68d399df799279d8547969439081d9f581",
+        "fetched_at": "2026-10-18T00:07:34.546277+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-58-10-years/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-58-10-years/",
+        "status_code": 302,
+        "cache_key": "886b0150a540b068fdefd9ddbd796a58c792458c8d03a991e5a8ece451c3a1b2",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 59,
+      "url": "https://www.10thplanetjj.com/techniques/mts-59-muddy-waters-revisited/",
+      "checked_at": "2026-10-18T00:07:34.549861+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-59-muddy-waters-revisited/",
+      "source": {
+        "sha256": "83fa7bfd878f7dd03b5363c4f86a48eb6a4241aba6d50e5736a44d796fb81a6b",
+        "fetched_at": "2026-10-18T00:07:40.959315+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-59-muddy-waters-revisited/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-59-muddy-waters-revisited/",
+        "status_code": 302,
+        "cache_key": "1aa42a28a6f03fba572bb8eadaa8ec1e06d06c51a22ca64caef03ec19adce22d",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 60,
+      "url": "https://www.10thplanetjj.com/techniques/mts-60-uk-part-5/",
+      "checked_at": "2026-10-18T00:07:40.963449+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-60-uk-part-5/",
+      "source": {
+        "sha256": "7f962f6585c61d6c6c9e28d2915788505e7894e1aac390fe37382471638a2b61",
+        "fetched_at": "2026-10-18T00:07:46.922382+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-60-uk-part-5/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-60-uk-part-5/",
+        "status_code": 302,
+        "cache_key": "46bdb30a19bddad659fcbe7418c3502020e7cd2903d9e342faf33cb2760ff6bf",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 61,
+      "url": "https://www.10thplanetjj.com/techniques/mts-61-uk-part-6/",
+      "checked_at": "2026-10-18T00:07:46.926287+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-61-uk-part-6/",
+      "source": {
+        "sha256": "ada3ef679163982a32e9000c92e75600dcfed8e9acb8706c6e8b6498c42e37fb",
+        "fetched_at": "2026-10-18T00:07:52.918806+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-61-uk-part-6/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-61-uk-part-6/",
+        "status_code": 302,
+        "cache_key": "208a011d8cc2d06f4c1f91d9a890f396d8b298ddbc061c744fb7183d5ffcc796",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 62,
+      "url": "https://www.10thplanetjj.com/techniques/mts-62-studying-tape-3/",
+      "checked_at": "2026-10-18T00:07:52.922583+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-62-studying-tape-3/",
+      "source": {
+        "sha256": "cd8dc6a2596945abc84a171b4ee5743015bc2d2810bdb58968589721d2487d1a",
+        "fetched_at": "2026-10-18T00:07:59.585190+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-62-studying-tape-3/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-62-studying-tape-3/",
+        "status_code": 302,
+        "cache_key": "d98050c3f074eeb3c8858dfba8dd9442ba264c6f430b9079540e72804f415d9c",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 63,
+      "url": "https://www.10thplanetjj.com/techniques/mts-63-escape-side-control/",
+      "checked_at": "2026-10-18T00:07:59.588613+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-63-escape-side-control/",
+      "source": {
+        "sha256": "274d8ba3028fb17277825fc4d1fed0f5fd7f454b071254585bcf8327559e7186",
+        "fetched_at": "2026-10-18T00:08:05.404405+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-63-escape-side-control/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-63-escape-side-control/",
+        "status_code": 302,
+        "cache_key": "8401d3804b06b86db8b44b4dec92b8002de33230750249b901f4d4c39633aceb",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 64,
+      "url": "https://www.10thplanetjj.com/techniques/mts-64-truck/",
+      "checked_at": "2026-10-18T00:08:05.408232+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-64-truck/",
+      "source": {
+        "sha256": "fda2b524171c2e3ece796bdd0ddaa8d78c35a3fcf76e0080ae8362f6f11d2be6",
+        "fetched_at": "2026-10-18T00:08:11.620738+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-64-truck/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-64-truck/",
+        "status_code": 302,
+        "cache_key": "a00cc1cda24c9544bbc2fdc08fd532842c506973264571a1ac6be42a30c2942d",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 65,
+      "url": "https://www.10thplanetjj.com/techniques/mts-65-polishing-warm-ups/",
+      "checked_at": "2026-10-18T00:08:11.624438+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-65-polishing-warm-ups/",
+      "source": {
+        "sha256": "0b68c7c9aac98ea8764338ea41dfdc2591225f67de3e5f9b7077a940e6561548",
+        "fetched_at": "2026-10-18T00:08:17.785743+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-65-polishing-warm-ups/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-65-polishing-warm-ups/",
+        "status_code": 302,
+        "cache_key": "be954dece078dbfd3c67736af675ccca2f8baf3040922a8bd43ac08580442828",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 66,
+      "url": "https://www.10thplanetjj.com/techniques/mts-66-polishing-warm-ups/",
+      "checked_at": "2026-10-18T00:08:17.789999+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-66-polishing-warm-ups/",
+      "source": {
+        "sha256": "49b4766f284614220a1cf3103e3e3b98f6fbb0f3838dde3add08504e503791f9",
+        "fetched_at": "2026-10-18T00:08:24.439064+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-66-polishing-warm-ups/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-66-polishing-warm-ups/",
+        "status_code": 302,
+        "cache_key": "84f06ea87484c723f8971d46cb26c9f40a8993406171a0db4012ef24dd2a9ea6",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 67,
+      "url": "https://www.10thplanetjj.com/techniques/mts-67-polishing-warm-ups/",
+      "checked_at": "2026-10-18T00:08:24.442927+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-67-polishing-warm-ups/",
+      "source": {
+        "sha256": "8a1aad9d48c58219af90fd1b884671f0f071b2f69cd15750af2e305baf6df0e3",
+        "fetched_at": "2026-10-18T00:08:30.201847+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-67-polishing-warm-ups/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-67-polishing-warm-ups/",
+        "status_code": 302,
+        "cache_key": "46e925b15c8c7c192258239632e05ca9f22ba50473e397f733d3589d37126105",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 68,
+      "url": "https://www.10thplanetjj.com/techniques/mts-68-polishing-warm-ups/",
+      "checked_at": "2026-10-18T00:08:30.205599+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-68-polishing-warm-ups/",
+      "source": {
+        "sha256": "94a003f122d419ededf45852d6bac543e20ae76e63c3046ab40c3d766660357a",
+        "fetched_at": "2026-10-18T00:08:36.788818+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-68-polishing-warm-ups/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-68-polishing-warm-ups/",
+        "status_code": 302,
+        "cache_key": "398552e894fd9de53aa39dc8e2af9aa7e25b31679f16818a29fe31fd7354900c",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 69,
+      "url": "https://www.10thplanetjj.com/techniques/mts-69-polishing-warm-ups/",
+      "checked_at": "2026-10-18T00:08:36.792397+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-69-polishing-warm-ups/",
+      "source": {
+        "sha256": "62423b0f9ebf587a2604ca4213780cf240cd536f8cfaad12df9043cf4497d763",
+        "fetched_at": "2026-10-18T00:08:42.543474+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-69-polishing-warm-ups/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-69-polishing-warm-ups/",
+        "status_code": 302,
+        "cache_key": "676ad3beac21c5fd6b244509aeeb880615d1d9bdbeb5505ccc8e87d2040f010e",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 70,
+      "url": "https://www.10thplanetjj.com/techniques/mts-70-polishing-warm-ups/",
+      "checked_at": "2026-10-18T00:08:42.547262+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-70-polishing-warm-ups/",
+      "source": {
+        "sha256": "7375dc6a05fe97e76d5f420b652176a4f6a69799fdbb4f39c5d12be9c3ba6be6",
+        "fetched_at": "2026-10-18T00:08:48.747982+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-70-polishing-warm-ups/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-70-polishing-warm-ups/",
+        "status_code": 302,
+        "cache_key": "466c6d30ad8b9330c4d50e0d182741b804acddbfa6fc0d6c758f478db57170d1",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 71,
+      "url": "https://www.10thplanetjj.com/techniques/mts-71-bravo-breakdown/",
+      "checked_at": "2026-10-18T00:08:48.751546+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-71-bravo-breakdown/",
+      "source": {
+        "sha256": "147624c301e3e5ba2bad08ba6abbb52baf5a4290a3f8c8ff028bc2213ca6bd94",
+        "fetched_at": "2026-10-18T00:08:55.350695+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-71-bravo-breakdown/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-71-bravo-breakdown/",
+        "status_code": 302,
+        "cache_key": "431848e6f9b5d238dfd53f45974b8df95bcfdc6ca596991491a0bd32613a2e6a",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 72,
+      "url": "https://www.10thplanetjj.com/techniques/mts-72-mystery-pass/",
+      "checked_at": "2026-10-18T00:08:55.354746+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-72-mystery-pass/",
+      "source": {
+        "sha256": "c6b149fdf3bedf84b6bc84c894b26de8ff3d6135f9a814e59a721391e061e6ac",
+        "fetched_at": "2026-10-18T00:09:01.299846+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-72-mystery-pass/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-72-mystery-pass/",
+        "status_code": 302,
+        "cache_key": "b6fbf4b5af851956a2f9d94ea9a8bc1ebd0f1b1cd3dbada224807e1e9c2a9481",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 73,
+      "url": "https://www.10thplanetjj.com/techniques/mts-73-final-3/",
+      "checked_at": "2026-10-18T00:09:01.303706+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-73-final-3/",
+      "source": {
+        "sha256": "56b3e27447ab9fb1dd455cfce78b74304c8ec579c4cd685b07b32356972c6d7c",
+        "fetched_at": "2026-10-18T00:09:07.555720+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-73-final-3/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-73-final-3/",
+        "status_code": 302,
+        "cache_key": "9ff4ed73bcfc7f0188327e19ea3df4f059e54c66a8a707f99b222c95e5d32aeb",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 74,
+      "url": "https://www.10thplanetjj.com/techniques/mts-74-slow-samurai/",
+      "checked_at": "2026-10-18T00:09:07.559870+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-74-slow-samurai/",
+      "source": {
+        "sha256": "1fcadcb6f0c2177a9ba4a7564110fd9c7f0de2b871018111a7199dd5fb2c35c2",
+        "fetched_at": "2026-10-18T00:09:14.018202+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-74-slow-samurai/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-74-slow-samurai/",
+        "status_code": 302,
+        "cache_key": "b4e1a5b6239f6dbf423d882946dd7a0d0d4004dffea4b6afa9993ff572efb795",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 75,
+      "url": "https://www.10thplanetjj.com/techniques/mts-75-butt-clinch/",
+      "checked_at": "2026-10-18T00:09:14.021868+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-75-butt-clinch/",
+      "source": {
+        "sha256": "9938a95640a8ae33e79fd0486f42b0fec90130a53f45acbdc8ffea1d8ab4fcb7",
+        "fetched_at": "2026-10-18T00:09:19.981005+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-75-butt-clinch/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-75-butt-clinch/",
+        "status_code": 302,
+        "cache_key": "94be277a032c21a93288252b49a6278c8fa5bfe33a92722f4d2534887937c131",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 76,
+      "url": "https://www.10thplanetjj.com/techniques/mts-76-isosceles-triangle/",
+      "checked_at": "2026-10-18T00:09:19.984591+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-76-isosceles-triangle/",
+      "source": {
+        "sha256": "5fde3bc76f31d83bb21b4f5b4e998f5c1cc73fde37e544ed4c6ebb5e5fa0a0d4",
+        "fetched_at": "2026-10-18T00:09:26.134145+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-76-isosceles-triangle/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-76-isosceles-triangle/",
+        "status_code": 302,
+        "cache_key": "a75cd62eb9cbdc427cd7aa18d9340c5197699d3b5275a0b96ef167d245f046d3",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 77,
+      "url": "https://www.10thplanetjj.com/techniques/mts-77-gogo-clinch/",
+      "checked_at": "2026-10-18T00:09:26.137984+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-77-gogo-clinch/",
+      "source": {
+        "sha256": "a2305279bbfd49075810c1dcdc5cedc70ad300a650719649cab922afe8796687",
+        "fetched_at": "2026-10-18T00:09:32.715772+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-77-gogo-clinch/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-77-gogo-clinch/",
+        "status_code": 302,
+        "cache_key": "ac417cb38c55cb4631b920247b629c9ff97e8062e289ad082070d1dd26ea8a06",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 78,
+      "url": "https://www.10thplanetjj.com/techniques/mts-78-death-from-below/",
+      "checked_at": "2026-10-18T00:09:32.723188+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-78-death-from-below/",
+      "source": {
+        "sha256": "e00c8e1501b7189d34b7f93b4781e01c79032cc6e1183d233c94ea270190d370",
+        "fetched_at": "2026-10-18T00:09:39.520226+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-78-death-from-below/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-78-death-from-below/",
+        "status_code": 302,
+        "cache_key": "c9ba368dbacef86d5936941098a4fa3f5a829d61bc9ed649829fb82a52315f0d",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 79,
+      "url": "https://www.10thplanetjj.com/techniques/mts-79-brokeback-mount/",
+      "checked_at": "2026-10-18T00:09:39.524413+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-79-brokeback-mount/",
+      "source": {
+        "sha256": "cf424e14b7955aa81b062ec3a60fa4db13a2634f86e963d63acab2433666f0ba",
+        "fetched_at": "2026-10-18T00:09:46.128382+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-79-brokeback-mount/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-79-brokeback-mount/",
+        "status_code": 302,
+        "cache_key": "76d304e777aae6e3356fd9dff85ec677165cbcf5a8810f13ec6aaee4bebf0494",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 80,
+      "url": "https://www.10thplanetjj.com/techniques/mts-80-z-shoot-pull/",
+      "checked_at": "2026-10-18T00:09:46.132018+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-80-z-shoot-pull/",
+      "source": {
+        "sha256": "a16e4e90b6587e03783e820068e71ad74bb87c907c23533a7b02a6011eabbe6c",
+        "fetched_at": "2026-10-18T00:09:52.245199+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-80-z-shoot-pull/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-80-z-shoot-pull/",
+        "status_code": 302,
+        "cache_key": "df1a356738dcd9251bc4c05ef5d2cce72f4dc60d9fe67ebe808b1b43c0b04cd9",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 81,
+      "url": "https://www.10thplanetjj.com/techniques/mts-81-killa-b/",
+      "checked_at": "2026-10-18T00:09:52.249255+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-81-killa-b/",
+      "source": {
+        "sha256": "f15abe85de72437fa9b3eaebbcf77d53761dabd376707433534a903de2a9fa16",
+        "fetched_at": "2026-10-18T00:09:58.662376+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-81-killa-b/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-81-killa-b/",
+        "status_code": 302,
+        "cache_key": "464762ba4b34b20a95fdd5754a80ec31d978668b0721c1cc6d36f701ba9e403c",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 82,
+      "url": "https://www.10thplanetjj.com/techniques/mts-82-electric-orchard/",
+      "checked_at": "2026-10-18T00:09:58.667431+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-82-electric-orchard/",
+      "source": {
+        "sha256": "b83299c344dca68dee86977b73041a335fa01c9bae17d87967ce46f4b60f916f",
+        "fetched_at": "2026-10-18T00:10:05.350189+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-82-electric-orchard/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-82-electric-orchard/",
+        "status_code": 302,
+        "cache_key": "13cc7fe259fb84804c50edcbd80611b6e42b4b94f679e4cf70047c8f3be322c5",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 83,
+      "url": "https://www.10thplanetjj.com/techniques/mts-83-killa-b-part-2/",
+      "checked_at": "2026-10-18T00:10:05.353947+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-83-killa-b-part-2/",
+      "source": {
+        "sha256": "dfb421774a9f9b21f3ddd7deced0fa0149b8a981950a9d1a15cb822770c6e521",
+        "fetched_at": "2026-10-18T00:10:11.636293+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-83-killa-b-part-2/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-83-killa-b-part-2/",
+        "status_code": 302,
+        "cache_key": "f1b3f2484139f67d675902b15614e3f95afec735c0e13aad39708412b7e80387",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 84,
+      "url": "https://www.10thplanetjj.com/techniques/mts-84-d-day/",
+      "checked_at": "2026-10-18T00:10:11.640293+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-84-d-day/",
+      "source": {
+        "sha256": "659e68d15b3798f2e3b99dedaf8d97db1b56659ebc238b2c32d4f5c3eef1eeec",
+        "fetched_at": "2026-10-18T00:10:18.552292+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-84-d-day/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-84-d-day/",
+        "status_code": 302,
+        "cache_key": "1f5228903e13deea3835add8f8dd93d56483a5858a5208f4c0f2640c29d02453",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 85,
+      "url": "https://www.10thplanetjj.com/techniques/mts-85-killa-b-part-3/",
+      "checked_at": "2026-10-18T00:10:18.555938+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-85-killa-b-part-3/",
+      "source": {
+        "sha256": "193ad43a751a5115994dee16a72c4aab185a3b4812dcc364f7235359e33ffe52",
+        "fetched_at": "2026-10-18T00:10:24.351485+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-85-killa-b-part-3/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-85-killa-b-part-3/",
+        "status_code": 302,
+        "cache_key": "6336d70dad16f55b22383d09743ce4a8097323e822c3ac120b5975135f777947",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 86,
+      "url": "https://www.10thplanetjj.com/techniques/mts-86-dan-severn/",
+      "checked_at": "2026-10-18T00:10:24.355614+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-86-dan-severn/",
+      "source": {
+        "sha256": "e5001b8fa68aa5666626ddd2247a6e311b558670f51117045925f36840ecef21",
+        "fetched_at": "2026-10-18T00:10:31.075342+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-86-dan-severn/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-86-dan-severn/",
+        "status_code": 302,
+        "cache_key": "66b5f4023d3629eba8cc8fb803c11c9f0c8025a0362540aed2f92269ff11802c",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 87,
+      "url": "https://www.10thplanetjj.com/techniques/mts-87-studying-tape-4/",
+      "checked_at": "2026-10-18T00:10:31.079580+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-87-studying-tape-4/",
+      "source": {
+        "sha256": "13db61d5364c4c29ed8a5718681e8220f6240c8d40a95a5ca4c5ace0deab05f9",
+        "fetched_at": "2026-10-18T00:10:37.572641+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-87-studying-tape-4/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-87-studying-tape-4/",
+        "status_code": 302,
+        "cache_key": "7febe60f3f646b9a0cf758657b47e9ebaa4676ab96549777b780722a3ba338df",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 88,
+      "url": "https://www.10thplanetjj.com/techniques/mts-88-leg-locks/",
+      "checked_at": "2026-10-18T00:10:37.576373+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-88-leg-locks/",
+      "source": {
+        "sha256": "d622c80506c73d5af67eecc65f5141aab19b657e5ef6f8918e8b53191fa3f399",
+        "fetched_at": "2026-10-18T00:10:43.969291+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-88-leg-locks/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-88-leg-locks/",
+        "status_code": 302,
+        "cache_key": "c6ed21113a45b8e713d8ea32da5675794fb26d193ca91e4e4629b9220923aa7b",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 89,
+      "url": "https://www.10thplanetjj.com/techniques/mts-89-14-ashi/",
+      "checked_at": "2026-10-18T00:10:43.972968+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-89-14-ashi/",
+      "source": {
+        "sha256": "e6e8cffd98c2365a988ee622c5af032b4eea6a44486e2689a377ea30209475d5",
+        "fetched_at": "2026-10-18T00:10:50.013925+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-89-14-ashi/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-89-14-ashi/",
+        "status_code": 302,
+        "cache_key": "8a47a61c0336b048accad82cc142f3b6c062d3466269722c2c305c13219b27a1",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 90,
+      "url": "https://www.10thplanetjj.com/techniques/mts-90-x-guard-to-doa/",
+      "checked_at": "2026-10-18T00:10:50.017680+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-90-x-guard-to-doa/",
+      "source": {
+        "sha256": "2d24bb80375b3021487343df00a118ac49b0b7d9fccd1eeaec535c1eacde3fb0",
+        "fetched_at": "2026-10-18T00:10:56.505955+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-90-x-guard-to-doa/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-90-x-guard-to-doa/",
+        "status_code": 302,
+        "cache_key": "5f291d2c030dd3bb9d7d7815cb81d981168d317875b688292eaa9fc045351c8b",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 91,
+      "url": "https://www.10thplanetjj.com/techniques/mts-91-2-on-1-c-o-p-clinch/",
+      "checked_at": "2026-10-18T00:10:56.509471+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-91-2-on-1-c-o-p-clinch/",
+      "source": {
+        "sha256": "f86c6fe5e0948720f24cf6392765610a3fb4205443353893591164e39c83a273",
+        "fetched_at": "2026-10-18T00:11:02.948527+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-91-2-on-1-c-o-p-clinch/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-91-2-on-1-c-o-p-clinch/",
+        "status_code": 302,
+        "cache_key": "0101b2b804e5ad60b02151bbc2ee2f0c0eafc5bcb00c337ac47f4c978e39193a",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 92,
+      "url": "https://www.10thplanetjj.com/techniques/mts-92-live-drills-1/",
+      "checked_at": "2026-10-18T00:11:02.952375+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-92-live-drills-1/",
+      "source": {
+        "sha256": "38133d42ce8310132af548a142b37562391d542c859167d4dca13a78954e344c",
+        "fetched_at": "2026-10-18T00:11:09.370270+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-92-live-drills-1/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-92-live-drills-1/",
+        "status_code": 302,
+        "cache_key": "ee22ea148e30e1f261acf86f25b3c90950385ae6c4a1b5667b1c428c422ebfd2",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 93,
+      "url": "https://www.10thplanetjj.com/techniques/mts-93-reverse-alcatraz/",
+      "checked_at": "2026-10-18T00:11:09.374112+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-93-reverse-alcatraz/",
+      "source": {
+        "sha256": "85a11ee1652cc55c94e75d89ff468d9dc7b441e805aff25cb87902b92f2c72f7",
+        "fetched_at": "2026-10-18T00:11:15.706063+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-93-reverse-alcatraz/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-93-reverse-alcatraz/",
+        "status_code": 302,
+        "cache_key": "cbd8e6c269e99a3449fd0d7364f4f0bc8bb30e83a28cb82079bba9a50588d8ad",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 94,
+      "url": "https://www.10thplanetjj.com/techniques/mts-94-polishing-the-japanese-neck-tie/",
+      "checked_at": "2026-10-18T00:11:15.709944+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-94-polishing-the-japanese-neck-tie/",
+      "source": {
+        "sha256": "6d10d0d2fb36454fd440da4971c9a7b9ed34a73b2cb4fbf06455352c5bb065b9",
+        "fetched_at": "2026-10-18T00:11:21.673523+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-94-polishing-the-japanese-neck-tie/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-94-polishing-the-japanese-neck-tie/",
+        "status_code": 302,
+        "cache_key": "d59541e39906538484a62a35d8c2d85e75c6ec446c1fe9f5b776245216a03b3f",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 95,
+      "url": "https://www.10thplanetjj.com/techniques/mts-95-prison-guard-revisited/",
+      "checked_at": "2026-10-18T00:11:21.677721+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-95-prison-guard-revisited/",
+      "source": {
+        "sha256": "a342f1ab4da0139fbbc912b24d5d3e89fb80988dc1b58ba6aea68bc07a465825",
+        "fetched_at": "2026-10-18T00:11:28.220330+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-95-prison-guard-revisited/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-95-prison-guard-revisited/",
+        "status_code": 302,
+        "cache_key": "dfdd08c923daa8a203848aa97ac953f3b9cda9bd6817c26e3f589d77c402add5",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 96,
+      "url": "https://www.10thplanetjj.com/techniques/mts-96-pre-web/",
+      "checked_at": "2026-10-18T00:11:28.224194+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-96-pre-web/",
+      "source": {
+        "sha256": "bc8e92e9499f0e1803cf47e467aa19f6ad9f8fc23167a917caad58083dd787e2",
+        "fetched_at": "2026-10-18T00:11:34.386568+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-96-pre-web/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-96-pre-web/",
+        "status_code": 302,
+        "cache_key": "a5614a9db93bbdaabf0eb2e395efd18c0fd45da282f3ff0129422b70c43a94b8",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 97,
+      "url": "https://www.10thplanetjj.com/techniques/mts-97-plan-b/",
+      "checked_at": "2026-10-18T00:11:34.390282+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-97-plan-b/",
+      "source": {
+        "sha256": "4b54b6b819462fc7552130efeb145651674ab7dddf339d2918a1573ff752217c",
+        "fetched_at": "2026-10-18T00:11:40.522366+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-97-plan-b/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-97-plan-b/",
+        "status_code": 302,
+        "cache_key": "603c0f6f281a56bb24b0c79ef2fcfe0b933cf6d53b7bcf807c49b184b1d44a8d",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 98,
+      "url": "https://www.10thplanetjj.com/techniques/mts-98-cummings-honey-flow/",
+      "checked_at": "2026-10-18T00:11:40.526381+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-98-cummings-honey-flow/",
+      "source": {
+        "sha256": "e672f9332b56586f976f12f275b858b787db07faa332e5c3e2f63a8534938463",
+        "fetched_at": "2026-10-18T00:11:46.726083+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-98-cummings-honey-flow/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-98-cummings-honey-flow/",
+        "status_code": 302,
+        "cache_key": "7facd9bc7c4630809c039067195cb95ad5077ea7f48822b7734f0a97aa937e16",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 99,
+      "url": "https://www.10thplanetjj.com/techniques/mts-99-twister-side-control/",
+      "checked_at": "2026-10-18T00:11:46.729859+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-99-twister-side-control/",
+      "source": {
+        "sha256": "1c77ffab3040b3d72872304c7a7d80cbcabf0c580c84bd4e3273338056a2cd91",
+        "fetched_at": "2026-10-18T00:11:53.290909+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-99-twister-side-control/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-99-twister-side-control/",
+        "status_code": 302,
+        "cache_key": "cb3db2100b6ce2e21487630abea61f7f5fadcef0ad2c28d8cf127d7bb8972bf8",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 159,
+      "url": "https://www.10thplanetjj.com/techniques/mts-159-mexican-dead-orchard/",
+      "checked_at": "2026-10-18T00:11:53.294876+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-159-mexican-dead-orchard/",
+      "source": {
+        "sha256": "2389d58424fe5fd32be9ac7a0e1d439468d4d5ff7b74bc518f860fbd09c6fe68",
+        "fetched_at": "2026-10-18T00:11:59.369578+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-159-mexican-dead-orchard/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-159-mexican-dead-orchard/",
+        "status_code": 302,
+        "cache_key": "32910fbc3780c0beedb3245e485710b1af855122cea57394cd29d884255126f3",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 160,
+      "url": "https://www.10thplanetjj.com/techniques/mts-160-perfect-dog-fight/",
+      "checked_at": "2026-10-18T00:11:59.373618+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-160-perfect-dog-fight/",
+      "source": {
+        "sha256": "fd6b0c1961bf281d5eafe83151e9009d8e202e5be999571eb8b08f66c61f7e51",
+        "fetched_at": "2026-10-18T00:12:05.962444+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-160-perfect-dog-fight/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-160-perfect-dog-fight/",
+        "status_code": 302,
+        "cache_key": "539a0b128a546df8d33a95909952f86eb7f84cf5cf90eaea6225a157539fc36c",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 161,
+      "url": "https://www.10thplanetjj.com/techniques/mts-161-new-lockdown-path/",
+      "checked_at": "2026-10-18T00:12:05.966556+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-161-new-lockdown-path/",
+      "source": {
+        "sha256": "e1999407c03e06c8ef19be5b9d63e3946d6be117b4e0659d3de00d751870c43c",
+        "fetched_at": "2026-10-18T00:12:11.897138+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-161-new-lockdown-path/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-161-new-lockdown-path/",
+        "status_code": 302,
+        "cache_key": "7f0c62c19019b73cf930373e47050071efb29bc84d8cf172d14ce7e5a9af7a09",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 165,
+      "url": "https://www.10thplanetjj.com/techniques/mts-164-100-percent-revisited/",
+      "checked_at": "2026-10-18T00:12:11.900805+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-164-100-percent-revisited/",
+      "source": {
+        "sha256": "d7d96636a22c46e0bc78bbfd88a5f6b4c7c33b5f8fb5f40c1e0fd2796eccad44",
+        "fetched_at": "2026-10-18T00:12:18.578734+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-164-100-percent-revisited/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-164-100-percent-revisited/",
+        "status_code": 302,
+        "cache_key": "48146efc7ced0de25e7a8b6bf1abcd5ab4b13b764203d33f0e08df10dd466663",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 166,
+      "url": "https://www.10thplanetjj.com/techniques/mts-166-maia-vs-askren-breakdown/",
+      "checked_at": "2026-10-18T00:12:18.582488+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-166-maia-vs-askren-breakdown/",
+      "source": {
+        "sha256": "3b4edd071688d2b97c277dae3296bc431f6743baefc007c0c87aadfc53ab4775",
+        "fetched_at": "2026-10-18T00:12:24.358501+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-166-maia-vs-askren-breakdown/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-166-maia-vs-askren-breakdown/",
+        "status_code": 302,
+        "cache_key": "9c48440aa7a18d96741ff04804e509b53b16bc24aacef3e3c6a73e2e2e8ec3f0",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 167,
+      "url": "https://www.10thplanetjj.com/techniques/mts-167-lockdown-entries/",
+      "checked_at": "2026-10-18T00:12:24.362401+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-167-lockdown-entries/",
+      "source": {
+        "sha256": "fef3298ab535f0a5e07177ca9f78bf3902211ec8216ee7891990da60e05c177f",
+        "fetched_at": "2026-10-18T00:12:30.644208+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-167-lockdown-entries/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-167-lockdown-entries/",
+        "status_code": 302,
+        "cache_key": "0a9c136999bc4a6de7be73c4887f5e3ffaa5f50c69489a3f246fa2e811e67dc0",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 168,
+      "url": "https://www.10thplanetjj.com/techniques/mts-168-lockdown-to-vaporizer/",
+      "checked_at": "2026-10-18T00:12:30.648128+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-168-lockdown-to-vaporizer/",
+      "source": {
+        "sha256": "b6b1522ad1fe9ec4a65f64ec6e000afa6863eb9d9abb28c7e1cc61c07c64d3fc",
+        "fetched_at": "2026-10-18T00:12:36.496424+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-168-lockdown-to-vaporizer/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-168-lockdown-to-vaporizer/",
+        "status_code": 302,
+        "cache_key": "65e7a300d2831bb73825d98a8ac0df43a7c7106dec2e3ed38677fd47d4a5a583",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 169,
+      "url": "https://www.10thplanetjj.com/techniques/mts-169-rubber-guard-the-pump/",
+      "checked_at": "2026-10-18T00:12:36.500492+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-169-rubber-guard-the-pump/",
+      "source": {
+        "sha256": "4cd86b7b0a9ac6d0e33764832b7b4f7375bc0831ec6e82c6690e0688f71c4214",
+        "fetched_at": "2026-10-18T00:12:43.175586+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-169-rubber-guard-the-pump/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-169-rubber-guard-the-pump/",
+        "status_code": 302,
+        "cache_key": "471d2802336cd4b1af77ce021e2fd32911d37b2cf2cfe3f31e7bde1dccd09f4a",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 170,
+      "url": "https://www.10thplanetjj.com/techniques/mts-170-samurai-calf-slicer/",
+      "checked_at": "2026-10-18T00:12:43.179482+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-170-samurai-calf-slicer/",
+      "source": {
+        "sha256": "6513dfbd6411a33546fd2525ba705789921991e1bcf560200f978abf7ff76add",
+        "fetched_at": "2026-10-18T00:12:49.119409+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-170-samurai-calf-slicer/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-170-samurai-calf-slicer/",
+        "status_code": 302,
+        "cache_key": "1eec177b9aac8e1692eb92fb105b521a7ddca46e17960160abafca724c6d4286",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 171,
+      "url": "https://www.10thplanetjj.com/techniques/mts-171-posture-clinching-warmups-h/",
+      "checked_at": "2026-10-18T00:12:49.123658+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-171-posture-clinching-warmups-h/",
+      "source": {
+        "sha256": "e0bef4c36a545f6736620e491a1d7042858efffca3b58cefe1d9e6bc03d5a28c",
+        "fetched_at": "2026-10-18T00:12:55.144010+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-171-posture-clinching-warmups-h/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-171-posture-clinching-warmups-h/",
+        "status_code": 302,
+        "cache_key": "a2c1075f1341f5f58b9db8e417fb52fa3d02855f7dfb307ebcb72c3be3b68f59",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 172,
+      "url": "https://www.10thplanetjj.com/techniques/mts-172-spider-clinch-warmups-a/",
+      "checked_at": "2026-10-18T00:12:55.147888+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-172-spider-clinch-warmups-a/",
+      "source": {
+        "sha256": "8ecafdab80f85af225d5648fb3026755783500b38bef116a3bb57843cbaa6bc8",
+        "fetched_at": "2026-10-18T00:13:01.319005+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-172-spider-clinch-warmups-a/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-172-spider-clinch-warmups-a/",
+        "status_code": 302,
+        "cache_key": "febb1af71dc10bc3cdd167f48f8daee65acf26dde77c7eb40f61c3e7e6d7672a",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 173,
+      "url": "https://www.10thplanetjj.com/techniques/mts-173-rolling-inverted-3-piece-warmups-b/",
+      "checked_at": "2026-10-18T00:13:01.323218+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-173-rolling-inverted-3-piece-warmups-b/",
+      "source": {
+        "sha256": "ae47d424275cccdcd68a0477b95f4e89dde46ffec46e96bb6496d0ada2755444",
+        "fetched_at": "2026-10-18T00:13:07.868686+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-173-rolling-inverted-3-piece-warmups-b/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-173-rolling-inverted-3-piece-warmups-b/",
+        "status_code": 302,
+        "cache_key": "de88d006c7ad1f24685b130265fd146abd161ebdfe17e753c93c0de15493e187",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 174,
+      "url": "https://www.10thplanetjj.com/techniques/mts-174-corona-lockdown-sweep/",
+      "checked_at": "2026-10-18T00:13:07.873187+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-174-corona-lockdown-sweep/",
+      "source": {
+        "sha256": "1a52e86b26de8dbddc621856155e8cce7584ee04a71c2288438a0f8d3d2901c6",
+        "fetched_at": "2026-10-18T00:13:14.243514+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-174-corona-lockdown-sweep/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-174-corona-lockdown-sweep/",
+        "status_code": 302,
+        "cache_key": "4e54fa4c773a11199a81302032789912a706e49364a35d0f4da72acfeb8a4d5b",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 175,
+      "url": "https://www.10thplanetjj.com/techniques/mts-175-focusing-on-the-truck/",
+      "checked_at": "2026-10-18T00:13:14.248156+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-175-focusing-on-the-truck/",
+      "source": {
+        "sha256": "13089df20ef359f3867c7ab1f76f8f50eb2799f7d23052cc1904d94f99c3d3b1",
+        "fetched_at": "2026-10-18T00:13:20.044890+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-175-focusing-on-the-truck/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-175-focusing-on-the-truck/",
+        "status_code": 302,
+        "cache_key": "609761d09aea6a65cb25ed7fb6c4314294df24a04963379d40d0a51fc2149501",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 176,
+      "url": "https://www.10thplanetjj.com/techniques/mts-176-lockdown-clinches/",
+      "checked_at": "2026-10-18T00:13:20.049344+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-176-lockdown-clinches/",
+      "source": {
+        "sha256": "19c1e7d37835e84ff1ce314ca0239dc5db044ec484d04e8ac43046d4ea731ed7",
+        "fetched_at": "2026-10-18T00:13:26.291189+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-176-lockdown-clinches/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-176-lockdown-clinches/",
+        "status_code": 302,
+        "cache_key": "77e2d9cda1b1d730cb1991d1830cdb7422731bb87a8eb0d45fea3716a176d032",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 177,
+      "url": "https://www.10thplanetjj.com/techniques/mts-177-tripod-passing/",
+      "checked_at": "2026-10-18T00:13:26.295869+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-177-tripod-passing/",
+      "source": {
+        "sha256": "0a1427deb5b01d10d18856ca257f5e62df68e501da07480ea68d417ff8ccc178",
+        "fetched_at": "2026-10-18T00:13:32.445751+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-177-tripod-passing/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-177-tripod-passing/",
+        "status_code": 302,
+        "cache_key": "d1383371c5fca3a21e09f75aa54626bab336a467f613cde6d2159396fc578f9e",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 178,
+      "url": "https://www.10thplanetjj.com/techniques/mts-178-banana-splits-in-transition/",
+      "checked_at": "2026-10-18T00:13:32.449668+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-178-banana-splits-in-transition/",
+      "source": {
+        "sha256": "35e735b72f378e89ded9eef05f28bcca5d61b8bfc2b8e5a25c6fbc8ca09e1cb8",
+        "fetched_at": "2026-10-18T00:13:38.649862+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-178-banana-splits-in-transition/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-178-banana-splits-in-transition/",
+        "status_code": 302,
+        "cache_key": "2d20c716da3d54b1172a8f8e3dc663c46e06eec21e0c8e444abaedcd794f9d0d",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 181,
+      "url": "https://www.10thplanetjj.com/techniques/mts-181-passing-basics-d-day/",
+      "checked_at": "2026-10-18T00:13:38.653942+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-181-passing-basics-d-day/",
+      "source": {
+        "sha256": "16abeb02710dab59e8c7446fe44bb4392ed5f2ebf8460d0bcb219b182d091ccd",
+        "fetched_at": "2026-10-18T00:13:45.086756+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-181-passing-basics-d-day/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-181-passing-basics-d-day/",
+        "status_code": 302,
+        "cache_key": "af93ba17539040d2b53134987c0ef957f70339093a294fe305ba1c7a68c06ab9",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 182,
+      "url": "https://www.10thplanetjj.com/techniques/mts-182-leg-locks-at-hq/",
+      "checked_at": "2026-10-18T00:13:45.091188+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-182-leg-locks-at-hq/",
+      "source": {
+        "sha256": "dda471bdd318e4a099bda721f97b3a6a183e73d39e229d988d48f6101d6b5cf6",
+        "fetched_at": "2026-10-18T00:13:51.314559+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-182-leg-locks-at-hq/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-182-leg-locks-at-hq/",
+        "status_code": 302,
+        "cache_key": "3cf9cc49b570cce4c7f0ee2ee347fbedbdcb3bab753775b3da7c7fba1217032f",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 183,
+      "url": "https://www.10thplanetjj.com/techniques/mts-183-spiderweb-silverado/",
+      "checked_at": "2026-10-18T00:13:51.318471+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-183-spiderweb-silverado/",
+      "source": {
+        "sha256": "7cec1c9120f657945d78531d885bc6723d8cac600a4b6267ac60aeb7417bfe83",
+        "fetched_at": "2026-10-18T00:13:57.437435+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-183-spiderweb-silverado/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-183-spiderweb-silverado/",
+        "status_code": 302,
+        "cache_key": "0ca5db474ae8a69c5b77cad260aceb58e3aade77f404afc988f39fe79d9cda98",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 184,
+      "url": "https://www.10thplanetjj.com/techniques/mts-184-rubber-guard-to-side-control/",
+      "checked_at": "2026-10-18T00:13:57.441577+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-184-rubber-guard-to-side-control/",
+      "source": {
+        "sha256": "1ebdabd59ad150707e5813489b9627c9d04723f9c2636109496053ce51e4a0ec",
+        "fetched_at": "2026-10-18T00:14:03.724495+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-184-rubber-guard-to-side-control/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-184-rubber-guard-to-side-control/",
+        "status_code": 302,
+        "cache_key": "61eea0d1ffb0bf7cc66afa198e3cd5483dd5d98889bd08a06b1e84a039d99e60",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 187,
+      "url": "https://www.10thplanetjj.com/techniques/mts-187-troubleshooting-the-lockdown-warmups-f/",
+      "checked_at": "2026-10-18T00:14:03.728475+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-187-troubleshooting-the-lockdown-warmups-f/",
+      "source": {
+        "sha256": "344764d84d515a0663ca8f4268fe862404ec0997c58ca0b0bb8651b87cc949d8",
+        "fetched_at": "2026-10-18T00:14:09.652257+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-187-troubleshooting-the-lockdown-warmups-f/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-187-troubleshooting-the-lockdown-warmups-f/",
+        "status_code": 302,
+        "cache_key": "fc150b8bcda04e7ede8b94c203ed2f3d5e7cbe23c3b4ef190222ca21d0e35b47",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 188,
+      "url": "https://www.10thplanetjj.com/techniques/mts-188-advanced-ebi-ot-warmups-g/",
+      "checked_at": "2026-10-18T00:14:09.656262+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-188-advanced-ebi-ot-warmups-g/",
+      "source": {
+        "sha256": "782e73231d975a33f7b9b44a32e5270c66ca27b541e22df685b459476099a652",
+        "fetched_at": "2026-10-18T00:14:15.909005+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-188-advanced-ebi-ot-warmups-g/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-188-advanced-ebi-ot-warmups-g/",
+        "status_code": 302,
+        "cache_key": "148442a3d5bdebf49699314207d3e964c671c5565c45651d8d1238d253fb0f18",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 189,
+      "url": "https://www.10thplanetjj.com/techniques/mts-189-prison-guard-homie-x-warmups-h/",
+      "checked_at": "2026-10-18T00:14:15.912733+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-189-prison-guard-homie-x-warmups-h/",
+      "source": {
+        "sha256": "c51ebecd2600b33ab440e18c1ae5740436c51019b0f8b8735833de3fd830626b",
+        "fetched_at": "2026-10-18T00:14:22.494842+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-189-prison-guard-homie-x-warmups-h/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-189-prison-guard-homie-x-warmups-h/",
+        "status_code": 302,
+        "cache_key": "94821649126aee51e9695609c793fe4c87c7834b666189ce6feccb75dd24c6df",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 190,
+      "url": "https://www.10thplanetjj.com/techniques/mts-190-back-attacks-with-luis-quinones-warmups-a/",
+      "checked_at": "2026-10-18T00:14:22.498908+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-190-back-attacks-with-luis-quinones-warmups-a/",
+      "source": {
+        "sha256": "c36e36dc8d34a1421ac5e1472a918f85cf8862ce0f19e9e9e3f096a553625b7b",
+        "fetched_at": "2026-10-18T00:14:28.501810+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-190-back-attacks-with-luis-quinones-warmups-a/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-190-back-attacks-with-luis-quinones-warmups-a/",
+        "status_code": 302,
+        "cache_key": "d98261502c2b9a9a309fbce7ad131263d90475282ca392e19955da391df52e34",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 191,
+      "url": "https://www.10thplanetjj.com/techniques/mts-191-passing-with-danny-guttierez-warmups-b/",
+      "checked_at": "2026-10-18T00:14:28.505806+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-191-passing-with-danny-guttierez-warmups-b/",
+      "source": {
+        "sha256": "ade87e320796c82ae384d4a338fb2133eea1b064ae19de7653b2c138afaee952",
+        "fetched_at": "2026-10-18T00:14:34.202316+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-191-passing-with-danny-guttierez-warmups-b/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-191-passing-with-danny-guttierez-warmups-b/",
+        "status_code": 302,
+        "cache_key": "f9bb93391dff83fbb916672e0e9675ec2a2d396e91536372fdf235e490b7c14f",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 192,
+      "url": "https://www.10thplanetjj.com/techniques/mts-192-rubber-guard-live-drills/",
+      "checked_at": "2026-10-18T00:14:34.207046+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-192-rubber-guard-live-drills/",
+      "source": {
+        "sha256": "60ea98aabe46f8f5ffffe595bf2f0e00fca60918ff8afd8727401aaaf0425907",
+        "fetched_at": "2026-10-18T00:14:40.540167+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-192-rubber-guard-live-drills/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-192-rubber-guard-live-drills/",
+        "status_code": 302,
+        "cache_key": "1a67ea64870a7156ae11cceea8a00ee3793a7509d779e845b5ff797244126486",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 193,
+      "url": "https://www.10thplanetjj.com/techniques/mts-193-deep-down-the-lockdown-hole/",
+      "checked_at": "2026-10-18T00:14:40.544831+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-193-deep-down-the-lockdown-hole/",
+      "source": {
+        "sha256": "2fa6402b8e6b0fed2a4d351445858ec5a06b5e30d62ce4b99a973cbc55ad577d",
+        "fetched_at": "2026-10-18T00:14:46.744376+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-193-deep-down-the-lockdown-hole/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-193-deep-down-the-lockdown-hole/",
+        "status_code": 302,
+        "cache_key": "0d08aefc4b8f6c946abfdab78f036cad18969fb8ef113d8b139a7d901f527100",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 194,
+      "url": "https://www.10thplanetjj.com/techniques/mts-194-rear-naked-choke-series-warmups-d/",
+      "checked_at": "2026-10-18T00:14:46.748946+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-194-rear-naked-choke-series-warmups-d/",
+      "source": {
+        "sha256": "870d5066fbf7d3b7f9cc5fd6d0af31cc49b1cf99ba0f8e3187393de86ef7a448",
+        "fetched_at": "2026-10-18T00:14:52.771058+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-194-rear-naked-choke-series-warmups-d/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-194-rear-naked-choke-series-warmups-d/",
+        "status_code": 302,
+        "cache_key": "3ca10d02c0b5ee92acd76e9bd354e7696bf3d3ad7e055030e2e74abe023a6389",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 195,
+      "url": "https://www.10thplanetjj.com/techniques/mts-195-advanced-arm-triangle-warmups-e1/",
+      "checked_at": "2026-10-18T00:14:52.775227+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-195-advanced-arm-triangle-warmups-e1/",
+      "source": {
+        "sha256": "86a5a49175641ac9e12bcfe9d1e5bc4efda26ce38726ab6b179fa6c1fb306e1f",
+        "fetched_at": "2026-10-18T00:14:59.479396+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-195-advanced-arm-triangle-warmups-e1/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-195-advanced-arm-triangle-warmups-e1/",
+        "status_code": 302,
+        "cache_key": "6d168c2e79fcd27e9e6fdf5efdefe7a2c32bca88fb60fd5c702327eaccdb8993",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 196,
+      "url": "https://www.10thplanetjj.com/techniques/mts-196-rubber-guard-with-ben-eddy-warmups-e1/",
+      "checked_at": "2026-10-18T00:14:59.483874+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-196-rubber-guard-with-ben-eddy-warmups-e1/",
+      "source": {
+        "sha256": "dec076e7a2862ff98932c16c7339b9bcbf2ceeed5028f31f247cf72554d342f3",
+        "fetched_at": "2026-10-18T00:15:06.511206+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-196-rubber-guard-with-ben-eddy-warmups-e1/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-196-rubber-guard-with-ben-eddy-warmups-e1/",
+        "status_code": 302,
+        "cache_key": "1d9458f6f11402712d2080816abcfa346f3814bb747e37a6a4031b9ce16da315",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 197,
+      "url": "https://www.10thplanetjj.com/techniques/mts-197-twister-side-control/",
+      "checked_at": "2026-10-18T00:15:06.515703+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-197-twister-side-control/",
+      "source": {
+        "sha256": "759be94d0492a1c670dc357c67b8aa8f6eb402589a2f2e94af8de0704935613f",
+        "fetched_at": "2026-10-18T00:15:13.227040+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-197-twister-side-control/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-197-twister-side-control/",
+        "status_code": 302,
+        "cache_key": "d7cbcdf147b1624b4f44aa3ce484df8d4a03009e33a9096c1a9152347e2f2553",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 198,
+      "url": "https://www.10thplanetjj.com/techniques/mts-198-deep-hook-philosophy/",
+      "checked_at": "2026-10-18T00:15:13.231339+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-198-deep-hook-philosophy/",
+      "source": {
+        "sha256": "080b63b241d0e36c2fd1a72b411a173c5956a51339303edc4215a394e0697a78",
+        "fetched_at": "2026-10-18T00:15:20.669854+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-198-deep-hook-philosophy/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-198-deep-hook-philosophy/",
+        "status_code": 302,
+        "cache_key": "0db8ffd28306a35570edbe30e08d725e59be5c6bf0e2781b2ed00aae15d566de",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 199,
+      "url": "https://www.10thplanetjj.com/techniques/mts-199-graces-twister/",
+      "checked_at": "2026-10-18T00:15:20.673890+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-199-graces-twister/",
+      "source": {
+        "sha256": "d03f73d8c09d4f263cc5be58666d1b706281109a41446d75262eedc9aa538783",
+        "fetched_at": "2026-10-18T00:15:27.854724+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-199-graces-twister/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-199-graces-twister/",
+        "status_code": 302,
+        "cache_key": "4b21ddd58985ffa37ded7b75c593dbf91b5e0d7b39a46f27620c0385b7d9f06c",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 201,
+      "url": "https://www.10thplanetjj.com/techniques/mts-201-prison-guard-breakdown/",
+      "checked_at": "2026-10-18T00:15:27.859162+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-201-prison-guard-breakdown/",
+      "source": {
+        "sha256": "e55735f73673ecdd3ec9a24d001589ad6a0bf23ea7da85d1312821a7d305307b",
+        "fetched_at": "2026-10-18T00:15:35.399446+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-201-prison-guard-breakdown/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-201-prison-guard-breakdown/",
+        "status_code": 302,
+        "cache_key": "939b507aa1c01c9bac2a73df1705c50193624252c54c0ebf7a01e3d6796821e6",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 202,
+      "url": "https://www.10thplanetjj.com/techniques/mts-202-meathook-options/",
+      "checked_at": "2026-10-18T00:15:35.403668+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-202-meathook-options/",
+      "source": {
+        "sha256": "e7da97d5e33085d6a63b40d363f685f8a56aed1c57b3fccacb66aa33bad1645a",
+        "fetched_at": "2026-10-18T00:15:41.480111+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-202-meathook-options/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-202-meathook-options/",
+        "status_code": 302,
+        "cache_key": "e2ebd9af2bd06fb1122adb99bf9a6e6fdfb141395c833278726c7c4d63eb6c5c",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 203,
+      "url": "https://www.10thplanetjj.com/techniques/mts-203-prison-guard-to-spider-web/",
+      "checked_at": "2026-10-18T00:15:41.484175+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-203-prison-guard-to-spider-web/",
+      "source": {
+        "sha256": "cc2f96a9cf7b07b409f2dd29645089eb13210390c5b4663eb5fa213ab093a3b4",
+        "fetched_at": "2026-10-18T00:15:48.293539+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-203-prison-guard-to-spider-web/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-203-prison-guard-to-spider-web/",
+        "status_code": 302,
+        "cache_key": "bcd372b56eae6a6d1ba92e06ad6ad26ed4c78b370c7c012db7f9730c1385bd1f",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 204,
+      "url": "https://www.10thplanetjj.com/techniques/mts-204-1-4-guard-strategies/",
+      "checked_at": "2026-10-18T00:15:48.297709+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-204-1-4-guard-strategies/",
+      "source": {
+        "sha256": "a1983088b0bda81abb89f17b25ba4c719690ab82dc93320176fcad677818c376",
+        "fetched_at": "2026-10-18T00:15:55.123609+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-204-1-4-guard-strategies/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-204-1-4-guard-strategies/",
+        "status_code": 302,
+        "cache_key": "8d1fa1ed697d06330d48fd0f3664d1edf76099472c28ea61c3bde09f10f14c1d",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 205,
+      "url": "https://www.10thplanetjj.com/techniques/mts-205-quarter-guard-concepts/",
+      "checked_at": "2026-10-18T00:15:55.127847+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-205-quarter-guard-concepts/",
+      "source": {
+        "sha256": "50c7907718e061e49b2c2b144c5b35261252352806418023b8dff035d1ddeaf7",
+        "fetched_at": "2026-10-18T00:16:02.020202+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-205-quarter-guard-concepts/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-205-quarter-guard-concepts/",
+        "status_code": 302,
+        "cache_key": "4bc92d505ec595761c0b9c2a3ecec57fa6b04cf27559605eb35d99def5f1b1cd",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 206,
+      "url": "https://www.10thplanetjj.com/techniques/mts-206-100-lockdown/",
+      "checked_at": "2026-10-18T00:16:02.026299+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-206-100-lockdown/",
+      "source": {
+        "sha256": "dbbdac0b2c06206f847111af7c1ccdf5fa0b444473af779fe85518759d5d71bd",
+        "fetched_at": "2026-10-18T00:16:08.029876+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-206-100-lockdown/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-206-100-lockdown/",
+        "status_code": 302,
+        "cache_key": "5d5badb586a10dbc03e32a9c9f3b416a6ad6ea9bb0297d7d6a0565cbc047b79e",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 207,
+      "url": "https://www.10thplanetjj.com/techniques/mts-207-twister-side-attacks/",
+      "checked_at": "2026-10-18T00:16:08.034389+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-207-twister-side-attacks/",
+      "source": {
+        "sha256": "657c8ccfac7aced0987ed72694079d1296cc6680c6f29072faa497de9a3c6c98",
+        "fetched_at": "2026-10-18T00:16:14.472416+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-207-twister-side-attacks/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-207-twister-side-attacks/",
+        "status_code": 302,
+        "cache_key": "2b0ab7f8d7fa4ab25472eeb7fb6f0d8c5221a9ae87b431a481ab729bb26c5b34",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 208,
+      "url": "https://www.10thplanetjj.com/techniques/mts-208-lock-drag-setups/",
+      "checked_at": "2026-10-18T00:16:14.476995+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-208-lock-drag-setups/",
+      "source": {
+        "sha256": "f34c6b9ef5dbec5820e1b72f9ec90441121507dc456688b580e96cd08e0f4ed9",
+        "fetched_at": "2026-10-18T00:16:20.333045+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-208-lock-drag-setups/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-208-lock-drag-setups/",
+        "status_code": 302,
+        "cache_key": "f2ff993e8718107bb06400b5b732d926898a491e492e68aa5c09d397c128488c",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 209,
+      "url": "https://www.10thplanetjj.com/techniques/mts-209-smash-side-control/",
+      "checked_at": "2026-10-18T00:16:20.337210+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-209-smash-side-control/",
+      "source": {
+        "sha256": "d5fd2a10d86818703a14f0da865677a3eec78854f8abb57491582839415f46f9",
+        "fetched_at": "2026-10-18T00:16:26.972830+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-209-smash-side-control/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-209-smash-side-control/",
+        "status_code": 302,
+        "cache_key": "7a4c1aa2ef4e1993b412dc4e48afdfc646ba61745304de97f4a3a3d8aec42a83",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 222,
+      "url": "https://www.10thplanetjj.com/techniques/mts-222-ebi-champion-alan-sanchez/",
+      "checked_at": "2026-10-18T00:16:26.976722+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-222-ebi-champion-alan-sanchez/",
+      "source": {
+        "sha256": "c9fbcdec9eebda25e09dfcc9e4e527f4e256dcbd5f558fe5c454b88711d408ab",
+        "fetched_at": "2026-10-18T00:16:33.686475+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-222-ebi-champion-alan-sanchez/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-222-ebi-champion-alan-sanchez/",
+        "status_code": 302,
+        "cache_key": "dd2747324e69c9075e47741407b8b6531f343111ee4b97f8d071714306b2ff9f",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 223,
+      "url": "https://www.10thplanetjj.com/techniques/mts-223-thein-luu-nguyen/",
+      "checked_at": "2026-10-18T00:16:33.691551+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-223-thein-luu-nguyen/",
+      "source": {
+        "sha256": "48938e1523cf5bae4e1e0c8c55d288837b75f1a70ceff81b9ec841373c499477",
+        "fetched_at": "2026-10-18T00:16:40.037599+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-223-thein-luu-nguyen/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-223-thein-luu-nguyen/",
+        "status_code": 302,
+        "cache_key": "a08e1f0a64526dce8741419e7a15206b9cd973b50d0da2451b64054c442c6eda",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 224,
+      "url": "https://www.10thplanetjj.com/techniques/mts-224-grapplers-no-gi-no-money-pgf-documentary/",
+      "checked_at": "2026-10-18T00:16:40.041899+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-224-grapplers-no-gi-no-money-pgf-documentary/",
+      "source": {
+        "sha256": "6b57bdcbd04ffd164798a3300396010b7aa683294412f4d7ac106d7f972d1bd3",
+        "fetched_at": "2026-10-18T00:16:46.554492+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-224-grapplers-no-gi-no-money-pgf-documentary/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-224-grapplers-no-gi-no-money-pgf-documentary/",
+        "status_code": 302,
+        "cache_key": "80c434d509304920d2a1b0a6ac658b78a6d88f6f46821628db9908798922390e",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 225,
+      "url": "https://www.10thplanetjj.com/techniques/mts-225-ultimate-rubber-guard-round/",
+      "checked_at": "2026-10-18T00:16:46.559312+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-225-ultimate-rubber-guard-round/",
+      "source": {
+        "sha256": "459bd38ba4528fdcc2ba467238f78171696d2c107b4ca3f063e414b1b085a2a2",
+        "fetched_at": "2026-10-18T00:16:53.175795+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-225-ultimate-rubber-guard-round/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-225-ultimate-rubber-guard-round/",
+        "status_code": 302,
+        "cache_key": "5ddd98e83c65e16e4474cb0880447a962d4ce7e9067e1c4c4d7886039898f06b",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 226,
+      "url": "https://www.10thplanetjj.com/techniques/mts-226-full-rubber-guard-invisible-collar/",
+      "checked_at": "2026-10-18T00:16:53.180103+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-226-full-rubber-guard-invisible-collar/",
+      "source": {
+        "sha256": "d6b2923710de2ba10d93ad9fe4ee5ebcb1319b933c50712e2f7efa28b455beb4",
+        "fetched_at": "2026-10-18T00:16:59.788833+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-226-full-rubber-guard-invisible-collar/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-226-full-rubber-guard-invisible-collar/",
+        "status_code": 302,
+        "cache_key": "a301b68c3b7c5579d8eeb5ae220e47597039db2f4c7c5847046caf0c55a39a9a",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 227,
+      "url": "https://www.10thplanetjj.com/techniques/mts-227-the-valley-twister/",
+      "checked_at": "2026-10-18T00:16:59.792823+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-227-the-valley-twister/",
+      "source": {
+        "sha256": "25a26ea91f30dc26e4a78c95627cc9928a4aa15f371025f969e0713fc0a26137",
+        "fetched_at": "2026-10-18T00:17:06.252297+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-227-the-valley-twister/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-227-the-valley-twister/",
+        "status_code": 302,
+        "cache_key": "93365d406c1c6f68871abcc496821317872b5e4e3260665553d3df2d7219c435",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 228,
+      "url": "https://www.10thplanetjj.com/techniques/mts-228-white-belt-wall-warmups-f/",
+      "checked_at": "2026-10-18T00:17:06.256340+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-228-white-belt-wall-warmups-f/",
+      "source": {
+        "sha256": "179b4884dea843bb6a85cf224dcb2f40e1a73dfad51e131c6163a1cedfd8cb84",
+        "fetched_at": "2026-10-18T00:17:12.862615+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-228-white-belt-wall-warmups-f/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-228-white-belt-wall-warmups-f/",
+        "status_code": 302,
+        "cache_key": "269d35bf41e062b8aa21a0b8e949f9cb319eb05b6d8f158549dcc536a4b99a2c",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 229,
+      "url": "https://www.10thplanetjj.com/techniques/mts-229-the-truck-love-handle/",
+      "checked_at": "2026-10-18T00:17:12.867858+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-229-the-truck-love-handle/",
+      "source": {
+        "sha256": "906467e11a0c87c5e9c27cc42981a65939246927463799e4f263468c77aa485e",
+        "fetched_at": "2026-10-18T00:17:19.222947+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-229-the-truck-love-handle/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-229-the-truck-love-handle/",
+        "status_code": 302,
+        "cache_key": "b444a52a70958ca7bd7d7a861844d0123402f9d31c139a20fd3a0c6ae28adb3b",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 230,
+      "url": "https://www.10thplanetjj.com/techniques/mts-230-ebi-ot/",
+      "checked_at": "2026-10-18T00:17:19.227456+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-230-ebi-ot/",
+      "source": {
+        "sha256": "1c480f6179b164672112bb38428838d8303fb8e8a34200276673cf7a344805b6",
+        "fetched_at": "2026-10-18T00:17:25.918213+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-230-ebi-ot/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-230-ebi-ot/",
+        "status_code": 302,
+        "cache_key": "088f661fc8a4e3e5e134922c871a43b261ed9eeeffb152634baad21abeb7833f",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 231,
+      "url": "https://www.10thplanetjj.com/techniques/mts-231-top-half-passing/",
+      "checked_at": "2026-10-18T00:17:25.922730+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-231-top-half-passing/",
+      "source": {
+        "sha256": "1eb058d3fa283d35e1ac63dbce0e860024365721516afb01d6dd44163e1c5420",
+        "fetched_at": "2026-10-18T00:17:31.800868+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-231-top-half-passing/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-231-top-half-passing/",
+        "status_code": 302,
+        "cache_key": "46cfc1d141c3407c37b388d71c33fde9129af676cbc496a8e77d75ee19ecd229",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 232,
+      "url": "https://www.10thplanetjj.com/techniques/mts-232-truck-with-kemoy-anderson/",
+      "checked_at": "2026-10-18T00:17:31.804817+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-232-truck-with-kemoy-anderson/",
+      "source": {
+        "sha256": "b04ea2f71ecb154a6f5ce45377dfba1be874d0c3fb9561550e9a0dd18134baeb",
+        "fetched_at": "2026-10-18T00:17:38.524414+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-232-truck-with-kemoy-anderson/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-232-truck-with-kemoy-anderson/",
+        "status_code": 302,
+        "cache_key": "2c5148e7099a020a01060883bff01ce1b4552f8309e008eebaa29d1d1642a516",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 233,
+      "url": "https://www.10thplanetjj.com/techniques/mts-233-truck-with-nathan-orchard/",
+      "checked_at": "2026-10-18T00:17:38.528852+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-233-truck-with-nathan-orchard/",
+      "source": {
+        "sha256": "10d62504d3ee46ad8658d62036e28754d11f8885f27f5b35296e09ea68d160c5",
+        "fetched_at": "2026-10-18T00:17:44.479192+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-233-truck-with-nathan-orchard/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-233-truck-with-nathan-orchard/",
+        "status_code": 302,
+        "cache_key": "d983b2e77a689d4c2614a672fc4004a03a775636a90fdcb462ee8cc29e517528",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 234,
+      "url": "https://www.10thplanetjj.com/techniques/mts-234-truck-with-kevin-berbrich/",
+      "checked_at": "2026-10-18T00:17:44.483305+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-234-truck-with-kevin-berbrich/",
+      "source": {
+        "sha256": "dd15512acc0ac6aa8446424feadac40a1c8c38e1a930b29ef99a0960f9743f8f",
+        "fetched_at": "2026-10-18T00:17:50.679029+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-234-truck-with-kevin-berbrich/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-234-truck-with-kevin-berbrich/",
+        "status_code": 302,
+        "cache_key": "081ef230d207ccd83621a30801cbce8fe6b932bf6e47408ad9ca06610b477f6d",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 235,
+      "url": "https://www.10thplanetjj.com/techniques/mts-235-truck-with-geo-martinez/",
+      "checked_at": "2026-10-18T00:17:50.682964+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-235-truck-with-geo-martinez/",
+      "source": {
+        "sha256": "4718301f799916c75860c1098439c7b20c4404c0fb07d47cd84a5a18564712fe",
+        "fetched_at": "2026-10-18T00:17:56.498290+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-235-truck-with-geo-martinez/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-235-truck-with-geo-martinez/",
+        "status_code": 302,
+        "cache_key": "b4f8080ae00bd26d1757c0649e36e1cea256dce0b1110542f157a7d5d2a22aa1",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 236,
+      "url": "https://www.10thplanetjj.com/techniques/mts-236-quarter-guard-for-mma/",
+      "checked_at": "2026-10-18T00:17:56.502953+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-236-quarter-guard-for-mma/",
+      "source": {
+        "sha256": "109662243341d74da48b8d5ee101553dd66eb3bdd08ca78f00f38acb37ce2b62",
+        "fetched_at": "2026-10-18T00:18:03.328725+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-236-quarter-guard-for-mma/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-236-quarter-guard-for-mma/",
+        "status_code": 302,
+        "cache_key": "4023025ed9f472a16a6e5a1ddae764b4dd28ceeb1a99584134f7f44f0e6ae472",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 237,
+      "url": "https://www.10thplanetjj.com/techniques/mts-237-death-bed-flows-rubber-guard/",
+      "checked_at": "2026-10-18T00:18:03.333869+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-237-death-bed-flows-rubber-guard/",
+      "source": {
+        "sha256": "49ec011d5f9e74d6cba60d2166f75ebf8a7b79807a7688ddea43c1cdb5f760f3",
+        "fetched_at": "2026-10-18T00:18:10.077097+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-237-death-bed-flows-rubber-guard/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-237-death-bed-flows-rubber-guard/",
+        "status_code": 302,
+        "cache_key": "4084394eb38f5facee35fef9c5f52234fc5c4e144c69e1aafc864472a306a3c6",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 238,
+      "url": "https://www.10thplanetjj.com/techniques/mts-238-death-bed-flows-truck/",
+      "checked_at": "2026-10-18T00:18:10.081376+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-238-death-bed-flows-truck/",
+      "source": {
+        "sha256": "e54bd72279a3c0fb143753f06edac9d873bb8764219a2594e22dda45d86c16fe",
+        "fetched_at": "2026-10-18T00:18:15.919325+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-238-death-bed-flows-truck/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-238-death-bed-flows-truck/",
+        "status_code": 302,
+        "cache_key": "94932ddccda6662cee849802bba338111fba0d7b589957a14a7f410820c79a67",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 239,
+      "url": "https://www.10thplanetjj.com/techniques/mts-239-jjod-dog-bar-pancho-villa/",
+      "checked_at": "2026-10-18T00:18:15.929098+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-239-jjod-dog-bar-pancho-villa/",
+      "source": {
+        "sha256": "a07f663ba485330c15539e755fc89497cb528995cdc20e2600530411fb72c665",
+        "fetched_at": "2026-10-18T00:18:21.839421+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-239-jjod-dog-bar-pancho-villa/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-239-jjod-dog-bar-pancho-villa/",
+        "status_code": 302,
+        "cache_key": "9bcfe068d415dfa74dc46deb83a4a4be0a977b1731aae9f5df42ae59a5db220b",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 240,
+      "url": "https://www.10thplanetjj.com/techniques/mts-240-carni-bear-trap/",
+      "checked_at": "2026-10-18T00:18:21.843395+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-240-carni-bear-trap/",
+      "source": {
+        "sha256": "e8b8a98e6863d0b2eb8ba3e0067c8e2a3fcb6b6b496810d30b691ce8097a7397",
+        "fetched_at": "2026-10-18T00:18:28.098593+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-240-carni-bear-trap/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-240-carni-bear-trap/",
+        "status_code": 302,
+        "cache_key": "185e692806c289b371b3daa4e8f78bb8a7c7dd67ef7592d1647f263032894778",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 241,
+      "url": "https://www.10thplanetjj.com/techniques/mts-241-death-bed-flow-rubber-guard/",
+      "checked_at": "2026-10-18T00:18:28.102809+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-241-death-bed-flow-rubber-guard/",
+      "source": {
+        "sha256": "0cc8982106f6e730be2913b069db2d15a6a82972c2a95db555e55e41008171cc",
+        "fetched_at": "2026-10-18T00:18:34.578862+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-241-death-bed-flow-rubber-guard/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-241-death-bed-flow-rubber-guard/",
+        "status_code": 302,
+        "cache_key": "8b7044aef33df0fc84b1d7b09eaf2ff66d906c54bf555d70e8ed3de444d7c3b4",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 245,
+      "url": "https://www.10thplanetjj.com/techniques/mts-245-bryce-mitchell-twister-series/",
+      "checked_at": "2026-10-18T00:18:34.582981+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-245-bryce-mitchell-twister-series/",
+      "source": {
+        "sha256": "ec1938d7dac3fdfae15497aefe38446cdf8c3cd284babc954dffef18dc92fdcc",
+        "fetched_at": "2026-10-18T00:18:40.771006+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-245-bryce-mitchell-twister-series/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-245-bryce-mitchell-twister-series/",
+        "status_code": 302,
+        "cache_key": "5d79b4956accd18ebfb8f9cfae22a3be5b32b03173294c7b20e1ef9984cc887b",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 246,
+      "url": "https://www.10thplanetjj.com/techniques/mts-246/",
+      "checked_at": "2026-10-18T00:18:40.775070+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-246/",
+      "source": {
+        "sha256": "31021d675ffc1277f22301fa42002d02937dbbc57b137d663c3283a6aa9b8aac",
+        "fetched_at": "2026-10-18T00:18:47.396270+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-246/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-246/",
+        "status_code": 302,
+        "cache_key": "2692961606f8e9415d9caa102afa334b13f6bce87b89e967bf693d08d8c461e9",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 247,
+      "url": "https://www.10thplanetjj.com/techniques/mts-247-ebi-ot/",
+      "checked_at": "2026-10-18T00:18:47.400502+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-247-ebi-ot/",
+      "source": {
+        "sha256": "7415018098f814d6c722c9eeb948926d8ccd6efd5e831192e307c5dfeed2334a",
+        "fetched_at": "2026-10-18T00:18:53.423516+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-247-ebi-ot/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-247-ebi-ot/",
+        "status_code": 302,
+        "cache_key": "e7f121a3e09efdd619e360508ecbc80b20227337de8eec22169fa5286b4afb37",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 248,
+      "url": "https://www.10thplanetjj.com/techniques/mts-248-deathbed-flows/",
+      "checked_at": "2026-10-18T00:18:53.428419+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-248-deathbed-flows/",
+      "source": {
+        "sha256": "557da10d5c7fbdaea12d31b9ae0149071974eeda853861bec498b9ddfa6a1e53",
+        "fetched_at": "2026-10-18T00:18:59.208475+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-248-deathbed-flows/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-248-deathbed-flows/",
+        "status_code": 302,
+        "cache_key": "e3257c722a9998fd355f93d7d77b040beb0ef9aef1dcd2ccf6e46aff9a413b78",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 249,
+      "url": "https://www.10thplanetjj.com/techniques/mts-249-the-toss-2/",
+      "checked_at": "2026-10-18T00:18:59.212640+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-249-the-toss-2/",
+      "source": {
+        "sha256": "48cf1cb35a39393077b96ae6e332a185930d539105a8cc455d1594b1af0dbc99",
+        "fetched_at": "2026-10-18T00:19:05.649686+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-249-the-toss-2/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-249-the-toss-2/",
+        "status_code": 302,
+        "cache_key": "5797bef0bbeeb2cd8e173e771f2d0b62109358c87ffa633163a05b1d92291e7d",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 250,
+      "url": "https://www.10thplanetjj.com/techniques/mts-250-deathbed-flow-twister-side/",
+      "checked_at": "2026-10-18T00:19:05.653810+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-250-deathbed-flow-twister-side/",
+      "source": {
+        "sha256": "5dcacf9e79f27c43fa1788344cc402cbd1d529fa34bff345d261c7c8d23d372e",
+        "fetched_at": "2026-10-18T00:19:11.579495+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-250-deathbed-flow-twister-side/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-250-deathbed-flow-twister-side/",
+        "status_code": 302,
+        "cache_key": "ec0099e6a536fe0611d0eef0993138aa35bb8b34076f600a9a0fcb76bc677fb5",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 251,
+      "url": "https://www.10thplanetjj.com/techniques/mts-251-deathbed-flows-lock-down/",
+      "checked_at": "2026-10-18T00:19:11.584059+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-251-deathbed-flows-lock-down/",
+      "source": {
+        "sha256": "711308b16dc424a913496034b9c21f3e69f6f05ae74c5e79e9dd61a8a79e4a9d",
+        "fetched_at": "2026-10-18T00:19:17.527071+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-251-deathbed-flows-lock-down/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-251-deathbed-flows-lock-down/",
+        "status_code": 302,
+        "cache_key": "a2712fed9e2aed7f01f42e9333bd2cff2f5bf342b9ecc39d93208b5c9fe119b8",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 252,
+      "url": "https://www.10thplanetjj.com/techniques/mts-252-zero-guard/",
+      "checked_at": "2026-10-18T00:19:17.531223+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-252-zero-guard/",
+      "source": {
+        "sha256": "ed92466b7ae7a35214933c3e428c5be87b4c55045e4db1a38f184af32d087a9c",
+        "fetched_at": "2026-10-18T00:19:23.388995+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-252-zero-guard/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-252-zero-guard/",
+        "status_code": 302,
+        "cache_key": "d9be0b7b615d31102740237d1b1e82ab560a441aab2f7d5b8c1fdf1184c584ea",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 253,
+      "url": "https://www.10thplanetjj.com/techniques/mts-253-dog-fight/",
+      "checked_at": "2026-10-18T00:19:23.393060+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-253-dog-fight/",
+      "source": {
+        "sha256": "d5adfcd014f0c099debdac5f73ecadb613e72ca77ce23ae2bb25d40bcc0cccfc",
+        "fetched_at": "2026-10-18T00:19:29.466741+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-253-dog-fight/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-253-dog-fight/",
+        "status_code": 302,
+        "cache_key": "e1e905ccf16b365b4bd083fe650f4ad37988e116cfb0b7f83dc4f3e852d77a1b",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 254,
+      "url": "https://www.10thplanetjj.com/techniques/mts-254-mount/",
+      "checked_at": "2026-10-18T00:19:29.471355+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-254-mount/",
+      "source": {
+        "sha256": "f02cefbce24fa162085356e84cc1ea09f431d7c967144b16d47a84e7ede6742b",
+        "fetched_at": "2026-10-18T00:19:35.775736+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-254-mount/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-254-mount/",
+        "status_code": 302,
+        "cache_key": "12673d7019159d44d8ef3fdb09befd153d04821661ccbb55d2b027392038f3f6",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 255,
+      "url": "https://www.10thplanetjj.com/techniques/mts-255-dms-passing/",
+      "checked_at": "2026-10-18T00:19:35.780725+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-255-dms-passing/",
+      "source": {
+        "sha256": "8c73088dc3205de1d5d4615d5efd6aa27309e0e260891178e0bf8e7dc5f85e55",
+        "fetched_at": "2026-10-18T00:19:42.299795+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-255-dms-passing/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-255-dms-passing/",
+        "status_code": 302,
+        "cache_key": "40ce420fb6aa0ec06277fe0d971be088da5f021c9ec346fe3633b798041db34c",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 256,
+      "url": "https://www.10thplanetjj.com/techniques/mts-256-twister-the-final-3/",
+      "checked_at": "2026-10-18T00:19:42.304169+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-256-twister-the-final-3/",
+      "source": {
+        "sha256": "1da0349033be6d4f4e75a52815068502de6f5a5fc20a8c317193890c492c850c",
+        "fetched_at": "2026-10-18T00:19:48.814061+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-256-twister-the-final-3/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-256-twister-the-final-3/",
+        "status_code": 302,
+        "cache_key": "b9c0af440db2c16d69711b40502cc82f7ce80944a1916ed3e7877066bf37e07d",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 257,
+      "url": "https://www.10thplanetjj.com/techniques/mts-257-jail-break/",
+      "checked_at": "2026-10-18T00:19:48.818694+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-257-jail-break/",
+      "source": {
+        "sha256": "802c860149cd2c80c1e7ab783f19105de3ba99d8f51710e961c68a616890a038",
+        "fetched_at": "2026-10-18T00:19:55.060518+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-257-jail-break/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-257-jail-break/",
+        "status_code": 302,
+        "cache_key": "a739b69178433060c674847a6780f7630425e2d27378494a57f20a72d7eb7daa",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 258,
+      "url": "https://www.10thplanetjj.com/techniques/mts-258-state-of-rubber-guard/",
+      "checked_at": "2026-10-18T00:19:55.065517+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-258-state-of-rubber-guard/",
+      "source": {
+        "sha256": "2335a668c87f6fad9cdca917bc3ff68102d10e30bfb282df98cc952c6fa5ab67",
+        "fetched_at": "2026-10-18T00:20:01.103015+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-258-state-of-rubber-guard/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-258-state-of-rubber-guard/",
+        "status_code": 302,
+        "cache_key": "61307baba893e64cd32fc96e092368879ec2fe05d15d1164b48bdb488f95f804",
+        "request_source": "live"
+      }
+    },
+    {
+      "episode": 259,
+      "url": "https://www.10thplanetjj.com/techniques/mts-259-modern-leg-locks-with-phill-schwartz/",
+      "checked_at": "2026-10-18T00:20:01.107132+00:00",
+      "status": "access_restricted",
+      "message": "Redirect/resource outside public episode pages: https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-259-modern-leg-locks-with-phill-schwartz/",
+      "source": {
+        "sha256": "eb9b70e21488d9b875beb31323dd4436de6d9c64dc68eab51a33e3bfb3e1fb8e",
+        "fetched_at": "2026-10-18T00:20:07.569591+00:00",
+        "final_url": "https://www.10thplanetjj.com/techniques/mts-259-modern-leg-locks-with-phill-schwartz/",
+        "redirect_target": "https://www.10thplanetjj.com/forum/login_info.php?r=https://www.10thplanetjj.com/techniques/mts-259-modern-leg-locks-with-phill-schwartz/",
+        "status_code": 302,
+        "cache_key": "a2a840268d3b710faaf9b2591690bb61a14bee76ba6257383a2a9b1bd821eb67",
+        "request_source": "live"
+      }
+    }
+  ],
+  "discovery": {
+    "episode": null,
+    "url": "https://www.10thplanetjj.com/techniques-archive/",
+    "checked_at": "2026-10-18T00:02:13.817675+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "source": {
+      "sha256": "9daecf8e02871dbf8e42ff606eb005e62fed271d72672bf9e673a260829cba07",
+      "fetched_at": "2026-10-18T00:02:27.451109+00:00",
+      "final_url": "https://www.10thplanetjj.com/techniques-archive/",
+      "redirect_target": null,
+      "cache_key": "2fb341a2bfd03e5defd1092563b550ad2f407161378561dc4b31c0d07c1c972b",
+      "request_source": "live"
+    }
+  },
+  "network_requests": 170,
+  "finished_at": "2026-10-18T00:20:07.574763+00:00",
+  "request_policy": {
+    "delay_seconds": 5.0,
+    "retries": 4,
+    "timeouts_seconds": [
+      10,
+      30
+    ],
+    "sequential": true,
+    "user_agent": "PersonalMTSChapterIndexer/2.0 (personal research; public text metadata only)",
+    "login_redirects_followed": false,
+    "robots_status": 200,
+    "robots_sha256": "480000c6115943e2da65baf4a2d935ce73a1f14f2ea9587e0f2b6b5d475e2f87"
+  }
+}

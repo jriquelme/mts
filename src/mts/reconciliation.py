@@ -45,6 +45,10 @@ def align_chapters(previous, current):
 def reconcile_episode(previous, candidate):
     if not previous or not previous['chapters']:
         result = deepcopy(candidate)
+        if previous:
+            for field in ('next_chapter_sequence', 'chapter_id_strategy', 'retired_chapter_ids'):
+                if field in previous:
+                    result[field] = deepcopy(previous[field])
         for chapter in result['chapters']:
             chapter['source'] = deepcopy(candidate.get('source', {}))
         result['validation'] = dict(state='revalidated', source=deepcopy(candidate.get('source', {})))
@@ -55,9 +59,9 @@ def reconcile_episode(previous, candidate):
     missing = sorted(set(range(len(old))) - set(reverse))
     additions = sorted(set(range(len(new))) - set(mapping))
     reordered = [mapping[j] for j in sorted(mapping)] != sorted(mapping.values())
-    issues, changes = [], []
+    issues, changes = [], deepcopy(previous.get('chapter_changes', []))
     for i in missing:
-        issues.append(dict(code='chapter_missing_in_source', chapter=i + 1,
+        issues.append(dict(code='chapter_missing_in_source', chapter=i + 1, chapter_id=old[i].get('chapter_id'),
                            message='Previous entry retained; no unambiguous source match.'))
     if len(new) < len(old):
         issues.append(dict(code='chapter_count_decreased', before=len(old), after=len(new),
@@ -66,6 +70,11 @@ def reconcile_episode(previous, candidate):
         issues.append(dict(code='chapter_order_changed', message='Prior chapter order retained; source order differs.'))
     if missing and additions:
         issues.append(dict(code='chapter_match_ambiguous', message='Unmatched source rows kept as candidates, not duplicate active entries.'))
+    unconfirmed_additions = [j for j in additions if not (
+        new[j].get('source_entry_kind') == 'list_item' or (new[j].get('time_valid') and new[j].get('title')))]
+    if unconfirmed_additions:
+        issues.append(dict(code='new_chapter_unconfirmed', source_chapters=[j + 1 for j in unconfirmed_additions],
+                           message='Untimed or incomplete added blocks require review before entering the active catalog.'))
     canonical = []
     degraded = False
     for i, old_chapter in enumerate(old):
@@ -78,7 +87,7 @@ def reconcile_episode(previous, candidate):
                 bool(old_chapter.get('title')) and not fresh.get('title'))
             if lower_quality:
                 degraded = True
-                issues.append(dict(code='chapter_quality_regressed', chapter=i + 1,
+                issues.append(dict(code='chapter_quality_regressed', chapter=i + 1, chapter_id=old_chapter.get('chapter_id'),
                                    message='Previous title/time retained; current source is incomplete or ambiguous.'))
             else:
                 for field in ('time_frames', 'time_frame_rate', 'time_precision', 'time_separator'):
@@ -91,14 +100,15 @@ def reconcile_episode(previous, candidate):
                 kept['source_order'] = j + 1
                 for field in ('title', 'time'):
                     if old_chapter.get(field, '') != fresh.get(field, ''):
-                        code = 'chapter_title_changed' if field == 'title' else 'chapter_timestamp_changed'
-                        issues.append(dict(code=code, chapter=i + 1, before=old_chapter.get(field, ''), after=fresh.get(field, '')))
-                        changes.append(dict(chapter=i + 1, field=field, before=old_chapter.get(field, ''),
-                                            after=fresh.get(field, ''), source=deepcopy(candidate.get('source', {}))))
+                        change = dict(chapter=i + 1, chapter_id=old_chapter.get('chapter_id'), field=field,
+                            before=old_chapter.get(field, ''), after=fresh.get(field, ''),
+                            reviewed=False, source=deepcopy(candidate.get('source', {})))
+                        if not any(all(c.get(k) == change.get(k) for k in ('chapter_id', 'chapter', 'field', 'before', 'after')) for c in changes):
+                            changes.append(change)
         canonical.append(kept)
     # Safe insertions require all old entries to be matched and source order to
     # agree. Otherwise the full proposal remains available for manual resolution.
-    if additions and not missing and not reordered and not degraded:
+    if additions and not missing and not reordered and not degraded and not unconfirmed_additions:
         merged = []
         for j, fresh in enumerate(new):
             if j in mapping:
@@ -108,12 +118,22 @@ def reconcile_episode(previous, candidate):
                 added.update(source=deepcopy(candidate.get('source', {})), source_order=j + 1)
                 merged.append(added)
         canonical = merged
+    positions = {c['chapter_id']: i + 1 for i, c in enumerate(canonical) if c.get('chapter_id')}
+    for issue in issues:
+        if issue.get('chapter_id') in positions:
+            issue['chapter'] = positions[issue['chapter_id']]
+    for change in changes:
+        if not change.get('reviewed', False):
+            code = 'chapter_title_changed' if change['field'] == 'title' else 'chapter_timestamp_changed'
+            issues.append(dict(code=code, chapter=positions.get(change.get('chapter_id'), change['chapter']),
+                chapter_id=change.get('chapter_id'), before=change['before'], after=change['after'],
+                message='Source correction remains pending manual review; set reviewed=true on its chapter_changes entry after review.'))
     result = deepcopy(candidate)
     for field in ('next_chapter_sequence', 'chapter_id_strategy', 'retired_chapter_ids'):
         if field in previous:
             result[field] = deepcopy(previous[field])
     result.update(finish(canonical, issues, candidate.get('layout')))
-    retained = bool(missing or reordered or degraded)
+    retained = bool(missing or reordered or degraded or unconfirmed_additions)
     result['validation'] = dict(state='preserved' if retained else 'revalidated',
         source=deepcopy(candidate.get('source', {})), matched_chapters=len(mapping),
         unmatched_previous=[i + 1 for i in missing], unmatched_source=[j + 1 for j in additions],

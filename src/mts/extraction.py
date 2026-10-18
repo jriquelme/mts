@@ -104,6 +104,8 @@ def extract_episode(html):
         return dict(chapters=[], status=status, layout=None, requires_review=True,
                     diagnostics=[dict(code=status, message='No recognized public episode description. Inspect cached HTML.')])
     scope = soup.select_one(selector)
+    source_heading = scope.find(['h1', 'h2'])
+    episode_match = re.search(r'\bMTS\s*(\d{1,4})\b', source_heading.get_text(' ', strip=True), re.I) if source_heading else None
     scope_restricted = scope.select_one('input[type="password"]') is not None
     for unwanted in list(scope.select(NOISE)):
         if unwanted.parent is not None:
@@ -124,6 +126,7 @@ def extract_episode(html):
             break
         chapter = parse_chapter(raw)
         if chapter['time_original'] or is_list or started:
+            chapter['source_entry_kind'] = 'list_item' if is_list else ('timed_block' if chapter['time_original'] else 'untimed_block')
             chapters.append(chapter)
             started = True
     diagnostics = []
@@ -135,6 +138,9 @@ def extract_episode(html):
         result.update(status='access_restricted', requires_review=True,
                       diagnostics=[dict(code='access_restricted', message='Login form inside the episode content; no public TOC available.')])
     result['source_selector'] = selector
+    if episode_match:
+        result['source_episode_number'] = int(episode_match[1])
+        result['source_episode_title'] = clean(source_heading.get_text(' ', strip=True))
     return result
 
 

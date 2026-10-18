@@ -117,3 +117,32 @@ class IncrementalTests(ExecutionCase):
         write_json(self.out / 'mts_run.json', dict(incomplete=True))
         self.assertEqual(self.run_cli('--resume'), 1)
         self.assertEqual((self.out / 'mts_toc.json').read_text(), before)
+
+    def test_http_200_login_wall_preserves_source_and_is_not_revalidation(self):
+        self.run_cli('--reparse')
+        old = load_catalog(self.out)[0]
+        self.cache.write(BASE + '/techniques/1/', '<title>Access Denied</title>',200)
+        self.run_cli('--reparse','--include','1')
+        row = load_catalog(self.out)[0]
+        self.assertEqual(row['status'],'access_restricted')
+        self.assertEqual(row['source']['sha256'],old['source']['sha256'])
+        self.assertEqual(row['last_attempt']['kind'],'http_response')
+        self.assertEqual(row['chapters'][0]['chapter_id'],old['chapters'][0]['chapter_id'])
+
+    def test_new_http_200_error_page_does_not_claim_public_metadata(self):
+        self.cache.write(BASE + '/techniques/1/', '<title>Access Denied</title>',200)
+        self.run_cli('--reparse','--include','1')
+        row=load_catalog(self.out)[0]
+        self.assertEqual(row['source']['kind'],'http_response')
+        self.assertFalse(row['chapters'])
+
+    def test_redirected_wrong_episode_metadata_is_not_accepted(self):
+        self.run_cli('--reparse')
+        old=load_catalog(self.out)[0]
+        self.cache.write(BASE + '/techniques/1/','<article><h2>MTS 2</h2><p>00:01 Wrong episode</p></article>',200)
+        self.run_cli('--reparse','--include','1')
+        row=load_catalog(self.out)[0]
+        self.assertEqual(row['status'],'parse_error')
+        self.assertIn('Episode number mismatch',row['error'])
+        self.assertEqual(row['chapters'][0]['chapter_id'],old['chapters'][0]['chapter_id'])
+        self.assertEqual(row['chapters'][0]['title'],old['chapters'][0]['title'])
