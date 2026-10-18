@@ -86,7 +86,7 @@ def compare(before, after):
             for d in r.get('diagnostics', []) if d.get('severity') != 'info' and d['code'] != 'frame_rate_unknown')))
 
 
-def render_html(report):
+def render_html(report, json_name='comparison.json'):
     labels = dict(episodes_discovered='Episodes discovered', episodes_with_chapters='Episodes with chapters',
         episodes_without_chapters='Episodes without chapters', total_chapters='Total chapters',
         fully_valid_timestamps='Episodes with valid timestamp formats', episodes_requiring_review='Episodes requiring review')
@@ -117,7 +117,7 @@ numeric seconds give only the whole-second position. Duplicate and backwards sou
 <details><summary>Changed episode counts</summary><ul>{changed}</ul></details>
 <p>Episodes losing chapters: {escape(str(report['potential_regressions']))}. Missing episodes: {escape(str(report['missing_episodes']))}.</p>
 <p>Review reasons: {escape(str(report['review_diagnostics']))}.</p>
-<p>See <a href="comparison.json">comparison.json</a> for ordered chapter-level changes, timestamp corrections, and source coverage;
+<p>See <a href="{escape(json_name, quote=True)}">{escape(json_name)}</a> for ordered chapter-level changes, timestamp corrections, and source coverage;
 <a href="investigation.md">investigation.md</a> for template evidence and remaining limitations.</p></html>'''
 
 

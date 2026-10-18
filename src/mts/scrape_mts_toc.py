@@ -14,11 +14,11 @@ from mts.extraction import clean, extract_chapters, extract_episode, finish, par
 from mts.http import ARCHIVE, BASE, USER_AGENT, FetchFailure, OfflineMiss, TextClient
 from mts.reconciliation import reconcile_episode
 from mts.identity import ensure_catalog_identity
-from mts.storage import HtmlCache, load_catalog, save_outputs
+from mts.incremental import FAILED_STATUSES, catalog_lock, plan_run, persist_run, write_changes
+from mts.storage import HtmlCache, load_catalog, save_outputs, write_json
 
 
 EPISODE_RE = re.compile(r'\bMTS\s*(\d{1,4})\b', re.I)
-FAILED_STATUSES = {'fetch_error', 'parse_error', 'unsupported_layout', 'access_restricted'}
 
 
 def episodes_from_archive(html):
@@ -39,6 +39,8 @@ def episodes_from_archive(html):
 
 
 def upgrade_legacy(row):
+    if row.get('schema_version', 0) >= 3:
+        return dict(row)
     if row.get('schema_version', 0) >= 2 and row.get('source', {}).get('kind') != 'legacy_metadata':
         return dict(row)
     result = dict(row)
@@ -75,8 +77,12 @@ def parse_args(argv):
     parser.add_argument('--limit', type=int, default=0, help='Select the newest N episodes (0: all)')
     parser.add_argument('--include', default='', help='Comma-separated episode numbers')
     modes = parser.add_mutually_exclusive_group()
-    modes.add_argument('--resume', action='store_true', help='Skip completed results; retry fetch/parse/layout failures')
+    parser.add_argument('--resume', action='store_true', help='Continue the pending selection from an interrupted run')
     modes.add_argument('--retry-failed', action='store_true', help='Process only fetch/parse/layout/access failures in the existing catalog')
+    modes.add_argument('--revalidate', action='store_true', help='Explicitly revalidate existing episodes')
+    modes.add_argument('--revalidate-legacy', action='store_true', help='Revalidate only episodes retaining legacy metadata')
+    parser.add_argument('--discover', action='store_true', help='Refresh archive discovery, adding only new episodes unless revalidation is selected')
+    parser.add_argument('--discovery-ttl', type=float, default=24, help='Archive cache lifetime in hours (default: 24)')
     parser.add_argument('--reparse', action='store_true', help='Reparse cached HTML only; never use the network')
     parser.add_argument('--refresh', action='store_true', help='Refresh selected cached pages over HTTP')
     args = parser.parse_args(argv)
@@ -84,8 +90,12 @@ def parse_args(argv):
         parser.error('Use --delay >= 2 seconds')
     if args.limit < 0:
         parser.error('Use --limit >= 0')
+    if not math.isfinite(args.discovery_ttl) or args.discovery_ttl < 0:
+        parser.error('Use --discovery-ttl >= 0')
     if args.refresh and args.reparse:
         parser.error('--refresh and --reparse cannot be combined')
+    if args.discover and args.reparse:
+        parser.error('--discover and --reparse cannot be combined')
     try:
         args.selected = {int(x.strip()) for x in args.include.split(',')} if args.include else set()
         if any(n <= 0 for n in args.selected):
@@ -123,38 +133,11 @@ def record_source(row, page):
 
 def run(args, client):
     existing = load_catalog(args.output)
-    if args.retry_failed and not existing:
-        raise FetchFailure('--retry-failed requires an existing catalog in --output')
+    journal, episodes = plan_run(args, client, existing, episodes_from_archive)
+    client.offline, client.refresh = args.reparse, args.refresh
     rows = {r['number']: upgrade_legacy(r) for r in existing}
     ensure_catalog_identity(list(rows.values()))
-    if existing and args.retry_failed:
-        episodes = [{k: r[k] for k in ('number', 'title', 'url')} for r in existing]
-    else:
-        try:
-            archive = client.get(ARCHIVE)
-        except OfflineMiss:
-            if not existing:
-                raise
-            episodes = [{k: r[k] for k in ('number', 'title', 'url')} for r in existing]
-        else:
-            if archive['status_code'] != 200:
-                raise FetchFailure(f'Archive HTTP {archive["status_code"]}')
-            episodes = episodes_from_archive(archive['html'])
-    if not episodes:
-        raise FetchFailure('No episode links found; inspect the cached archive HTML.')
-    discovered = len(episodes)
-    if args.selected:
-        missing = args.selected - {e['number'] for e in episodes}
-        if missing:
-            raise FetchFailure(f'Episodes not found in archive/catalog: {", ".join(map(str, sorted(missing)))}')
-        episodes = [e for e in episodes if e['number'] in args.selected]
-    episodes.sort(key=lambda e: e['number'])
-    if args.limit:
-        episodes = episodes[-args.limit:]
-    if args.retry_failed:
-        episodes = [e for e in episodes if e['number'] in rows and rows[e['number']]['status'] in FAILED_STATUSES]
-    elif args.resume:
-        episodes = [e for e in episodes if e['number'] not in rows or rows[e['number']]['status'] in FAILED_STATUSES]
+    discovered = journal['discovered']
     print(f'Processing {len(episodes)} of {discovered} discovered episodes (sequential public HTML).', flush=True)
     try:
         for index, episode in enumerate(episodes, 1):
@@ -189,16 +172,28 @@ def run(args, client):
                 if exc.page:
                     record_source(row, exc.page)
             rows[number] = row
-            save_outputs(args.output, list(rows.values()), discovered)
+            ensure_catalog_identity(list(rows.values()))
+            write_json(Path(args.output) / 'mts_toc.json', sorted(rows.values(), key=lambda r: r['number']))
+            journal['completed'].append(number)
+            journal['pending'].remove(number)
+            persist_run(args.output, journal)
             codes = sorted({d['code'] for d in row.get('diagnostics', []) if d['code'] != 'frame_rate_unknown'})
             print(f'[{index}/{len(episodes)}] MTS {number}: {len(row["chapters"])} chapters '
                   f'({row["status"]}; {row.get("source", {}).get("request_source", "catalog")})'
                   + (f' [{", ".join(codes)}]' if codes else ''), flush=True)
     except KeyboardInterrupt:
+        journal['state'] = 'interrupted'
+        persist_run(args.output, journal)
         save_outputs(args.output, list(rows.values()), discovered, interrupted=True)
+        write_changes(args.output, journal, list(rows.values()))
         print('\nInterrupted. Completed results and exports saved; use --resume to continue.', flush=True)
         return 130
+    journal['state'] = 'finalizing'
+    persist_run(args.output, journal)
     summary = save_outputs(args.output, list(rows.values()), discovered)
+    journal['state'] = 'complete'
+    write_changes(args.output, journal, list(rows.values()))
+    persist_run(args.output, journal)
     print(json.dumps(dict(summary, network_requests=client.network_requests), indent=2), flush=True)
     return 0
 
@@ -207,9 +202,10 @@ def main(argv=None):
     args = parse_args(argv)
     client = TextClient(HtmlCache(args.cache), delay=args.delay, offline=args.reparse, refresh=args.refresh)
     try:
-        return run(args, client)
+        with catalog_lock(args.output):
+            return run(args, client)
     except KeyboardInterrupt:
-        print('\nInterrupted before episode processing; existing catalog preserved.', flush=True)
+        print('\nInterrupted. The catalog and run journal are preserved; use --resume to continue.', flush=True)
         return 130
     except (FetchFailure, ValueError, OSError) as exc:
         print(f'Stopped: {exc}', flush=True)

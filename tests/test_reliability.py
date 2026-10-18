@@ -121,7 +121,7 @@ class HttpTests(unittest.TestCase):
         self.assertEqual(self.client.cache.read(ARCHIVE)['status_code'], 302)
 
 
-class ExecutionTests(unittest.TestCase):
+class ExecutionCase(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
@@ -140,6 +140,9 @@ class ExecutionTests(unittest.TestCase):
     def run_cli(self, *args):
         with redirect_stdout(io.StringIO()), redirect_stderr(io.StringIO()):
             return main(['--output', str(self.out), '--cache', str(self.cache.directory), *args])
+
+
+class ExecutionTests(ExecutionCase):
 
     def test_offline_outputs_and_subset_preserve_existing_catalog(self):
         self.assertEqual(self.run_cli('--reparse'), 0)
@@ -252,8 +255,7 @@ class ExecutionTests(unittest.TestCase):
 
     def test_network_failure_preserves_previous_chapters(self):
         self.run_cli('--reparse', '--include', '1')
-        with patch('mts.scrape_mts_toc.TextClient.get', side_effect=[
-                self.cache.read(ARCHIVE), FetchFailure('timeout')]):
+        with patch('mts.scrape_mts_toc.TextClient.get', side_effect=FetchFailure('timeout')):
             self.assertEqual(self.run_cli('--include', '1'), 0)
         row = load_catalog(self.out)[0]
         self.assertEqual(row['status'], 'fetch_error')
