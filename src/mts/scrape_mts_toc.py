@@ -12,6 +12,7 @@ from bs4 import BeautifulSoup
 
 from mts.extraction import clean, extract_chapters, extract_episode, finish, parse_chapter
 from mts.http import ARCHIVE, BASE, USER_AGENT, FetchFailure, OfflineMiss, TextClient
+from mts.reconciliation import reconcile_episode
 from mts.storage import HtmlCache, load_catalog, save_outputs
 
 
@@ -107,11 +108,16 @@ def failure_row(episode, previous, status, message):
 
 
 def record_source(row, page):
-    row['source'] = {k: page[k] for k in ('url', 'final_url', 'status_code', 'fetched_at', 'cache_key', 'request_source')}
-    row['source']['kind'] = 'raw_html'
+    source = {k: page[k] for k in ('url', 'final_url', 'status_code', 'fetched_at', 'cache_key', 'request_source')}
+    source['kind'] = 'raw_html'
     for field in ('origin', 'final_url_verified', 'sha256', 'redirect_target'):
         if field in page:
-            row['source'][field] = page[field]
+            source[field] = page[field]
+    if row.get('source') and row['status'] in FAILED_STATUSES | {'robots_disallowed'}:
+        row['last_attempt'] = source
+        row['validation'] = dict(state=row['status'], source=source)
+    else:
+        row['source'] = source
 
 
 def run(args, client):
@@ -158,19 +164,17 @@ def run(args, client):
                 if page['status_code'] != 200:
                     status = 'access_restricted' if page['status_code'] in (401, 403) else 'fetch_error'
                     row = failure_row(episode, previous, status, f'HTTP {page["status_code"]}; inspect cached response.')
+                    record_source(row, page)
                 else:
                     try:
                         extraction = extract_episode(page['html'])
                     except Exception as exc:
                         row = failure_row(episode, previous, 'parse_error', f'{type(exc).__name__}: {exc}')
+                        record_source(row, page)
                     else:
-                        row = dict(episode, **extraction, schema_version=2)
-                        if previous and len(row['chapters']) < len(previous['chapters']):
-                            row['requires_review'] = True
-                            row['diagnostics'].append(dict(code='chapter_count_decreased',
-                                before=len(previous['chapters']), after=len(row['chapters']),
-                                message='Compare cached source with prior catalog before accepting this loss.'))
-                record_source(row, page)
+                        candidate = dict(episode, **extraction, schema_version=2)
+                        record_source(candidate, page)
+                        row = reconcile_episode(previous, candidate)
             except OfflineMiss as exc:
                 if previous:
                     row = dict(previous)

@@ -1,0 +1,34 @@
+{
+  "schema_version": 2,
+  "scraped_at": "2026-10-17T23:31:57.460835+00:00",
+  "episodes": 260,
+  "episodes_discovered": 260,
+  "chapters": 4200,
+  "with_toc": 228,
+  "with_chapters": 253,
+  "without_chapters": 7,
+  "fully_valid_timestamps": 230,
+  "require_review": 52,
+  "statuses": {
+    "toc_partial": 12,
+    "toc_untimed": 10,
+    "ok": 228,
+    "toc_not_present": 7,
+    "access_restricted": 3
+  },
+  "diagnostic_counts": {
+    "timestamp_missing": 96,
+    "raw_html_unavailable": 168,
+    "cache_missing": 168,
+    "toc_not_present": 7,
+    "timestamp_non_monotonic": 22,
+    "timestamp_duplicate": 7,
+    "timestamp_malformed": 2,
+    "access_restricted": 3,
+    "frame_rate_unknown": 1038,
+    "chapter_title_missing": 1,
+    "timestamp_format_ambiguous": 17,
+    "timestamp_semicolon_timecode": 26
+  },
+  "interrupted": false
+}

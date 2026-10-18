@@ -114,6 +114,12 @@ class HttpTests(unittest.TestCase):
         with self.assertRaisesRegex(FetchFailure, 'Corrupt cache'):
             self.client.get(ARCHIVE)
 
+    def test_refresh_preserves_previous_hashed_evidence(self):
+        old = self.client.cache.write(ARCHIVE, 'valid source', 200)
+        self.client.cache.write(ARCHIVE, 'redirect body', 302, redirect_target=BASE + '/login/')
+        self.assertEqual(self.client.cache.read_source(old), 'valid source')
+        self.assertEqual(self.client.cache.read(ARCHIVE)['status_code'], 302)
+
 
 class ExecutionTests(unittest.TestCase):
     def setUp(self):

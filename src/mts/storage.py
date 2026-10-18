@@ -6,6 +6,7 @@ from contextlib import contextmanager
 import hashlib
 import json
 import os
+import re
 from pathlib import Path
 import tempfile
 from datetime import datetime, timezone
@@ -65,10 +66,44 @@ class HtmlCache:
                     fetched_at=utcnow(), sha256=hashlib.sha256(html.encode()).hexdigest())
         if redirect_target:
             meta['redirect_target'] = redirect_target
+        try:
+            previous = self.read(url)
+        except (ValueError, KeyError):
+            previous = None
+        if previous:
+            self.pin(previous)
+        self.pin(dict(meta, html=html))
         with atomic_file(self.directory / f'{key}.html') as stream:
             stream.write(html)
         write_json(self.directory / f'{key}.json', meta)
         return dict(meta, html=html, cache_key=key, request_source='live')
+
+    def pin(self, page):
+        """Keep immutable content by hash, even when the current URL is refreshed."""
+        digest = hashlib.sha256(page['html'].encode()).hexdigest()
+        if page.get('sha256', digest) != digest:
+            raise ValueError('Cannot pin evidence with an incorrect checksum')
+        path = self.directory / 'objects' / f'{digest}.html'
+        if not path.exists():
+            with atomic_file(path) as stream:
+                stream.write(page['html'])
+        metadata = {k: v for k, v in page.items() if k not in {'html', 'request_source'}}
+        metadata['sha256'] = digest
+        version = self.directory / 'versions' / self.key(page['url']) / f'{digest}-{page["status_code"]}.json'
+        if not version.exists():
+            write_json(version, metadata)
+
+    def read_source(self, source):
+        digest = source.get('sha256', '')
+        if not re.fullmatch(r'[0-9a-f]{64}', digest):
+            return None
+        path = self.directory / 'objects' / f'{digest}.html'
+        if not path.exists():
+            return None
+        html = path.read_text()
+        if hashlib.sha256(html.encode()).hexdigest() != digest:
+            raise ValueError('Archived source checksum mismatch')
+        return html
 
 
 def load_catalog(directory):
